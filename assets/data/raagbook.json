@@ -1,0 +1,2476 @@
+{
+  "_notation_legend": {
+    "octave_middle": "plain letter, e.g. S R G M P D N",
+    "octave_upper": "letter followed by apostrophe, e.g. S' = dot-above Ṡ",
+    "octave_lower": "comma before letter, e.g. ,N = underlined lower N",
+    "sustain": "-- means the previous swara is held",
+    "block_type_grid": "a taal-marker table of swara rows (sargamgeet-style)",
+    "block_type_grid_with_lyrics": "a taal-marker table with matched swara + lyric rows (laxangeet/bandish-style)",
+    "status_pending_verification": "blocks tagged this way were intentionally NOT transcribed yet (dense drill grids, no lyric anchor) - do a focused pass on the photo before trusting them",
+    "block_type_alankar_set": "a running list of AROH/AVROH swara-phrases (no taal-column grid, no lyrics) - used for pure practice-drill pages. Optional 'taal' names the rhythmic cycle the book associates with the drill. Optional 'confidence': 'verify_against_photo' flags sets where handwritten octave dots were hard to disambiguate from the scan."
+  },
+  "source": "Goonjan Kala Kendra - Alankar Praveshika notebook",
+  "sourceImageConvention": "each page object has a 'sourceImage' path (assets/pages/page_NNN.jpg, zero-padded to 3 digits, matching pageNumber). Drop your original page photos into that Flutter asset folder using this exact naming so the app can show the source snapshot next to the transcribed content for verification.",
+  "index": [
+    {
+      "no": 1,
+      "title": "alankar Prarambik",
+      "page": 1
+    },
+    {
+      "no": 2,
+      "title": "Alankar Praveshika",
+      "page": 2
+    },
+    {
+      "no": 3,
+      "title": "Durga alankar Praveshika",
+      "page": 3
+    },
+    {
+      "no": 4,
+      "title": "Extra alankars",
+      "page": 4
+    },
+    {
+      "no": 5,
+      "title": "Bhoopali",
+      "page": 5
+    },
+    {
+      "no": 6,
+      "title": "Durga",
+      "page": 10
+    },
+    {
+      "no": 7,
+      "title": "Bhageshree",
+      "page": 15
+    },
+    {
+      "no": 8,
+      "title": "bheempalas",
+      "page": 20
+    },
+    {
+      "no": 9,
+      "title": "Kafi",
+      "page": 25
+    },
+    {
+      "no": 10,
+      "title": "Khamaj",
+      "page": 30
+    },
+    {
+      "no": 11,
+      "title": "Des",
+      "page": 35
+    },
+    {
+      "no": 12,
+      "title": "Yaman",
+      "page": 40
+    },
+    {
+      "no": 13,
+      "title": "drupad",
+      "page": 44
+    },
+    {
+      "no": 14,
+      "title": "taal",
+      "page": 45
+    }
+  ],
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "Alankars",
+      "raag": null,
+      "status": "transcribed_review_recommended",
+      "note": "Generic shudh-swar alankar drill patterns (combinatorial, no lyrics). Transcribed from source scan; sets marked confidence: 'verify_against_photo' involve dense multi-octave runs where handwritten dot placement was ambiguous - cross-check those against the sourceImage.",
+      "sourceImage": "assets/pages/page_001.jpg",
+      "blocks": [
+        {
+          "type": "alankar_set",
+          "label": "Basic - Sa to Sa",
+          "aroh": [
+            "S",
+            "R",
+            "G",
+            "M",
+            "P",
+            "D",
+            "N",
+            "S'"
+          ],
+          "avroh": [
+            "S'",
+            "N",
+            "D",
+            "P",
+            "M",
+            "G",
+            "R",
+            "S"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "3-note groups",
+          "aroh": [
+            "SRG",
+            "RGM",
+            "GMP",
+            "MPD",
+            "PDN",
+            "DNS'"
+          ],
+          "avroh": [
+            "S'ND",
+            "NDP",
+            "DPM",
+            "PMG",
+            "MGR",
+            "GRS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "4-note groups",
+          "aroh": [
+            "SRGM",
+            "RGMP",
+            "GMPD",
+            "MPDN",
+            "PDNS'"
+          ],
+          "avroh": [
+            "S'NDP",
+            "NDPM",
+            "DPMG",
+            "PMGR",
+            "MGRS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "6-note doubled groups",
+          "aroh": [
+            "SRSRG",
+            "RGRGM",
+            "GMGMP",
+            "MPMPD",
+            "PDPDN",
+            "DNDNS'"
+          ],
+          "avroh": [
+            "S'NSND",
+            "NDNDP",
+            "DPDPM",
+            "PMPMG",
+            "MGMGR",
+            "GRGRS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "Skip-note pairs (every other swara)",
+          "aroh": [
+            "SG",
+            "RM",
+            "GP",
+            "MD",
+            "PN",
+            "DS'"
+          ],
+          "avroh": [
+            "S'D",
+            "NP",
+            "DM",
+            "PG",
+            "MR",
+            "GS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "Pyramid build on each swara",
+          "confidence": "verify_against_photo",
+          "aroh": [
+            "S",
+            "SRS",
+            "SRGRS",
+            "R",
+            "RGR",
+            "RGMGR",
+            "G",
+            "GMG",
+            "GMPMG",
+            "M",
+            "MPM",
+            "MPDPM",
+            "P",
+            "PDP",
+            "PDNDP",
+            "D",
+            "DND",
+            "DNS'ND",
+            "N",
+            "NSN",
+            "NS'RS'N",
+            "S'",
+            "S'RS'",
+            "S'RGRS'"
+          ],
+          "avroh": [
+            "S'",
+            "S'NS'",
+            "S'NDNS'",
+            "N",
+            "NDN",
+            "NDPDN",
+            "D",
+            "DPD",
+            "DPMPD",
+            "P",
+            "PMP",
+            "PMGMP",
+            "M",
+            "MGM",
+            "MGRGM",
+            "G",
+            "GRG",
+            "GRSRG",
+            "R",
+            "RSR",
+            "RSNSR",
+            "S",
+            "SNS",
+            "SNDNS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "Extending run (adds one swara each phrase)",
+          "confidence": "verify_against_photo",
+          "aroh": [
+            "S",
+            "SRS",
+            "SRGRS",
+            "SRGMGRS",
+            "SRGMPMGRS",
+            "SRGMPDPMGRS",
+            "SRGMPDNDPMGRS",
+            "SRGMPDNS'NDPMGRS"
+          ],
+          "avroh": [
+            "S'",
+            "S'NS'",
+            "S'NDNS'",
+            "S'NDPDNS'",
+            "S'NDPMPDNS'",
+            "S'NDPMGMPDNS'",
+            "S'NDPMGRGMPDNS'",
+            "S'NDPMGRSRGMPDNS'"
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "Alankars in Shudh Swar",
+      "raag": null,
+      "status": "transcribed_review_recommended",
+      "note": "Alankar patterns tagged by taal (Ektaal, Dadrataal, Roopaktaal, Teentaal, Kehrava). Transcribed from source scan; sets marked confidence: 'verify_against_photo' involve dense multi-octave runs where handwritten dot placement was ambiguous - cross-check those against the sourceImage.",
+      "sourceImage": "assets/pages/page_002.jpg",
+      "blocks": [
+        {
+          "type": "alankar_set",
+          "label": "Basic - Sa to Sa",
+          "aroh": [
+            "S",
+            "R",
+            "G",
+            "M",
+            "P",
+            "D",
+            "N",
+            "S'"
+          ],
+          "avroh": [
+            "S'",
+            "N",
+            "D",
+            "P",
+            "M",
+            "G",
+            "R",
+            "S"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "Ascending/descending pairs",
+          "taal": "Ektaal",
+          "aroh": [
+            "SR",
+            "RG",
+            "GM",
+            "MP",
+            "PD",
+            "DN",
+            "NS'",
+            "S'R'"
+          ],
+          "avroh": [
+            "R'S'",
+            "S'N",
+            "ND",
+            "DP",
+            "PM",
+            "MG",
+            "GR",
+            "RS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "3-note groups",
+          "taal": "Dadrataal",
+          "aroh": [
+            "SRS",
+            "RGR",
+            "GMG",
+            "MPM",
+            "PDP",
+            "DND",
+            "NSN",
+            "S'RS'"
+          ],
+          "avroh": [
+            "S'NS'",
+            "NDN",
+            "DPD",
+            "PMP",
+            "MGM",
+            "GRG",
+            "RSR",
+            "SNS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "7-note extending groups",
+          "taal": "Roopaktaal",
+          "confidence": "verify_against_photo",
+          "aroh": [
+            "SRGSRGM",
+            "RGMRGMP",
+            "GMPGMPD",
+            "MPDMPDN",
+            "PDNPDNS'"
+          ],
+          "avroh": [
+            "S'NDS'NDP",
+            "NDPNDPM",
+            "DPMDPMG",
+            "PMGPMGR",
+            "MGRMGRS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "4-note groups (theka-style)",
+          "taal": "Teentaal",
+          "confidence": "verify_against_photo",
+          "aroh": [
+            "SGRS",
+            "RMGR",
+            "GPMG",
+            "MDPM",
+            "PNDP",
+            "DS'ND",
+            "NR'S'N",
+            "S'GR'S'"
+          ],
+          "avroh": [
+            "S'DNS'",
+            "NPDN",
+            "DMPD",
+            "PGMP",
+            "MRGM",
+            "GSRG",
+            "R,NSR",
+            "SD,NS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "Skip-note pairs",
+          "taal": "Kehrava",
+          "aroh": [
+            "SM",
+            "RP",
+            "GD",
+            "MN",
+            "PS'",
+            "DR'"
+          ],
+          "avroh": [
+            "R'D",
+            "S'P",
+            "NM",
+            "DG",
+            "PR",
+            "MS"
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "Alankars in Durga Raag",
+      "raag": "Durga",
+      "status": "transcribed_review_recommended",
+      "note": "Alankar patterns tagged by taal. Transcribed from source scan; sets marked confidence: 'verify_against_photo' involve dense multi-octave runs where handwritten dot placement was ambiguous - cross-check those against the sourceImage.",
+      "sourceImage": "assets/pages/page_003.jpg",
+      "blocks": [
+        {
+          "type": "alankar_set",
+          "label": "Basic - Sa to Sa (Durga: S R M P D S')",
+          "aroh": [
+            "S",
+            "R",
+            "M",
+            "P",
+            "D",
+            "S'"
+          ],
+          "avroh": [
+            "S'",
+            "D",
+            "P",
+            "M",
+            "R",
+            "S"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "Ascending/descending pairs",
+          "taal": "Ektaal",
+          "aroh": [
+            "SR",
+            "RM",
+            "MP",
+            "PD",
+            "DS'",
+            "S'R'"
+          ],
+          "avroh": [
+            "R'S'",
+            "S'D",
+            "DP",
+            "PM",
+            "MR",
+            "RS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "3-note groups",
+          "taal": "Dadrataal",
+          "aroh": [
+            "SRS",
+            "RMR",
+            "MPM",
+            "PDP",
+            "DS'D",
+            "S'RS'"
+          ],
+          "avroh": [
+            "S'DS'",
+            "DPD",
+            "PMP",
+            "MRM",
+            "RSR",
+            "SDS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "7-note extending groups",
+          "taal": "Roopaktaal",
+          "confidence": "verify_against_photo",
+          "aroh": [
+            "SRMSRMP",
+            "RMPRMPD",
+            "MPDMPDS'",
+            "PDS'PDS'R'"
+          ],
+          "avroh": [
+            "R'S'DR'S'DP",
+            "S'DPS'DPM",
+            "DPMDPMR",
+            "PMRPMRS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "4-note groups",
+          "taal": "Teentaal",
+          "confidence": "verify_against_photo",
+          "aroh": [
+            "SMRS",
+            "RPMR",
+            "MDPM",
+            "PS'DP",
+            "DR'S'D",
+            "S'MRS'"
+          ],
+          "avroh": [
+            "S'PDS'",
+            "DMPD",
+            "PRMP",
+            "MS'RM",
+            "RD'S'R",
+            "S'PDS'"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "Skip-note pairs",
+          "aroh": [
+            "SP",
+            "RD",
+            "MS'",
+            "PR'"
+          ],
+          "avroh": [
+            "R'P",
+            "S'M",
+            "DR",
+            "PS"
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "title": "Alankar",
+      "raag": null,
+      "status": "transcribed_review_recommended",
+      "note": "More alankar patterns (Roopak taal, Jhaptaal, Ektaal). Transcribed from source scan; sets marked confidence: 'verify_against_photo' involve dense multi-octave runs where handwritten dot placement was ambiguous - cross-check those against the sourceImage.",
+      "sourceImage": "assets/pages/page_004.jpg",
+      "blocks": [
+        {
+          "type": "alankar_set",
+          "label": "4-note groups (theka-style)",
+          "confidence": "verify_against_photo",
+          "aroh": [
+            "SGRS",
+            "RMGR",
+            "GPMG",
+            "MDPM",
+            "PNDP",
+            "DS'ND",
+            "NR'S'N",
+            "S'GR'S'"
+          ],
+          "avroh": [
+            "S'DNS'",
+            "NPDN",
+            "DMPD",
+            "PGMP",
+            "MRGM",
+            "GSRG",
+            "R,NSR",
+            "SD,NS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "3-note doubled groups",
+          "aroh": [
+            "SRSG",
+            "RGRM",
+            "GMGP",
+            "MPMD",
+            "PDPN",
+            "DNDS'"
+          ],
+          "avroh": [
+            "S'NSD",
+            "NDNP",
+            "DPDM",
+            "PMPG",
+            "MGMR",
+            "GRGS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "7-note extending groups",
+          "taal": "Roopak taal",
+          "confidence": "verify_against_photo",
+          "note": "Dense multi-octave drill; handwritten octave dots were hard to disambiguate from the scan - please check against page_004.jpg before relying on this one.",
+          "aroh": [
+            "SRGRGSR",
+            "RGMGMRG",
+            "GMPMPGM",
+            "MPDPDMP",
+            "PDNDNPD",
+            "DNS'NS'DN",
+            "NS'RS'RNS'",
+            "S'RGRGS'R"
+          ],
+          "avroh": [
+            "R'SNSNRS",
+            "SNDNDSN",
+            "NDPDPND",
+            "DPMPMDP",
+            "PMGMGPM",
+            "MGRGRMG",
+            "GRSNSNRS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "Doubled-note groups",
+          "taal": "Jhaptaal",
+          "confidence": "verify_against_photo",
+          "note": "OCR/handwriting ambiguous on octave marks - please check against page_004.jpg.",
+          "aroh": [
+            "SGGR",
+            "RMMG",
+            "GPPM",
+            "MDDP",
+            "PNND",
+            "DS'SN",
+            "NR'R'S'",
+            "S'GGR"
+          ],
+          "avroh": [
+            "R'NNS'",
+            "S'DDN",
+            "NPPD",
+            "DMMP",
+            "PGGM",
+            "MRRG",
+            "GSSR",
+            "RNNS"
+          ]
+        },
+        {
+          "type": "alankar_set",
+          "label": "3-note groups with pause (ending on '-')",
+          "taal": "Ektaal",
+          "confidence": "verify_against_photo",
+          "aroh": [
+            "SRGRG-",
+            "RGMGM-",
+            "GMPMP-",
+            "MPDPD-",
+            "PDNDN-",
+            "DNS'NS'-",
+            "NS'RS'R-",
+            "S'RGRG-"
+          ],
+          "avroh": [
+            "GRS'RS'-",
+            "RS'NS'N-",
+            "S'NDN-",
+            "NDPD-",
+            "DPMP-",
+            "PMGM-",
+            "MGRG-",
+            "GRSR-"
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 5,
+      "title": "Rag Bhoopali",
+      "raag": "Bhoopali",
+      "blocks": [
+        {
+          "type": "header",
+          "data": {
+            "that": "Kalyan",
+            "jaathi": "Ovdav",
+            "vaadi": "Gandhar",
+            "samvaadi": "Daivath",
+            "ras": "Shanth & Gambheer",
+            "vikrathSwar": "unclear - crossed out & hand-corrected in book, re-check photo",
+            "time": "1st prahar of night",
+            "varjya": "Madyam & Nishad",
+            "aroh": [
+              "S",
+              "R",
+              "G",
+              "P",
+              "D",
+              "S'"
+            ],
+            "avroh": [
+              "S'",
+              "D",
+              "P",
+              "G",
+              "R",
+              "S"
+            ],
+            "pakkad": [
+              "D",
+              "S",
+              "R",
+              "G",
+              "R",
+              "S",
+              "D",
+              "S"
+            ]
+          }
+        },
+        {
+          "type": "grid",
+          "label": "Sargamgeet - Teentaal - Sthayi",
+          "taalMarkers": [
+            "9 10 11 12",
+            "13 14 15 16",
+            "1 2 3 4",
+            "5 6 7 8"
+          ],
+          "rows": [
+            [
+              "S' S' D P",
+              "G R S R",
+              "G G P G",
+              "D P G G"
+            ],
+            [
+              "G P D S'",
+              "R S D P",
+              "S' P D P",
+              "G R S S"
+            ]
+          ]
+        },
+        {
+          "type": "grid",
+          "label": "Antara",
+          "rows": [
+            [
+              "G G P D",
+              "P S' S' S'",
+              "D D S' R",
+              "G R S' D"
+            ],
+            [
+              "G G R S",
+              "R R S D",
+              "S' S' D P",
+              "G R S S"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_005.jpg"
+    },
+    {
+      "pageNumber": 6,
+      "title": "Laxangeet Tritaal - Bhoopali",
+      "raag": "Bhoopali",
+      "blocks": [
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              "S R G R",
+              "S D S R",
+              "G - G R",
+              "GP DP GR S"
+            ],
+            [
+              "G G P P",
+              "D -- PD S",
+              "PD S DP",
+              "G R S S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Gaa - va tha",
+              "gu ni ja na",
+              "me-la su",
+              "san - ga tha"
+            ],
+            [
+              "Va ra ja ma",
+              "ni - bhoo --",
+              "paa - li ru",
+              "chi ra su ra"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "G G G G",
+              "P P D D",
+              "S-S S",
+              "DS R S S"
+            ],
+            [
+              "S G R --",
+              "S D S--",
+              "DS R S S",
+              "D -- P P"
+            ],
+            [
+              "G -- G R",
+              "G P D S'",
+              "PD S D P",
+              "G R S S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Pra tha ma pra",
+              "ha ra ni shi",
+              "gaa - na su",
+              "haa - va tha"
+            ],
+            [
+              "Ga da vaa --",
+              "di - sam --",
+              "vaa -di ka",
+              "haa - va tha"
+            ],
+            [
+              "Ou - da va",
+              "ra cha naa --",
+              "a thi ma na",
+              "bhaa - va tha"
+            ]
+          ]
+        },
+        {
+          "type": "text",
+          "label": "Sthayi lyrics (full)",
+          "content": "Gaavatha gunijana mela susangatha, varaja mani bhoopaali ruchirasura"
+        },
+        {
+          "type": "text",
+          "label": "Anthara lyrics (full)",
+          "content": "Prathama prahara nishi gaana suhaavatha, gada vaadi samvaadi kahaavatha"
+        }
+      ],
+      "sourceImage": "assets/pages/page_006.jpg"
+    },
+    {
+      "pageNumber": 7,
+      "title": "Bhoopaali Bandish - Teentaal",
+      "raag": "Bhoopali",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Staayi lyrics",
+          "content": "Ithana jo bana paramaanana kariye, Dhariye prabhu so aaj aali"
+        },
+        {
+          "type": "text",
+          "label": "Antharaa lyrics",
+          "content": "Jo koi aave apane dindavaa, Thaaso garab na kijiye, Sadaaranga yaha reeth maane"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "9 10 11 12 (0)",
+            "13 14 15 16 (3)",
+            "1 2 3 4 (X)",
+            "5 6 7 8 (2)"
+          ],
+          "swaraRows": [
+            [
+              "S S D P",
+              "G R S R",
+              "G -- P P",
+              "P D D ---"
+            ],
+            [
+              "G G G R",
+              "G P D S'",
+              "S PD S S",
+              "SS DP GR S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "I tha na jo",
+              "ba na pa ra",
+              "maa- na na",
+              "ka ri ye --"
+            ],
+            [
+              "Dha ri ye --",
+              "pra bhu so --",
+              "aa -- -- ja",
+              "aa -- -- li"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antharaa",
+          "swaraRows": [
+            [
+              "G -- G R",
+              "G P S D",
+              "S S S --",
+              "D R S ---"
+            ],
+            [
+              "D --- D ---",
+              "S S R R",
+              "S R G R",
+              "S D P ---"
+            ],
+            [
+              "G G R G",
+              "P D S S",
+              "S PD S S",
+              "SS DP GR S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Jo -- ko i",
+              "aa - ve --",
+              "a pa ne --",
+              "din ga vaa --"
+            ],
+            [
+              "Thaa - so --",
+              "ga ra ba na",
+              "kee --- ji",
+              "ye ---- --"
+            ],
+            [
+              "Sa daa -- ran",
+              "--ga ya ha",
+              "ree -- -- tha",
+              "maa -- -- ne"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_007.jpg"
+    },
+    {
+      "pageNumber": 8,
+      "title": "Bhoopali Bandish Teentaal",
+      "raag": "Bhoopali",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Vistar",
+          "content": "SRG-, SRGPG, GPDS, DPGR, PGRS"
+        },
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Gaavo shyaama muraari, Baansuri ko pyaar karata hai, Gokula ki braja naari"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Bhooli bhooli saba sudhabudha tanake, Magana hota suna dhuna murali ki, Binate karata brajanaari"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              "SR GP GP GR",
+              "GP DS DS DP",
+              "G -- R S",
+              "R D S --"
+            ],
+            [
+              "GP DP GR",
+              "S D S --",
+              "GP DP GR",
+              "G P D S'"
+            ],
+            [
+              "S G R G",
+              "S R D S'",
+              "PD SS PD PD",
+              "SS DP GR S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Gaa -- -- --",
+              "vo -- -- --",
+              "shyaa -ma mu",
+              "raa - ri --"
+            ],
+            [
+              "Baan -- su ri",
+              "ko -- -- --",
+              "pyaa -ra ka",
+              "ra thahai --"
+            ],
+            [
+              "Go -ku la",
+              "ki - bra ja",
+              "naa -- -- --",
+              "-- -- -- ri"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "G -- G P",
+              "--- P S D",
+              "S S S S",
+              "D R S --"
+            ],
+            [
+              "D D D S",
+              "--- S R R",
+              "SR G R S",
+              "D D P --"
+            ],
+            [
+              "S G R G",
+              "S R D S'",
+              "PD SS PD PD",
+              "SS DP GR S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Bhoo - li bhoo",
+              "--- li sa ba",
+              "su dha bu dha",
+              "tha nake --"
+            ],
+            [
+              "Ma ga na ho",
+              "--- tha su na",
+              "dhoo -na mu",
+              "ra li ki --"
+            ],
+            [
+              "Bi na thi ka",
+              "ra tha bra ja",
+              "naa -- -- --",
+              "-- -- -- ri"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_008.jpg"
+    },
+    {
+      "pageNumber": 9,
+      "title": "Bhoopalii Aalap Stayi / Aalap Antara / Taan Stayi / Taan Antara",
+      "raag": "Bhoopali",
+      "status": "pending_verification",
+      "note": "Four drill grids on this page not transcribed yet - dense, no lyric anchor.",
+      "sourceImage": "assets/pages/page_009.jpg"
+    },
+    {
+      "pageNumber": 10,
+      "title": "Rag Durga",
+      "raag": "Durga",
+      "blocks": [
+        {
+          "type": "header",
+          "data": {
+            "that": "Bilaval",
+            "jati": "Oudav",
+            "vadi": "Daivat (D)",
+            "samvadi": "Rishab (R)",
+            "time": "1st prahar of night",
+            "varjya": "Gandhar & Nishad",
+            "vikratSwar": "Nothing",
+            "ras": "Veer, Gambheer",
+            "aroh": [
+              "S",
+              "R",
+              "M",
+              "P",
+              "D",
+              "S'"
+            ],
+            "avroh": [
+              "S'",
+              "D",
+              "P",
+              "M",
+              "R",
+              "S"
+            ],
+            "pakkad": [
+              "D",
+              "P",
+              "M",
+              "R",
+              "S",
+              ",D",
+              "S"
+            ],
+            "vistar": [
+              "S-",
+              ",DSR--",
+              "MR,DS--",
+              "RMPDP--",
+              "DPDMR-",
+              "M-RS,DS"
+            ]
+          }
+        },
+        {
+          "type": "grid",
+          "label": "Sargamgeet Zaptaal - Stayi",
+          "taalMarkers": [
+            "1 2",
+            "3 4 5",
+            "6 7",
+            "8 9 10"
+          ],
+          "rows": [
+            [
+              "D D",
+              "P D M",
+              "R R",
+              "S ,D S"
+            ],
+            [
+              "R M",
+              "P D S'",
+              "R S",
+              ",D M P"
+            ]
+          ]
+        },
+        {
+          "type": "grid",
+          "label": "Antara",
+          "rows": [
+            [
+              "M M",
+              "M P D",
+              "S' D",
+              "S' S' S'"
+            ],
+            [
+              "R M",
+              "R R S",
+              ",D S'",
+              ",D M P"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_010.jpg"
+    },
+    {
+      "pageNumber": 11,
+      "title": "Durga Laxangeet Ektaal",
+      "raag": "Durga",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Gaavatha durugaa raagini, Ovdava sura shuddha bani, Varajitha gani atha shobhimi"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Vaadi suravara daivatha, Samvaadi dwithiya kahatha, Dheera veerayutha gambheera, Samaya kahatha dina yaamini"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "1 2",
+            "3 4",
+            "5 6",
+            "7 8",
+            "9 10",
+            "11 12"
+          ],
+          "swaraRows": [
+            [
+              "D --",
+              "M M",
+              "P D",
+              "M --",
+              "R --",
+              "S S"
+            ],
+            [
+              "S --",
+              "R R",
+              "M M",
+              "P --",
+              "M D",
+              "P --"
+            ],
+            [
+              "R M",
+              "P D",
+              "S' R'",
+              "S' S'",
+              "DS' DP",
+              "M P"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Gaa --",
+              "va tha",
+              "du ru",
+              "gaa--",
+              "raa--",
+              "gi ni"
+            ],
+            [
+              "Ou --",
+              "da va",
+              "su ra",
+              "shu--",
+              "dda ba",
+              "ni--"
+            ],
+            [
+              "Va ra",
+              "ji tha",
+              "ga ni",
+              "a tha",
+              "sho --",
+              "bhi ni"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M --",
+              "P --",
+              "D D",
+              "S' D",
+              "S' --",
+              "S' S'"
+            ],
+            [
+              "D S'",
+              "D R'",
+              "D R'",
+              "S' S'",
+              "D D",
+              "M P"
+            ],
+            [
+              "R --",
+              "M R'",
+              "-- S'",
+              "D R'",
+              "S' D",
+              "--- P"
+            ],
+            [
+              "S R",
+              "M P",
+              "D R'",
+              "S' S'",
+              "DS' DP",
+              "M P"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "vaa --",
+              "di --",
+              "su ra",
+              "va ra",
+              "dai --",
+              "va tha"
+            ],
+            [
+              "Sam --",
+              "vaa --",
+              "di --",
+              "dwi thi",
+              "ya ka",
+              "ha tha"
+            ],
+            [
+              "Dhee--",
+              "ra vee",
+              "--ra",
+              "yu tha",
+              "gam bhee",
+              "--ra"
+            ],
+            [
+              "Sa ma",
+              "ya ka",
+              "ha tha",
+              "di na",
+              "yaa --",
+              "mi ni"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_011.jpg"
+    },
+    {
+      "pageNumber": 12,
+      "title": "Rag Durga Bandish Trithaal",
+      "raag": "Durga",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Sthayi lyrics",
+          "content": "Mana mohana muralivaalaa, Muralivaalaa sakhi hai khalaa"
+        },
+        {
+          "type": "text",
+          "label": "Anthara lyrics",
+          "content": "Nisa dina jaako dhyaana dharatha hai, Muni nigamaagama guna gaavatha hai, Jitha jai e utha ham dekhatha hai, Seesa mukuta ga le banamaalaa"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "9-12",
+            "13-16",
+            "1-4",
+            "5-8"
+          ],
+          "note": "beats 9-12/13-16/1-4 blank on first swara row in the photo - only beats 5-8 filled",
+          "swaraRows": [
+            [
+              "",
+              "",
+              "",
+              "P P"
+            ],
+            [
+              "MP DS' D P",
+              "M M R --",
+              "S D S --",
+              "--- -- -- --"
+            ],
+            [
+              "S S M R",
+              "P M D P",
+              ",D S DS' RS'",
+              "DS' DP MR S-"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "",
+              "",
+              "",
+              "Ma na"
+            ],
+            [
+              "Mo - ha na",
+              "Mu ra li --",
+              "Vaa -- laa --",
+              "--- -- -- --"
+            ],
+            [
+              "Mu ra li --",
+              "Va -- laa --",
+              "Sa khi hai --",
+              "Khaa -- laa --"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Anthara",
+          "swaraRows": [
+            [
+              "D D M M",
+              "P -- S' D",
+              "S' -- S' S'",
+              "D R S --"
+            ],
+            [
+              "D D D D",
+              "S' -- R' R'",
+              "S' R S' --",
+              "D P M R"
+            ],
+            [
+              "P P P --",
+              "M P D S'",
+              "D P M --",
+              "R R S --"
+            ],
+            [
+              "S R M M",
+              "P P D S'",
+              ",D S DS' RS'",
+              "DP MR"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ni sa di na",
+              "Jaa -- ko --",
+              "Dhyaa - na dha",
+              "Ra tha hai --"
+            ],
+            [
+              "Mu ni ni ga",
+              "Maa -- ga ma",
+              "Gu na gaa --",
+              "Va tha hai --"
+            ],
+            [
+              "Ji tha jai --",
+              "E - u tha",
+              "Ha ma de --",
+              "Kha tha hai --"
+            ],
+            [
+              "See - sa mu",
+              "ku ta ga le",
+              "ba na maa --",
+              "Laa --"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_012.jpg"
+    },
+    {
+      "pageNumber": 13,
+      "title": "Durga Bandish Ekthaal",
+      "raag": "Durga",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "papa naasha duritha shaman, jatta jhoota kara kapaala, baitte hara kailaas"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "bhasma anga garala sanga, brakuti branga nitila chandra, saptha naada saptha bheda, baitte hara kailaas"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Sthayi",
+          "taalMarkers": [
+            "1 2",
+            "3 4",
+            "5 6",
+            "7 8",
+            "9 10",
+            "11 12"
+          ],
+          "swaraRows": [
+            [
+              "P --",
+              "P MP",
+              "D D",
+              "M R",
+              "R ,D",
+              "S S"
+            ],
+            [
+              "D S",
+              "--- D",
+              "S S",
+              "S R",
+              ",D S",
+              "-- S"
+            ],
+            [
+              "D --",
+              "S' --",
+              "S S",
+              "DS' DP",
+              "DS' DP",
+              "M P"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Paa--",
+              "pa naa",
+              "-- sha",
+              "du ri",
+              "tha sha",
+              "ma na"
+            ],
+            [
+              "Ja tta",
+              "--jhoo",
+              "-- ta",
+              "ka ra",
+              "ka paa",
+              "--la"
+            ],
+            [
+              "Bai--",
+              "Tte --",
+              "ha ra",
+              "kai --",
+              "laa--",
+              "--- sa"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "status": "pending_verification",
+          "note": "layout interleaves lyric/swara differently than other tables on this page - re-check against photo"
+        }
+      ],
+      "sourceImage": "assets/pages/page_013.jpg"
+    },
+    {
+      "pageNumber": 14,
+      "title": "Aalap Stayi / Aalap Antara / Taan Stayi / Taan Antara",
+      "raag": "Durga",
+      "status": "pending_verification",
+      "note": "Four drill grids on this page not transcribed yet - dense, no lyric anchor.",
+      "sourceImage": "assets/pages/page_014.jpg"
+    },
+    {
+      "pageNumber": 15,
+      "title": "Bhageshree Teentaal",
+      "raag": "Bhageshree",
+      "blocks": [
+        {
+          "type": "header",
+          "data": {
+            "that": "Kafi",
+            "jaati": "Oudav Sapoorn",
+            "vaadi": "Madyam",
+            "samvaadi": "Shadja",
+            "ras": "Bhakti & Karuna",
+            "varjya": "Rishab, Pancham",
+            "vikrat": "Gandhar & Nishad",
+            "time": "2nd prahar of night",
+            "aroh": [
+              "S",
+              "G",
+              "M",
+              "D",
+              ",N",
+              "S'"
+            ],
+            "avroh": [
+              "S'",
+              ",N",
+              "D",
+              "M",
+              "P",
+              "D",
+              "M",
+              "G",
+              "R",
+              "S"
+            ],
+            "avroh_note": "printed avroh looks like it may have a duplicated D M pair - please re-check photo",
+            "pakkad": [
+              "M",
+              "D",
+              ",N",
+              "D",
+              "M",
+              "P",
+              "D",
+              "M",
+              "G",
+              "R",
+              "S"
+            ],
+            "vistar": [
+              "S--",
+              "SGM",
+              "GMDM",
+              "DMGRS",
+              "GM,ND-D",
+              "MD,N,NS'",
+              ",NDM",
+              "DMGM",
+              "MPDG-RS"
+            ]
+          }
+        },
+        {
+          "type": "grid",
+          "label": "Sargamgeet Roopaktaal - Stayi",
+          "taalMarkers": [
+            "X",
+            "1",
+            "2",
+            "X",
+            "1",
+            "2"
+          ],
+          "rows": [
+            [
+              "M D ,N",
+              "S' ---",
+              ",N D",
+              "M D --",
+              "M G",
+              "R S"
+            ],
+            [
+              "D ,N S",
+              "G M",
+              "D M",
+              "D ,N D",
+              "M G",
+              "R S"
+            ]
+          ]
+        },
+        {
+          "type": "grid",
+          "label": "Antara",
+          "rows": [
+            [
+              "G M D",
+              ",N D",
+              ",N ,N",
+              "S'---S'",
+              ",N S'",
+              ",N D"
+            ],
+            [
+              "S' G M",
+              "G' R'",
+              "S' ,N",
+              "D M G",
+              "R S",
+              ",N S"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_015.jpg"
+    },
+    {
+      "pageNumber": 16,
+      "title": "Laxangeet Teentaal - Bhageshree",
+      "raag": "Bhageshree",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Bhaagesari madhura raagini, Mradula ga ni madhyama amsha suhaavatha, Prathama sura karatha ruchira samvaadi"
+        },
+        {
+          "type": "text",
+          "label": "Anthara lyrics",
+          "content": "Rasa vaahini shrangaara karuni, Samaya nisa dhyaana gaatha guni haraki"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              "D",
+              ",N D P D",
+              "S' -- -- ,N",
+              "D M G --"
+            ],
+            [
+              "R S -- S",
+              "S R D ,N",
+              "S M M M",
+              "MP D P M"
+            ],
+            [
+              "G R M M",
+              "M D M D",
+              ",N S S S'",
+              "S R ,N S"
+            ],
+            [
+              "N D M",
+              "",
+              "",
+              ""
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Bhaa",
+              "---ge-sa",
+              "ri --- ma",
+              "dhu ra raa --"
+            ],
+            [
+              "gi ni -- Mra",
+              "du la ga ni",
+              "ma - dya ma",
+              "am - sha su"
+            ],
+            [
+              "haa - va tha",
+              "Pra tha ma su",
+              "ra ka ra tha",
+              "ru chi ra sam"
+            ],
+            [
+              "vaa -- di",
+              "",
+              "",
+              ""
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "G",
+              "M DN S ,N",
+              "S' -- -- S'",
+              "--- ,NS R S"
+            ],
+            [
+              "N N D D",
+              "N S M G",
+              "R -- S ,NS",
+              "R' S ,N S"
+            ],
+            [
+              "N D M",
+              "",
+              "",
+              ""
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ra",
+              "sa vaa ---hi",
+              "ni --- shran",
+              "--- gaa - ra"
+            ],
+            [
+              "ka ru ni Sa",
+              "ma ya ni sa",
+              "dhyaa - na gaa",
+              "--- tha gu ni"
+            ],
+            [
+              "ha ra khi",
+              "",
+              "",
+              ""
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_016.jpg"
+    },
+    {
+      "pageNumber": 17,
+      "title": "Bhageshree Bandish Teentaal",
+      "raag": "Bhageshree",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Sthayi lyrics",
+          "content": "Paayal bajhe mori jhaanjara pyaare, Kaise aavoo tore milanaare"
+        },
+        {
+          "type": "text",
+          "label": "Antharaa lyrics",
+          "content": "Jaag rahi mori saas nanad ki, Jiyaa darapaavatha raina andheri"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Sthayi",
+          "taalMarkers": [
+            "9-12",
+            "13-16",
+            "1-4",
+            "5-8"
+          ],
+          "swaraRows": [
+            [
+              "M G R S",
+              "-- RS D ,N",
+              "S M M M",
+              "G -- R S"
+            ],
+            [
+              "G M D --",
+              "PD ,N D M",
+              "M P D G",
+              "G R S S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Paa ya la baa",
+              "--- jhe mo ri",
+              "jhaan - ja ra",
+              "pyaa -re --"
+            ],
+            [
+              "Kai -se--",
+              "aa - vu --",
+              "tho - re mi",
+              "la naa -- re"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antharaa",
+          "swaraRows": [
+            [
+              "G M D ,N",
+              "S -- S S",
+              "S -- S R",
+              ",N S ,N D"
+            ],
+            [
+              "D D NR SR",
+              ",N DP M M",
+              "G -- R S",
+              "R -- S --"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Jaa - ga ra",
+              "hee - mo ri",
+              "saa -sa na",
+              "na da ki --"
+            ],
+            [
+              "Ji ya da ra",
+              "paa -va tha",
+              "rai -na an",
+              "dhe -ri --"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_017.jpg"
+    },
+    {
+      "pageNumber": 18,
+      "title": "Bhageshree Bandish Theenthal",
+      "raag": "Bhageshree",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Kovn karatha thori binathi piyaravaa, Maano na maano hamari baatha"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Jabse gaye mori sudhahunalini, Chaahe southana ke ghara jaatha"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              "S -- ,N ,N",
+              "D M P D",
+              "G G R S",
+              "R R S --"
+            ],
+            [
+              ",N -- D ,N",
+              "S -- S --",
+              "M D PD ,N",
+              "D G R S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Kov - na ka",
+              "ra tha tho ri",
+              "bi na thi pi",
+              "ya ra vaa --"
+            ],
+            [
+              "Maa - no na",
+              "maa - no --",
+              "ha ma ri --",
+              "--- baa - tha"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "G M D ,N",
+              "S -- S S",
+              ",N S R S",
+              ",N S ,N D"
+            ],
+            [
+              "--- D -- D",
+              ",N -- D M",
+              "G --- -- M",
+              "G R -- S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ja ba se ga",
+              "ye - mo ri",
+              "su dha hu na",
+              "li - ni --"
+            ],
+            [
+              "--- chaa - he",
+              "sou - tha na",
+              "ke ---- gha",
+              "ra jaa - tha"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_018.jpg"
+    },
+    {
+      "pageNumber": 19,
+      "title": "Bhageshree Aalap Stayi / Antar / Taan Stayi / Antara",
+      "raag": "Bhageshree",
+      "status": "pending_verification",
+      "note": "Four drill grids on this page not transcribed yet - dense, no lyric anchor.",
+      "sourceImage": "assets/pages/page_019.jpg"
+    },
+    {
+      "pageNumber": 20,
+      "title": "Rag Bheempalas",
+      "raag": "Bheempalas",
+      "blocks": [
+        {
+          "type": "header",
+          "data": {
+            "that": "Kafi",
+            "jaati": "Oudav Sampoorn",
+            "vaadi": "Madyam",
+            "samvadi": "Shadj",
+            "varjya": "Rishab & Daivat (Aroh)",
+            "vikrat": "Gadhar & Nishad",
+            "time": "3rd prahar of day",
+            "ras": "Shant & Bhakti",
+            "aroh": [
+              "S",
+              "G",
+              "M",
+              "P",
+              ",N",
+              "S'"
+            ],
+            "avroh": [
+              "S'",
+              ",N",
+              "D",
+              "P",
+              "M",
+              "G",
+              "R",
+              "S"
+            ],
+            "pakkad": "crossed out in book, replaced by handwritten note - illegible/uncertain, re-check photo",
+            "vistar": [
+              "S",
+              ",N S",
+              "S G R S",
+              ",N S G M-",
+              "G M P",
+              "M P ,N D P",
+              ",N S",
+              ",N D P M",
+              "G M G R S"
+            ]
+          }
+        },
+        {
+          "type": "grid",
+          "label": "Swargeeth Trithaal - Sthayi",
+          "taalMarkers": [
+            "9-12",
+            "13-16",
+            "1-4",
+            "5-8"
+          ],
+          "rows": [
+            [
+              ",N ,N S --",
+              "M G R S",
+              "M G M P",
+              "G R ,N S"
+            ],
+            [
+              ",N S G M",
+              "P ,N D P",
+              "S ,N D P",
+              "M G R S"
+            ]
+          ]
+        },
+        {
+          "type": "grid",
+          "label": "Antara",
+          "rows": [
+            [
+              "P P G M",
+              "P ,N S --",
+              "P ,N S G",
+              "R ,N R S"
+            ],
+            [
+              "R S ,N D",
+              "P ,N D P",
+              "S ,N D P",
+              "M G R S"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_020.jpg"
+    },
+    {
+      "pageNumber": 21,
+      "title": "Laxangeet Teentaal - Bheempalas",
+      "raag": "Bheempalas",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Raagini vara bheemapalaasi, Soha mradugani chadatha na re da sura, Amsha madhyama aadisura anuchara"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Thrathiya prahara dina samaya suhaavatha, Madhura shaantha rasako sarajaanatha, Mana bhaavatha sangatha pa ga ma ga re sa, Ni sa ma ga ma sura jeevanavarasi"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              ",N --- P",
+              "PN SR ,NS",
+              ",N D M P",
+              "G S G M"
+            ],
+            [
+              "P --- P",
+              "G M G R",
+              ",N ,N S M",
+              "G R S S"
+            ],
+            [
+              "M --- G",
+              "M P G M",
+              ",N D ,N S",
+              ",N D M P"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Raa --- gi",
+              "ni - va ra",
+              "bhee - ma pa",
+              "laa - si --"
+            ],
+            [
+              "So --- ha",
+              "mra du ga ni",
+              "cha da tha na",
+              "re da su ra"
+            ],
+            [
+              "Am --- sha",
+              "ma - dya ma",
+              "aa di su ra",
+              "a nu cha ra"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "P P P P",
+              "M P G M",
+              "PN PN",
+              "S - S' S'"
+            ],
+            [
+              ",N ,N ,N S",
+              "--- S' S' S'",
+              "PN SR S' R'",
+              ",N D M P"
+            ],
+            [
+              ",N ,N D P",
+              "M P G S",
+              "G M P G",
+              "M G R S"
+            ],
+            [
+              ",N S M G",
+              "--- M P ,N",
+              "PN SR S' R'",
+              ",N D M P"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Thra ti ya pra",
+              "ha ra di na",
+              "sa ma ya su",
+              "haa - va tha"
+            ],
+            [
+              "Ma dhu ra shan",
+              "---tha ra sa",
+              "ko - sa ra",
+              "jaa - va tha"
+            ],
+            [
+              "Ma na bhaa --",
+              "va tha san --",
+              "ga tha pa ga",
+              "ma ga ra sa"
+            ],
+            [
+              "Ni sa ma ga",
+              "---ma su ra",
+              "jee - va na",
+              "va ra si --"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_021.jpg"
+    },
+    {
+      "pageNumber": 22,
+      "title": "Bheempalas Bandish Ektaal",
+      "raag": "Bheempalas",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Chandra vadana madana saara, Sundara sukha so savaara"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Aaye ruthu raaj aaj, Saaja sukha saheli"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "1 2",
+            "3 4",
+            "5 6",
+            "7 8",
+            "9 10",
+            "11 12"
+          ],
+          "swaraRows": [
+            [
+              "PN SN",
+              "D M",
+              "P P",
+              "G M",
+              "G R",
+              "S S"
+            ],
+            [
+              ",N S",
+              "G M",
+              "P P",
+              "PN SG",
+              "RS ,ND",
+              "PM P"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Chan --",
+              "dra va",
+              "da na",
+              "ma da",
+              "na saa",
+              "--- ra"
+            ],
+            [
+              "Sun --",
+              "da ra",
+              "su kha",
+              "so --",
+              "sa va",
+              "--- ra"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M --",
+              "M P",
+              "G M",
+              "P ,N",
+              ",N S",
+              "--- S"
+            ],
+            [
+              "P ,N",
+              "S G",
+              "R S",
+              "SN DP",
+              "SN DP",
+              "M G RS"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Aa --",
+              "ye --",
+              "ru thu",
+              "raa --",
+              "ja aa",
+              "--- ja"
+            ],
+            [
+              "Saa --",
+              "ja su",
+              "kha sa",
+              "he --",
+              "--- --",
+              "li --"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_022.jpg"
+    },
+    {
+      "pageNumber": 23,
+      "title": "Bandish Trital (Bheempalas)",
+      "raag": "Bheempalas",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Bhajamana nisa dina shyaama sundara, Sukha saagara hari shree radhavara"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Sakala jagath ke jeevan dhana prabhu, Karatha krupaa nitha nija bhakthan par"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "9-12",
+            "13-16",
+            "1-4",
+            "5-8"
+          ],
+          "swaraRows": [
+            [
+              "G G R S",
+              ",N S G M",
+              "P --- -- M",
+              "P ,N D P"
+            ],
+            [
+              "P ,N S --",
+              ",N D M P",
+              "P ,N D P",
+              "G --- R S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Bha ja mana",
+              "ni sa di na",
+              "shyaa-- ---ma",
+              "sun-da ra"
+            ],
+            [
+              "Su kha saa--",
+              "ga ra ha ri",
+              "shree-raa--",
+              "dhaa-va ra"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "P ,N P ,N",
+              "S' S' S' --",
+              "P ,N S G",
+              "R R S S"
+            ],
+            [
+              "S' R S' R",
+              ",N S ,ND P",
+              "P ,N D P",
+              "G G R S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Sa ka la ja",
+              "ga tha ke--",
+              "jee-va na",
+              "dha na pra bhu"
+            ],
+            [
+              "Ka ra tha kra",
+              "paa-ni tha",
+              "ni ja bha--",
+              "ktha na pa ra"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_023.jpg"
+    },
+    {
+      "pageNumber": 25,
+      "title": "Rag Kafi",
+      "raag": "Kafi",
+      "note": "transcribed in an earlier message of this conversation - can be merged into this file on request",
+      "blocks": [],
+      "sourceImage": "assets/pages/page_025.jpg"
+    }
+  ],
+  "notYetSent": [
+    "Khamaj (p30)",
+    "Des (p35)",
+    "Yaman (p40)",
+    "drupad (p44)",
+    "taal (p45)"
+  ],
+  "raagIndex": {
+    "alankar Prarambik": [
+      1
+    ],
+    "Alankar Praveshika": [
+      2
+    ],
+    "Durga alankar Praveshika": [
+      3
+    ],
+    "Extra alankars": [
+      4
+    ],
+    "Bhoopali": [
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "Durga": [
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "Bhageshree": [
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "Bheempalas": [
+      20,
+      21,
+      22,
+      23
+    ],
+    "Kafi": [
+      25
+    ]
+  }
+}
