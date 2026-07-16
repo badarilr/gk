@@ -1,0 +1,61 @@
+{
+  "institute": {
+    "name": "Goonjan Kala Kendra",
+    "welcomeMessage": "Welcome to Goonjan Kala Kendra"
+  },
+  "announcements": [
+    {
+      "id": 1,
+      "title": "Guru Purnima Celebration",
+      "description": "All students are requested to attend the Guru Purnima celebration.",
+      "date": "2026-08-02",
+      "type": "event"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Guru Purnima",
+      "date": "2026-08-02",
+      "location": "Institute",
+      "description": "Special performances by students."
+    }
+  ],
+  "classSchedule": [
+    {
+      "day": "Saturday",
+      "startTime": "17:30",
+      "endTime": "18:15",
+      "mode": "Online",
+      "meetingUrl": "https://meet.google.com/zrk-hvje-fxg"
+    },
+    {
+      "day": "Sunday",
+      "startTime": "10:45",
+      "endTime": "11:30",
+      "mode": "Online",
+      "meetingUrl": "https://meet.google.com/zmy-hbji-xef"
+    },
+    {
+      "day": "Wednesday",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "mode": "Online",
+      "meetingUrl": "https://meet.google.com/gzn-ihzx-xfo"
+    }
+  ],
+  "homeCards": {
+    "showAnnouncements": true,
+    "showEvents": true,
+    "showClassSchedule": true,
+    "showPractice": true
+  },
+  "practice": {
+    "title": "Today's Practice",
+    "items": [
+      "Practice current lesson",
+      "Revise previous song",
+      "Listen to teacher's YouTube reference"
+    ]
+  }
+}
