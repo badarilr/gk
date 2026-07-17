@@ -1,0 +1,68 @@
+{
+  "institute": {
+    "name": "Goonjan Kala Kendra",
+    "welcomeMessage": "Welcome to the latest updates, announcements, and class schedule."
+  },
+  "homeCards": {
+    "showAnnouncements": true,
+    "showEvents": true,
+    "showClassSchedule": true,
+    "showPractice": true
+  },
+  "announcements": [
+    {
+      "id": 1,
+      "title": "Guru Purnima Celebration",
+      "description": "All students and parents are invited to participate in the Guru Purnima celebrations on 2 August.",
+      "date": "Updated today",
+      "type": "info"
+    }
+  ],
+  "events": [
+    {
+      "id": 2,
+      "title": "Community Music Session",
+      "date": "2026-07-20",
+      "location": "Online",
+      "description": "Join the weekly session with raaga-based practice and discussion."
+    },
+    {
+      "id": 3,
+      "title": "Guru Purnima 2026",
+      "date": "2026-08-02",
+      "location": "Nadashree Art Space, Bengaluru",
+      "description": "Guru Vandana at 9:30 AM sharp, students' Baithak performances from 10:00 AM onwards, and a musical evening by Pandit M. V. Hegde from 6:00 PM onwards. Students and families are invited to celebrate with the Goonjan Kalakendra family and are requested to be present throughout the day."
+    }
+  ],
+  "classSchedule": [
+    {
+      "day": "Saturday",
+      "startTime": "05:30 PM",
+      "endTime": "06:15 PM",
+      "mode": "Online class",
+      "meetingUrl": "https://meet.google.com/zrk-hvie-fxg"
+    },
+    {
+      "day": "Sunday",
+      "startTime": "10:45 AM",
+      "endTime": "11:30 AM",
+      "mode": "Online class",
+      "meetingUrl": "https://meet.google.com/zmy-hbjj-xef"
+    },
+    {
+      "day": "Wednesday",
+      "startTime": "05:00 PM",
+      "endTime": "06:00 PM",
+      "mode": "Online class",
+      "meetingUrl": "https://meet.google.com/gzn-ihzx-xfo"
+    }
+  ],
+  "practice": {
+    "title": "Practice Focus",
+    "items": [
+      "Warm up with alankaras for 15 minutes",
+      "Practice one raga with swara patterns",
+      "Record and review your performance"
+    ]
+  }
+}

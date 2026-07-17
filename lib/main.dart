@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/raag_list_screen.dart';
+import 'screens/home_screen.dart';
 
 void main() => runApp(const RaagbookApp());
 
@@ -9,12 +9,12 @@ class RaagbookApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Raagbook',
+      title: 'Gk Book',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const RaagListScreen(),
+      home: const HomeScreen(),
     );
   }
 }
