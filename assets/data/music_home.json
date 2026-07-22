@@ -12,11 +12,12 @@
   "announcements": [
     {
       "id": 1,
-      "title": "Guru Purnima Celebration",
-      "description": "All students and parents are invited to participate in the Guru Purnima celebrations on 2 August.",
-      "date": "Updated today",
-      "type": "info"
-    }
+      "title": "Guru Purnima 2026",
+      "date": "2026-08-02",
+      "location" :"Nadashree Art Space, Bengaluru",
+      "description": "Guru Vandana at 9:30 AM sharp, students' Baithak performances from 10:00 AM onwards, and a musical evening by Pandit M. V. Hegde from 6:00 PM onwards. Students and families are invited to celebrate with the Goonjan Kalakendra family and are requested to be present throughout the day."
+    }     
+    
   ],
   "events": [
     {
