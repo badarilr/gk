@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import '../models/song_page.dart';
 
 class SongPageView extends StatefulWidget {
-  final SongPage page;
+  final SongBookSong item;
 
-  const SongPageView({super.key, required this.page});
+  const SongPageView({super.key, required this.item});
 
   @override
   State<SongPageView> createState() => _SongPageViewState();
@@ -20,9 +20,9 @@ class _SongPageViewState extends State<SongPageView> {
       appBar: AppBar(
         backgroundColor: const Color(0xFF8B6E3C),
         foregroundColor: Colors.white,
-        title: Text('Page ${widget.page.pageNumber}'),
+        title: Text(widget.item.pageLabel),
         actions: [
-          if (widget.page.sourceImage != null)
+          if (widget.item.sourceImage != null)
             IconButton(
               icon: Icon(_showSource ? Icons.article : Icons.image),
               tooltip: 'Toggle original page photo',
@@ -31,8 +31,8 @@ class _SongPageViewState extends State<SongPageView> {
         ],
       ),
       body: _showSource
-          ? _SourceImageView(assetPath: widget.page.sourceImage!)
-          : _TranscribedView(page: widget.page),
+          ? _SourceImageView(assetPath: widget.item.sourceImage!)
+          : _TranscribedView(item: widget.item),
     );
   }
 }
@@ -46,21 +46,36 @@ class _SourceImageView extends StatelessWidget {
     return InteractiveViewer(
       minScale: 1,
       maxScale: 5,
-      child: Center(child: Image.asset(assetPath)),
+      child: Center(
+        child: Image.asset(
+          assetPath,
+          errorBuilder: (context, error, stackTrace) {
+            return Padding(
+              padding: const EdgeInsets.all(24),
+              child: Text(
+                'Source image unavailable',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }
 
 class _TranscribedView extends StatelessWidget {
-  final SongPage page;
-  const _TranscribedView({required this.page});
+  final SongBookSong item;
+  const _TranscribedView({required this.item});
 
   @override
   Widget build(BuildContext context) {
+    final song = item.song;
+
     return ListView(
       padding: const EdgeInsets.all(16),
       children: [
-        if (page.note != null)
+        if (item.pageNote != null)
           Container(
             margin: const EdgeInsets.only(bottom: 12),
             padding: const EdgeInsets.all(12),
@@ -70,56 +85,77 @@ class _TranscribedView extends StatelessWidget {
               border: Border.all(color: const Color(0xFFD8C7A4)),
             ),
             child: Text(
-              page.note!,
-              style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey.shade700),
+              item.pageNote!,
+              style: Theme.of(
+                context,
+              ).textTheme.bodySmall?.copyWith(color: Colors.grey.shade700),
             ),
           ),
-        ...page.songs.asMap().entries.map((entry) {
-          final song = entry.value;
-          final index = entry.key + 1;
-          return Container(
-            margin: const EdgeInsets.only(bottom: 12),
-            padding: const EdgeInsets.all(14),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: const Color(0xFFE6D8B8)),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  song.displayTitle.isNotEmpty ? 'Song $index • ${song.displayTitle}' : 'Song $index',
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
-                ),
-                if (song.taal != null || song.attribution != null) ...[
-                  const SizedBox(height: 6),
-                  if (song.taal != null)
-                    Text('Taal: ${song.taal}', style: Theme.of(context).textTheme.bodySmall),
-                  if (song.attribution != null)
-                    Text('Attribution: ${song.attribution}', style: Theme.of(context).textTheme.bodySmall),
-                ],
-                const SizedBox(height: 8),
-                ...song.stanzas.asMap().entries.expand((stanzaEntry) {
-                  final stanzaIndex = stanzaEntry.key + 1;
-                  final stanza = stanzaEntry.value;
-                  return [
-                    Text(
-                      stanza.marked ? 'Stanza $stanzaIndex • marked' : 'Stanza $stanzaIndex',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
-                    ),
-                    const SizedBox(height: 4),
-                    ...stanza.lines.map((line) => Padding(
-                          padding: const EdgeInsets.only(bottom: 4),
-                          child: Text(line, style: Theme.of(context).textTheme.bodyMedium),
-                        )),
-                    const SizedBox(height: 6),
-                  ];
-                }),
+        Container(
+          margin: const EdgeInsets.only(bottom: 12),
+          padding: const EdgeInsets.all(14),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(color: const Color(0xFFE6D8B8)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                item.displayTitle,
+                style: Theme.of(
+                  context,
+                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
+              ),
+              if (song.title != null &&
+                  song.indexTitle != null &&
+                  song.title != song.indexTitle) ...[
+                const SizedBox(height: 6),
+                Text(song.title!, style: Theme.of(context).textTheme.bodySmall),
               ],
-            ),
-          );
-        }),
+              if (song.taal != null || song.attribution != null) ...[
+                const SizedBox(height: 6),
+                if (song.taal != null)
+                  Text(
+                    'Taal: ${song.taal}',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                if (song.attribution != null)
+                  Text(
+                    'Attribution: ${song.attribution}',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+              ],
+              const SizedBox(height: 8),
+              ...song.stanzas.asMap().entries.expand((stanzaEntry) {
+                final stanzaIndex = stanzaEntry.key + 1;
+                final stanza = stanzaEntry.value;
+                return [
+                  Text(
+                    stanza.marked
+                        ? 'Stanza $stanzaIndex - marked'
+                        : 'Stanza $stanzaIndex',
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  ...stanza.lines.map(
+                    (line) => Padding(
+                      padding: const EdgeInsets.only(bottom: 4),
+                      child: Text(
+                        line,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                ];
+              }),
+            ],
+          ),
+        ),
       ],
     );
   }

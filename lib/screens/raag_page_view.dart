@@ -49,7 +49,20 @@ class _SourceImageView extends StatelessWidget {
     return InteractiveViewer(
       minScale: 1,
       maxScale: 5,
-      child: Center(child: Image.asset(assetPath)),
+      child: Center(
+        child: Image.asset(
+          assetPath,
+          errorBuilder: (context, error, stackTrace) {
+            return Padding(
+              padding: const EdgeInsets.all(24),
+              child: Text(
+                'Source image unavailable',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            );
+          },
+        ),
+      ),
     );
   }
 }
@@ -66,7 +79,11 @@ class _TranscribedView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Icon(Icons.warning_amber_rounded, color: Colors.orange, size: 32),
+            const Icon(
+              Icons.warning_amber_rounded,
+              color: Colors.orange,
+              size: 32,
+            ),
             const SizedBox(height: 8),
             Text(
               'Not transcribed yet — use the photo toggle above to view the original page.',
@@ -113,7 +130,9 @@ class _TranscribedView extends StatelessWidget {
                 const SizedBox(height: 6),
                 Text(
                   page.note!,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Colors.grey.shade700),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodySmall?.copyWith(color: Colors.grey.shade700),
                 ),
               ],
             ],
@@ -190,11 +209,17 @@ class _AlankarSetCard extends StatelessWidget {
           ),
           if (block.taal != null) ...[
             const SizedBox(height: 4),
-            Text('Taal: ${block.taal}', style: Theme.of(context).textTheme.bodySmall),
+            Text(
+              'Taal: ${block.taal}',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
           ],
           if (block.confidence != null) ...[
             const SizedBox(height: 4),
-            Text('Confidence: ${block.confidence}', style: Theme.of(context).textTheme.bodySmall),
+            Text(
+              'Confidence: ${block.confidence}',
+              style: Theme.of(context).textTheme.bodySmall,
+            ),
           ],
           if (block.note != null) ...[
             const SizedBox(height: 4),
@@ -202,38 +227,68 @@ class _AlankarSetCard extends StatelessWidget {
           ],
           const SizedBox(height: 10),
           if (aroh.isNotEmpty) ...[
-            Text('Aroh', style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600)),
+            Text(
+              'Aroh',
+              style: Theme.of(
+                context,
+              ).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600),
+            ),
             const SizedBox(height: 6),
             Wrap(
               spacing: 8,
               runSpacing: 6,
-              children: aroh.map((item) => Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: const Color(0xFFF4E9D5),
-                  border: Border.all(color: const Color(0xFFE2D3AB)),
-                ),
-                child: Text(item, style: const TextStyle(fontWeight: FontWeight.w600)),
-              )).toList(),
+              children: aroh
+                  .map(
+                    (item) => Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 6,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: const Color(0xFFF4E9D5),
+                        border: Border.all(color: const Color(0xFFE2D3AB)),
+                      ),
+                      child: Text(
+                        item,
+                        style: const TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  )
+                  .toList(),
             ),
           ],
           if (avroh.isNotEmpty) ...[
             const SizedBox(height: 10),
-            Text('Avroh', style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600)),
+            Text(
+              'Avroh',
+              style: Theme.of(
+                context,
+              ).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600),
+            ),
             const SizedBox(height: 6),
             Wrap(
               spacing: 8,
               runSpacing: 6,
-              children: avroh.map((item) => Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: const Color(0xFFF7F2EA),
-                  border: Border.all(color: const Color(0xFFE8DFC8)),
-                ),
-                child: Text(item, style: const TextStyle(fontWeight: FontWeight.w600)),
-              )).toList(),
+              children: avroh
+                  .map(
+                    (item) => Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 10,
+                        vertical: 6,
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: const Color(0xFFF7F2EA),
+                        border: Border.all(color: const Color(0xFFE8DFC8)),
+                      ),
+                      child: Text(
+                        item,
+                        style: const TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                  )
+                  .toList(),
             ),
           ],
         ],
@@ -266,14 +321,19 @@ class _HeaderCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: data.entries.map((e) {
-          final value = e.value is List ? (e.value as List).join(' ') : e.value.toString();
+          final value = e.value is List
+              ? (e.value as List).join(' ')
+              : e.value.toString();
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 2),
             child: RichText(
               text: TextSpan(
                 style: DefaultTextStyle.of(context).style.copyWith(height: 1.4),
                 children: [
-                  TextSpan(text: '${e.key}: ', style: const TextStyle(fontWeight: FontWeight.bold)),
+                  TextSpan(
+                    text: '${e.key}: ',
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   TextSpan(text: value),
                 ],
               ),
@@ -328,19 +388,26 @@ class _GridCard extends StatelessWidget {
                 TableRow(
                   decoration: BoxDecoration(color: const Color(0xFFF3EAD8)),
                   children: taalMarkers!
-                      .map((m) => Padding(
-                            padding: const EdgeInsets.all(6),
-                            child: Text(m, style: const TextStyle(fontWeight: FontWeight.bold)),
-                          ))
+                      .map(
+                        (m) => Padding(
+                          padding: const EdgeInsets.all(6),
+                          child: Text(
+                            m,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      )
                       .toList(),
                 ),
               for (final row in rows)
                 TableRow(
                   children: row
-                      .map((cell) => Padding(
-                            padding: const EdgeInsets.all(6),
-                            child: SwaraCellText(cell),
-                          ))
+                      .map(
+                        (cell) => Padding(
+                          padding: const EdgeInsets.all(6),
+                          child: SwaraCellText(cell),
+                        ),
+                      )
                       .toList(),
                 ),
             ],
@@ -400,31 +467,46 @@ class _GridWithLyricsCard extends StatelessWidget {
                 TableRow(
                   decoration: BoxDecoration(color: const Color(0xFFF3EAD8)),
                   children: taalMarkers!
-                      .map((m) => Padding(
-                            padding: const EdgeInsets.all(6),
-                            child: Text(m, style: const TextStyle(fontWeight: FontWeight.bold)),
-                          ))
+                      .map(
+                        (m) => Padding(
+                          padding: const EdgeInsets.all(6),
+                          child: Text(
+                            m,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      )
                       .toList(),
                 ),
               for (var i = 0; i < swaraRows.length; i++) ...[
                 TableRow(
                   children: swaraRows[i]
-                      .map((cell) => Padding(
-                            padding: const EdgeInsets.all(6),
-                            child: SwaraCellText(
-                              cell,
-                              style: const TextStyle(fontWeight: FontWeight.w600),
-                            ),
-                          ))
+                      .map(
+                        (cell) => Padding(
+                          padding: const EdgeInsets.all(6),
+                          child: SwaraCellText(
+                            cell,
+                            style: const TextStyle(fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      )
                       .toList(),
                 ),
                 if (i < lyricRows.length)
                   TableRow(
                     children: lyricRows[i]
-                        .map((cell) => Padding(
-                              padding: const EdgeInsets.all(6),
-                              child: Text(cell, style: TextStyle(color: Colors.grey.shade700, fontStyle: FontStyle.italic)),
-                            ))
+                        .map(
+                          (cell) => Padding(
+                            padding: const EdgeInsets.all(6),
+                            child: Text(
+                              cell,
+                              style: TextStyle(
+                                color: Colors.grey.shade700,
+                                fontStyle: FontStyle.italic,
+                              ),
+                            ),
+                          ),
+                        )
                         .toList(),
                   ),
               ],

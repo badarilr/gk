@@ -15,6 +15,70 @@ class SongBook {
 
   SongBook({required this.pages});
 
+  List<SongBookSong> get songs {
+    final items = <SongBookSong>[];
+    for (final page in pages) {
+      for (var i = 0; i < page.songs.length; i++) {
+        items.add(
+          SongBookSong(
+            pageNumber: page.pageNumber,
+            sourceImage: page.sourceImage,
+            pageNote: page.note,
+            pageTitle: page.title,
+            song: page.songs[i],
+            songIndexOnPage: i + 1,
+            totalSongsOnPage: page.songs.length,
+            fallbackIndex: items.length + 1,
+          ),
+        );
+      }
+    }
+
+    items.sort((a, b) {
+      final aNo = a.song.indexNo;
+      final bNo = b.song.indexNo;
+      if (aNo != null && bNo != null) return aNo.compareTo(bNo);
+      if (aNo != null) return -1;
+      if (bNo != null) return 1;
+      return a.fallbackIndex.compareTo(b.fallbackIndex);
+    });
+
+    return items;
+  }
+
+  static const _availableSongSourceImages = {
+    'assets/songs/page_001.jpg',
+    'assets/songs/page_001A.jpg',
+    'assets/songs/page_002.jpg',
+    'assets/songs/page_003.jpg',
+    'assets/songs/page_004.jpg',
+    'assets/songs/page_005.jpg',
+    'assets/songs/page_006.jpg',
+    'assets/songs/page_007.jpg',
+    'assets/songs/page_008.jpg',
+    'assets/songs/page_009.jpg',
+    'assets/songs/page_010.jpg',
+    'assets/songs/page_011.jpg',
+    'assets/songs/page_012.jpg',
+    'assets/songs/page_013.jpg',
+    'assets/songs/page_014.jpg',
+    'assets/songs/page_015.jpg',
+    'assets/songs/page_016.jpg',
+    'assets/songs/page_017.jpg',
+    'assets/songs/page_018.jpg',
+    'assets/songs/page_019.jpg',
+    'assets/songs/page_020.jpg',
+    'assets/songs/page_021.jpg',
+    'assets/songs/page_022.jpg',
+    'assets/songs/page_023.jpg',
+  };
+
+  static String? normalizeSongSourceImage(String? sourceImage) {
+    if (sourceImage == null || sourceImage.trim().isEmpty) return null;
+    final path = sourceImage.trim();
+    return _availableSongSourceImages.contains(path) ? path : null;
+  }
+
   factory SongBook.fromJson(dynamic json) {
     if (json is List) {
       return SongBook(
@@ -44,6 +108,54 @@ class SongBook {
   }
 }
 
+class SongBookSong {
+  final String pageNumber;
+  final String? sourceImage;
+  final String? pageNote;
+  final String? pageTitle;
+  final SongEntry song;
+  final int songIndexOnPage;
+  final int totalSongsOnPage;
+  final int fallbackIndex;
+
+  SongBookSong({
+    required this.pageNumber,
+    this.sourceImage,
+    this.pageNote,
+    this.pageTitle,
+    required this.song,
+    required this.songIndexOnPage,
+    required this.totalSongsOnPage,
+    required this.fallbackIndex,
+  });
+
+  String get indexLabel => song.indexNo?.toString() ?? '$fallbackIndex';
+
+  String get pageLabel {
+    final base = pageNumber.isEmpty ? 'Page' : 'Page $pageNumber';
+    if (totalSongsOnPage <= 1) return base;
+    return '$base ($songIndexOnPage/$totalSongsOnPage)';
+  }
+
+  String get displayTitle {
+    final songTitle = song.displayTitle;
+    if (songTitle.isNotEmpty) return songTitle;
+
+    for (final stanza in song.stanzas) {
+      for (final line in stanza.lines) {
+        final text = line.trim();
+        if (text.isNotEmpty) return text;
+      }
+    }
+
+    if (pageTitle != null && pageTitle!.trim().isNotEmpty) {
+      return pageTitle!.trim();
+    }
+
+    return pageLabel;
+  }
+}
+
 class SongPage {
   final String pageNumber;
   final String? sourceImage;
@@ -61,7 +173,9 @@ class SongPage {
 
   String get displayTitle {
     if (title != null && title!.trim().isNotEmpty) return title!.trim();
-    if (songs.isEmpty) return pageNumber.isEmpty ? 'Song page' : 'Page $pageNumber';
+    if (songs.isEmpty) {
+      return pageNumber.isEmpty ? 'Song page' : 'Page $pageNumber';
+    }
     final first = songs.first.displayTitle;
     if (first.isNotEmpty) return first;
     return pageNumber.isEmpty ? 'Song page' : 'Page $pageNumber';
@@ -72,13 +186,28 @@ class SongPage {
         ? json['songs'] as List<dynamic>
         : (json['song'] != null ? [json['song']] : null);
     final songItems = songsJson ?? [];
-    final isFlatSong = json['stanzas'] != null || json['lines'] != null || json['lyrics'] != null;
+    final isFlatSong =
+        json['stanzas'] != null ||
+        json['lines'] != null ||
+        json['lyrics'] != null;
 
     return SongPage(
-      pageNumber: json['pageNumber']?.toString() ?? json['page']?.toString() ?? '',
-      sourceImage: json['sourceImage'] as String? ?? json['image'] as String?,
+      pageNumber:
+          json['pageNumber']?.toString() ?? json['page']?.toString() ?? '',
+      sourceImage: SongBook.normalizeSongSourceImage(
+        json['sourceImage'] as String? ?? json['image'] as String?,
+      ),
       note: json['note'] as String?,
-      title: _readString(json, ['title', 'songTitle', 'song_title', 'name', 'song_name', 'heading']),
+      title: _readString(json, [
+        'title',
+        'titke',
+        'songTitle',
+        'songTitke',
+        'song_title',
+        'name',
+        'song_name',
+        'heading',
+      ]),
       songs: (isFlatSong ? [json] : songItems)
           .map((song) => SongEntry.fromJson(song as Map<String, dynamic>))
           .toList(),
@@ -87,6 +216,8 @@ class SongPage {
 }
 
 class SongEntry {
+  final int? indexNo;
+  final String? indexTitle;
   final String? title;
   final String? raag;
   final String? taal;
@@ -95,6 +226,8 @@ class SongEntry {
   final List<SongStanza> stanzas;
 
   SongEntry({
+    this.indexNo,
+    this.indexTitle,
     this.title,
     this.raag,
     this.taal,
@@ -104,12 +237,13 @@ class SongEntry {
   });
 
   String get displayTitle {
-    if (title != null && title!.trim().isNotEmpty) return title!.trim();
-    final parts = <String>[];
-    if (raag != null && raag!.trim().isNotEmpty) parts.add(raag!.trim());
-    if (taal != null && taal!.trim().isNotEmpty) parts.add(taal!.trim());
-    if (attribution != null && attribution!.trim().isNotEmpty) parts.add(attribution!.trim());
-    return parts.isEmpty ? '' : parts.join(' • ');
+    if (indexTitle != null && indexTitle!.trim().isNotEmpty) {
+      return indexTitle!.trim();
+    }
+    if (title != null && title!.trim().isNotEmpty) {
+      return title!.trim();
+    }
+    return '';
   }
 
   factory SongEntry.fromJson(Map<String, dynamic> json) {
@@ -120,10 +254,33 @@ class SongEntry {
         : stanzasJson;
 
     return SongEntry(
-      title: _readString(json, ['title', 'songTitle', 'song_title', 'name', 'song_name', 'heading']),
+      indexNo: int.tryParse(json['indexNo']?.toString() ?? ''),
+      indexTitle: _readString(json, [
+        'indexTitle',
+        'indexTitke',
+        'index_title',
+        'index_titke',
+        'indexName',
+        'index_name',
+      ]),
+      title: _readString(json, [
+        'title',
+        'titke',
+        'songTitle',
+        'songTitke',
+        'song_title',
+        'name',
+        'song_name',
+        'heading',
+      ]),
       raag: _readString(json, ['raag', 'raga']),
       taal: _readString(json, ['taal', 'tala']),
-      attribution: _readString(json, ['attribution', 'credit', 'composer', 'source']),
+      attribution: _readString(json, [
+        'attribution',
+        'credit',
+        'composer',
+        'source',
+      ]),
       note: _readString(json, ['note']),
       stanzas: stanzaItems
           .map((stanza) => SongStanza.fromJson(stanza as Map<String, dynamic>))

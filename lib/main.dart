@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
-void main() => runApp(const RaagbookApp());
+void main() {
+  FlutterError.onError = (details) {
+    FlutterError.presentError(details);
+    debugPrint('Flutter error: ${details.exception}');
+  };
+
+  runApp(const RaagbookApp());
+}
 
 class RaagbookApp extends StatelessWidget {
   const RaagbookApp({super.key});

@@ -4,7 +4,10 @@
     "stanza.marked": "true if the stanza was set off in the book with a > or bullet marker (looks like a chorus/highlight convention used throughout) - kept as a flag rather than guessing at Carnatic terms like pallavi/anupallavi since the book mixes Hindustani, Kannada, and Hindi film songs",
     "attribution": "whatever credit line appeared on the page - could be a movie name, album name, or a person's name (composer/singer)",
     "(2) markers": "kept inline in the lyric text exactly as printed - indicates the line/phrase repeats twice when sung",
-    "bracketed text": "kept inline as printed, e.g. [Sa Pa] in the Tare Zameen Par song marks an echoed phrase"
+    "bracketed text": "kept inline as printed, e.g. [Sa Pa] in the Tare Zameen Par song marks an echoed phrase",
+    "title": "some pages print a distinct song title (not a person/movie/album credit) above the taal line, e.g. 'HAM KO MANKI', 'ETANI SHAKTI' - kept in this optional field, separate from 'attribution' which is reserved for movie/album/composer credit lines.",
+    "inline_sargam_lines": "a few songs (Hind Desh Ke Nivasi p32, Janani Janma Bhoomi p38, the Saraswati vandana p45) print sargam solfa lines directly above/within the lyric stanza as a singing aid. Kept inline as their own line(s) in the stanza, exactly as printed, same convention as the '(2)' and bracketed-text markers.",
+    "indexTitle": "title/serial number pulled from the songbook's own handwritten INDEX page (front of book), added as a cross-reference tag alongside any 'title' already transcribed from the song's own page - kept separate rather than overwriting 'title' since the index sometimes abbreviates or spells a song name slightly differently than the page itself (e.g. index 'Itani shakti' vs page title 'Etani Shakti'). Matched to songs by sequential order (index entries 1-84 walk through the book's songs in the same order as the pages) rather than by the index's own page-number column, which was printed sideways/small and not reliably legible - the sequential match was cross-checked against several songs that already had a page-derived 'title' (Ham Ko Man Ki, Hind Desh Ke Nivasi, Hachevu Kannadada Deepa, Etani Shakti, Jaha Daal Daal) and lined up exactly, so confidence is high, but a couple of individual titles (deduced only from the index, no independent anchor) are worth a quick visual double-check."
   },
   "source": "Goonjan Kala Kendra - devotional & film song notebook",
   "sourceImageConvention": "each page has 'sourceImage': assets/songs/page_<label>.jpg where <label> matches the page number printed in the book (including '1A')",
@@ -18,20 +21,66 @@
           "taal": "Kehrava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Aaaaa... aadidhano ranga", "Adhbhuthadhali kaalingana paniya mel"]},
-            {"marked": true, "lines": ["paniyaa metti baalava thulidu", "Thala thala holeyuthali naatyava natisuthali", "Jhana kaalandhuge gajje ghulu ghulurenuthaa", "Putta paadhavanetthi shree Krishna"]},
-            {"marked": false, "lines": ["Ambushodhbhava akhila suraru seri", "Ambaradhali nee avatharisi", "Rambe oorvashi ramaniyarellaru", "Chandhadim bharatha naatyava natise"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Aaaaa... aadidhano ranga",
+                "Adhbhuthadhali kaalingana paniya mel"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "paniyaa metti baalava thulidu",
+                "Thala thala holeyuthali naatyava natisuthali",
+                "Jhana kaalandhuge gajje ghulu ghulurenuthaa",
+                "Putta paadhavanetthi shree Krishna"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ambushodhbhava akhila suraru seri",
+                "Ambaradhali nee avatharisi",
+                "Rambe oorvashi ramaniyarellaru",
+                "Chandhadim bharatha naatyava natise"
+              ]
+            }
+          ],
+          "indexNo": 1,
+          "indexTitle": "Adidano ranga"
         },
         {
           "raag": null,
           "taal": "Dadra",
           "attribution": "N.R. ROOPASHREE",
           "stanzas": [
-            {"marked": false, "lines": ["Anuraagadha preethi kalakuthaa kalakuthaa", "Manasannu seleyuthidhe seleyuthidhe", "Vathsalyadha jyothi belaguthaa belaguthaa", "Hradhayavanu harasuthidhe harasuthidhe"]},
-            {"marked": true, "lines": ["Mamakaaradha maitre minuguthaa minuguthaa", "Chitthavanu thanisuthidhe thanisuthidhe"]},
-            {"marked": false, "lines": ["Baandhavyadha bandha beseyuthaa beseyuthaa", "Baalannu belesuthidhe belesuthidhe"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Anuraagadha preethi kalakuthaa kalakuthaa",
+                "Manasannu seleyuthidhe seleyuthidhe",
+                "Vathsalyadha jyothi belaguthaa belaguthaa",
+                "Hradhayavanu harasuthidhe harasuthidhe"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Mamakaaradha maitre minuguthaa minuguthaa",
+                "Chitthavanu thanisuthidhe thanisuthidhe"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Baandhavyadha bandha beseyuthaa beseyuthaa",
+                "Baalannu belesuthidhe belesuthidhe"
+              ]
+            }
+          ],
+          "indexNo": 2,
+          "indexTitle": "Anuragada preeti"
         }
       ]
     },
@@ -45,21 +94,74 @@
           "taal": "Kehrava",
           "attribution": "N.S. LAXMINARAYAN BHAT",
           "stanzas": [
-            {"marked": false, "lines": ["Amma ninna ninna punya charanada sanna dhooli naanu", "Amma ninna kanna kaanthiya sanna kirana naanu"]},
-            {"marked": false, "lines": ["Entha hemmeye amma ninna kandha nanagiruvudu", "Sati illada bhuvana maathe nanna thaayaagiruvudhu"]},
-            {"marked": false, "lines": ["Ithihaasake nilukadha kaalaku nee purvalu", "Upanishattina mantragaate ninna prathamodhgaaravu", "Seethe ennuva thaalmege drawpadi sathi melmege", "Ninna bhaavave moola illiya naariyara Ghana kaankege"]},
-            {"marked": false, "lines": ["Ninna jnaanadha aleyu chalisi vyaasapaani nee bandharu", "Buddha Gandhi karuna bhaavada sudheya mogedu thandharu", "Kshaatra bhaavake paarthanu thyaagake jimoothanu", "Ninna pratiguna ganige koti honna kidigala chalanavu"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Amma ninna ninna punya charanada sanna dhooli naanu",
+                "Amma ninna kanna kaanthiya sanna kirana naanu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Entha hemmeye amma ninna kandha nanagiruvudu",
+                "Sati illada bhuvana maathe nanna thaayaagiruvudhu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ithihaasake nilukadha kaalaku nee purvalu",
+                "Upanishattina mantragaate ninna prathamodhgaaravu",
+                "Seethe ennuva thaalmege drawpadi sathi melmege",
+                "Ninna bhaavave moola illiya naariyara Ghana kaankege"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ninna jnaanadha aleyu chalisi vyaasapaani nee bandharu",
+                "Buddha Gandhi karuna bhaavada sudheya mogedu thandharu",
+                "Kshaatra bhaavake paarthanu thyaagake jimoothanu",
+                "Ninna pratiguna ganige koti honna kidigala chalanavu"
+              ]
+            }
+          ],
+          "indexNo": 3,
+          "indexTitle": "Amma ninna"
         },
         {
           "raag": null,
           "taal": "Kehrava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Ammaa endare yaru neevu helire neevu helire", "Estu maragalu hannu hotthive estu gidagalu huva hothive"]},
-            {"marked": false, "lines": ["Nintha neladhali neera oratheyu hotti uriyuthidhe maradha benkiyu", "Mele aakaash kelagade bhoomi madhye maanavarusuruva gaali"]},
-            {"marked": false, "lines": ["Gali helitu maravu helithu uriyuva benkiyu neenamma", "Benki gaali jotheyali helithu kudiyuva neeru neenamma", "Bhoomi aakaasha nakku helithu naduvina gaaliye neenamma", "Panchabhoothagale neenamma ammaa endhare neenamma", "Ammaa endhare neenamma"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Ammaa endare yaru neevu helire neevu helire",
+                "Estu maragalu hannu hotthive estu gidagalu huva hothive"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Nintha neladhali neera oratheyu hotti uriyuthidhe maradha benkiyu",
+                "Mele aakaash kelagade bhoomi madhye maanavarusuruva gaali"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Gali helitu maravu helithu uriyuva benkiyu neenamma",
+                "Benki gaali jotheyali helithu kudiyuva neeru neenamma",
+                "Bhoomi aakaasha nakku helithu naduvina gaaliye neenamma",
+                "Panchabhoothagale neenamma ammaa endhare neenamma",
+                "Ammaa endhare neenamma"
+              ]
+            }
+          ],
+          "indexNo": 4,
+          "indexTitle": "Amma endhare"
         }
       ]
     },
@@ -72,22 +174,80 @@
           "taal": "Bhajan Teka",
           "attribution": "VIJAYA.S",
           "stanzas": [
-            {"marked": false, "lines": ["Aanandhaa sachchidhaanandhaa", "Nandhana nandha mukundhaa", "Vyaaghra charmadhara vyaadha roopa hara", "Arjunagolidhaa govindhaa"]},
-            {"marked": true, "lines": ["Bhaktha premi iva hradhaya vihaari", "Sathya roopa munijana sanchaari", "Chittha janai peethaambara dhaari", "Bhaava vipina sanchaari"]},
-            {"marked": false, "lines": ["Yoga maanasadha yoga vihaari", "Naadha roopadhe swara sanchaari", "Bhaava rasadha bhaavaananadha lahari", "Vishwa vipina sanchaari"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Aanandhaa sachchidhaanandhaa",
+                "Nandhana nandha mukundhaa",
+                "Vyaaghra charmadhara vyaadha roopa hara",
+                "Arjunagolidhaa govindhaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Bhaktha premi iva hradhaya vihaari",
+                "Sathya roopa munijana sanchaari",
+                "Chittha janai peethaambara dhaari",
+                "Bhaava vipina sanchaari"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Yoga maanasadha yoga vihaari",
+                "Naadha roopadhe swara sanchaari",
+                "Bhaava rasadha bhaavaananadha lahari",
+                "Vishwa vipina sanchaari"
+              ]
+            }
+          ],
+          "indexNo": 5,
+          "indexTitle": "Amma amma amma"
         },
         {
           "raag": null,
           "taal": "Keherava",
           "attribution": "H.S.VENKTESH MOORTHI",
           "stanzas": [
-            {"marked": false, "lines": ["Amma amma amma namma tholige rekke hachchu", "Sontake belli patti katti hakki puchcha chuchchu"]},
-            {"marked": true, "lines": ["Haarittheevi rekke bichchi thengina marakku mele", "Jagali mele ninthe namage amma taataa hele"]},
-            {"marked": false, "lines": ["Haage haage mele hogi muttutthevi maada", "Kelutthevi yaaru keledha chukka haado haada"]},
-            {"marked": true, "lines": ["Thingalinoorina angala seri belli molavanu nodi", "Hidiyuttheevi haaro bannadha jinkeya hego maadi"]},
-            {"marked": false, "lines": ["Kotte koduvanu chandhamaama kenne thumba mutthu", "Muddhisi bettadha thudhige ilisuvanu yaaru illadha hotthu"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Amma amma amma namma tholige rekke hachchu",
+                "Sontake belli patti katti hakki puchcha chuchchu"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Haarittheevi rekke bichchi thengina marakku mele",
+                "Jagali mele ninthe namage amma taataa hele"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Haage haage mele hogi muttutthevi maada",
+                "Kelutthevi yaaru keledha chukka haado haada"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Thingalinoorina angala seri belli molavanu nodi",
+                "Hidiyuttheevi haaro bannadha jinkeya hego maadi"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kotte koduvanu chandhamaama kenne thumba mutthu",
+                "Muddhisi bettadha thudhige ilisuvanu yaaru illadha hotthu"
+              ]
+            }
+          ],
+          "indexNo": 6,
+          "indexTitle": "Ananda sachchidananada"
         }
       ]
     },
@@ -100,23 +260,85 @@
           "taal": "Keherava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Aarati kunja bihaariki shree giridhara krishn muraari ki"]},
-            {"marked": true, "lines": ["Gale me baijanti maala bhajaave murali madhura baalaa", "Shravana me kundala jhalakaalaa", "Nanda ke nanda nanda aananda", "Raadhikaa ramana bihaari ki shree giridhara krishn muraari ki"]},
-            {"marked": false, "lines": ["Gagana sama anga kanti kali radhika chamaka rahi aali", "Latana me thaade banamaali", "Chandra si alak Chandra si jhalak", "Lalita chabi shyama pyaari ki shree giridhara krishn muraari ki"]},
-            {"marked": true, "lines": ["Jahase pragata bhayi gangaa kalushmali haarini shree ganga", "Smarana se hota moha bhangaa", "Basi shiv sheesh jattaa ke beech", "Charana chabi shree banavaari ki shree giridhara krishn muraari ki"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Aarati kunja bihaariki shree giridhara krishn muraari ki"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Gale me baijanti maala bhajaave murali madhura baalaa",
+                "Shravana me kundala jhalakaalaa",
+                "Nanda ke nanda nanda aananda",
+                "Raadhikaa ramana bihaari ki shree giridhara krishn muraari ki"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Gagana sama anga kanti kali radhika chamaka rahi aali",
+                "Latana me thaade banamaali",
+                "Chandra si alak Chandra si jhalak",
+                "Lalita chabi shyama pyaari ki shree giridhara krishn muraari ki"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Jahase pragata bhayi gangaa kalushmali haarini shree ganga",
+                "Smarana se hota moha bhangaa",
+                "Basi shiv sheesh jattaa ke beech",
+                "Charana chabi shree banavaari ki shree giridhara krishn muraari ki"
+              ]
+            }
+          ],
+          "indexNo": 7,
+          "indexTitle": "Aarati kunj bihari"
         },
         {
           "raag": null,
           "taal": null,
           "attribution": "Movie - Raazi",
           "stanzas": [
-            {"marked": false, "lines": ["Ae watan... Mere watan..."]},
-            {"marked": false, "lines": ["Ae watan.. aabaad rahe tu Aabaad rahe tu... (aabaad rahe tu)"]},
-            {"marked": false, "lines": ["Ae watan, watan mere, aabaad rahe tu", "Main jahan rahun, jahaan me yaad rahe tu", "Ae watan... mere watan! (Ae watan... mere watan!)"]},
-            {"marked": false, "lines": ["Tu hi meri manzil hai, pehchan tujhi se", "Pahunchu main jahaan bhi Meri buniyad rahe tu"]},
-            {"marked": false, "lines": ["Tujhpe koi gham ki aanch aane nahin doon", "Kurbaan meri jaan tujhpe, shaad rahe tu"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Ae watan... Mere watan..."
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ae watan.. aabaad rahe tu Aabaad rahe tu... (aabaad rahe tu)"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ae watan, watan mere, aabaad rahe tu",
+                "Main jahan rahun, jahaan me yaad rahe tu",
+                "Ae watan... mere watan! (Ae watan... mere watan!)"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Tu hi meri manzil hai, pehchan tujhi se",
+                "Pahunchu main jahaan bhi Meri buniyad rahe tu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Tujhpe koi gham ki aanch aane nahin doon",
+                "Kurbaan meri jaan tujhpe, shaad rahe tu"
+              ]
+            }
+          ],
+          "indexNo": 8,
+          "indexTitle": "Ae wathan"
         }
       ]
     },
@@ -129,12 +351,57 @@
           "taal": "Kehrava",
           "attribution": "ALBUM - NADA RANJINI (Sangmesh Upase)",
           "stanzas": [
-            {"marked": false, "lines": ["Ambaravillade chandiranilla nee tilideyaa", "Ninagaagi midiyuvudu ee hradaya", "Saagaravillade alegele illa nee ariteyaa", "Ninagaagi meesalu ee hradayaa", "Ambaravillade chnadiranilla nee tilideyaa"]},
-            {"marked": true, "lines": ["Ambarake chndiranillade jeevana ellideyo -2", "Ee alege saagaravillade baduku ellideyo", "Sarasa virasave nija preetiyu Eduve badukina nija reetiyu -2", "Ambaravillade chnadiranilla nee tilideyaa -2"]},
-            {"marked": false, "lines": ["Neene nanna preeti chinna indrana melaane -2", "Naane ninna preeti ranna olamanasu neekaane", "Gaali beesali maleyu suriyali olavina dayeyondirali", "Minchu minchali sidilu badiyali Neene neralaagi barali -2", "Ambaravillade chnadiranilla nee tilideyaa -2"]},
-            {"marked": true, "lines": ["Neeru neenu meenu naanu ee jeeva hididiheno -2", "Deha neenu aatma naanu usire bidutihenu", "Moda musukali gudugu gudugali olavina dayeyondirali", "Agasa beelali bhoomi mulugali neene neralaagi barali -2"]},
-            {"marked": false, "lines": ["Ambaravillade chnadiranilla nee tilideyaa", "Ninagaagi midiyuvudu ee hradaya", "Saagaravillade alegele illa nee ariteyaa", "Ninagaagi meesalu ee hradayaa", "Ambaravillade chnadiranilla nee tilideyaa"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Ambaravillade chandiranilla nee tilideyaa",
+                "Ninagaagi midiyuvudu ee hradaya",
+                "Saagaravillade alegele illa nee ariteyaa",
+                "Ninagaagi meesalu ee hradayaa",
+                "Ambaravillade chnadiranilla nee tilideyaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Ambarake chndiranillade jeevana ellideyo -2",
+                "Ee alege saagaravillade baduku ellideyo",
+                "Sarasa virasave nija preetiyu Eduve badukina nija reetiyu -2",
+                "Ambaravillade chnadiranilla nee tilideyaa -2"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Neene nanna preeti chinna indrana melaane -2",
+                "Naane ninna preeti ranna olamanasu neekaane",
+                "Gaali beesali maleyu suriyali olavina dayeyondirali",
+                "Minchu minchali sidilu badiyali Neene neralaagi barali -2",
+                "Ambaravillade chnadiranilla nee tilideyaa -2"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Neeru neenu meenu naanu ee jeeva hididiheno -2",
+                "Deha neenu aatma naanu usire bidutihenu",
+                "Moda musukali gudugu gudugali olavina dayeyondirali",
+                "Agasa beelali bhoomi mulugali neene neralaagi barali -2"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ambaravillade chnadiranilla nee tilideyaa",
+                "Ninagaagi midiyuvudu ee hradaya",
+                "Saagaravillade alegele illa nee ariteyaa",
+                "Ninagaagi meesalu ee hradayaa",
+                "Ambaravillade chnadiranilla nee tilideyaa"
+              ]
+            }
+          ],
+          "indexNo": 9,
+          "indexTitle": "ambaravillade"
         }
       ]
     },
@@ -148,21 +415,67 @@
           "attribution": null,
           "note": "handwritten annotation 'Daadheena / Ihadheena' at top of page - likely taal bols, not transcribed as part of lyrics",
           "stanzas": [
-            {"marked": false, "lines": ["Amma neenu kotta kaanike kaleyalilla karagalilla", "Enne aaradha dheepadhanthe maneya belagi ninthidhe"]},
-            {"marked": true, "lines": ["Enu thiddhi theedidhe entha maatha kalisidhe", "Dhaivakoo anjadhantha bhaava moodi ninthidhe"]},
-            {"marked": false, "lines": ["Sookshmatheyaa kunchavaagi anyaayake sidilaagi", "Ninnaya nenapaagi edheyu thumbi bandidhe"]},
-            {"marked": true, "lines": ["Chandhranilladha raatriyanthe gopaalanilladhaa pashugalanthe", "Amma neeniradha baalu baradu bhoomi enisidhe"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Amma neenu kotta kaanike kaleyalilla karagalilla",
+                "Enne aaradha dheepadhanthe maneya belagi ninthidhe"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Enu thiddhi theedidhe entha maatha kalisidhe",
+                "Dhaivakoo anjadhantha bhaava moodi ninthidhe"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Sookshmatheyaa kunchavaagi anyaayake sidilaagi",
+                "Ninnaya nenapaagi edheyu thumbi bandidhe"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Chandhranilladha raatriyanthe gopaalanilladhaa pashugalanthe",
+                "Amma neeniradha baalu baradu bhoomi enisidhe"
+              ]
+            }
+          ],
+          "indexNo": 10,
+          "indexTitle": "Amma neenu kotta"
         },
         {
           "raag": "Kedar",
           "taal": "Dadra",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Akhila jeeva paalaka anantha prema dayaka", "Ajaraamara roopa amalakanthi deepa"]},
-            {"marked": true, "lines": ["Jaya jaya hai jagadeka sundara shubha sayi", "Jaya jaya hai deenavana divya kala sayi"]},
-            {"marked": false, "lines": ["Athulitha maya vikasa aruna surya sankasha", "Sathatha vishrutha nama sarva sadhguna dhama"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Akhila jeeva paalaka anantha prema dayaka",
+                "Ajaraamara roopa amalakanthi deepa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Jaya jaya hai jagadeka sundara shubha sayi",
+                "Jaya jaya hai deenavana divya kala sayi"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Athulitha maya vikasa aruna surya sankasha",
+                "Sathatha vishrutha nama sarva sadhguna dhama"
+              ]
+            }
+          ],
+          "indexNo": 11,
+          "indexTitle": "Akhila jeeva"
         }
       ]
     },
@@ -175,11 +488,53 @@
           "taal": "Kehrava",
           "attribution": "ALBUM - KANNADA NADAGEETEGALU (DATTAGURU KANTHI)",
           "stanzas": [
-            {"marked": false, "lines": ["Ammaa ammaa nanagu kannada kalisammaa (2)", "Ammaa embaa eradaksharava modalige baresamaa", "Modalige baresamaa", "Ammaa ammaa nanagu kannada kalisammaa", "nanagu kannada kalisammaa"]},
-            {"marked": true, "lines": ["Odu baraha kaliyuvenu Tamma tangige kalisuvenu (2)", "Dinakondu kathegala oduvenu (2)", "Adara neetiya ariyuvenu", "Ammaa ammaa nanagu kannada kalisammaa", "nanagu kannada kalisammaa"]},
-            {"marked": false, "lines": ["Kannada haadanu oduvenu Haadanu haaduta kuniyuvenu (2)", "Kannada nelajala preetisuve (2)", "Kannadigara aaraadhisuve", "Ammaa ammaa nanagu kannada kalisammaa", "nanagu kannada kalisammaa"]},
-            {"marked": true, "lines": ["Kannadaambeya poojisuve Kannada bhaasheya gouravisuve (2)", "Vidyeya kalitu shikshakanaagi (2)", "Kannada bhaasheya belesuvenu", "Ammaa ammaa nanagu kannada kalisammaa", "Ammaa embaa eradaksharava modalige baresamaa", "Modalige baresamaa", "Ammaa ammaa nanagu kannada kalisammaa", "nanagu kannada kalisammaa", "nanagu kannada kalisammaa"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Ammaa ammaa nanagu kannada kalisammaa (2)",
+                "Ammaa embaa eradaksharava modalige baresamaa",
+                "Modalige baresamaa",
+                "Ammaa ammaa nanagu kannada kalisammaa",
+                "nanagu kannada kalisammaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Odu baraha kaliyuvenu Tamma tangige kalisuvenu (2)",
+                "Dinakondu kathegala oduvenu (2)",
+                "Adara neetiya ariyuvenu",
+                "Ammaa ammaa nanagu kannada kalisammaa",
+                "nanagu kannada kalisammaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kannada haadanu oduvenu Haadanu haaduta kuniyuvenu (2)",
+                "Kannada nelajala preetisuve (2)",
+                "Kannadigara aaraadhisuve",
+                "Ammaa ammaa nanagu kannada kalisammaa",
+                "nanagu kannada kalisammaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Kannadaambeya poojisuve Kannada bhaasheya gouravisuve (2)",
+                "Vidyeya kalitu shikshakanaagi (2)",
+                "Kannada bhaasheya belesuvenu",
+                "Ammaa ammaa nanagu kannada kalisammaa",
+                "Ammaa embaa eradaksharava modalige baresamaa",
+                "Modalige baresamaa",
+                "Ammaa ammaa nanagu kannada kalisammaa",
+                "nanagu kannada kalisammaa",
+                "nanagu kannada kalisammaa"
+              ]
+            }
+          ],
+          "indexNo": 12,
+          "indexTitle": "Aarati kjai"
         }
       ]
     },
@@ -192,22 +547,78 @@
           "taal": "Bhajan Teka",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Aarti Ki Jai Hanuman Lala Ki, Dushat Dalan Ragunath Kala Ki.", "Ja Ke Bal Se Giriver Kaanpe, Rog Dosh Ja Ke Nikat Na Jaanke."]},
-            {"marked": false, "lines": ["Anjani Putra Mahabaldaye, Santan Ke Prabhu Sada Sahaye.", "De Beeraha Raghunath Pathai, Lanka Jaari Siya Sudhi Laiye."]},
-            {"marked": false, "lines": ["Lanka So Kot Samundra Se Khaiy, Jaat Pavan Sut Baar Na Laiye.", "Lanka Jaari Asur Sab Maare, Siya Ramji Ke Kaaj Sanvare."]},
-            {"marked": false, "lines": ["Lakshman Moorchit Parhe Sakare, Aan Sajeevan Pran Ubhaare.", "Paith Pataal Tori Yamkare, Ahiravan Ke Bhuja Ukhaare."]},
-            {"marked": false, "lines": ["Baayen Bhuja Asur Dal Mare, Daayen Bhuja Sab Santa Jana Tare.", "Surnar Munijan Aarti Utare, Jai Jai Jai Hanuman Uchaare."]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Aarti Ki Jai Hanuman Lala Ki, Dushat Dalan Ragunath Kala Ki.",
+                "Ja Ke Bal Se Giriver Kaanpe, Rog Dosh Ja Ke Nikat Na Jaanke."
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Anjani Putra Mahabaldaye, Santan Ke Prabhu Sada Sahaye.",
+                "De Beeraha Raghunath Pathai, Lanka Jaari Siya Sudhi Laiye."
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Lanka So Kot Samundra Se Khaiy, Jaat Pavan Sut Baar Na Laiye.",
+                "Lanka Jaari Asur Sab Maare, Siya Ramji Ke Kaaj Sanvare."
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Lakshman Moorchit Parhe Sakare, Aan Sajeevan Pran Ubhaare.",
+                "Paith Pataal Tori Yamkare, Ahiravan Ke Bhuja Ukhaare."
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Baayen Bhuja Asur Dal Mare, Daayen Bhuja Sab Santa Jana Tare.",
+                "Surnar Munijan Aarti Utare, Jai Jai Jai Hanuman Uchaare."
+              ]
+            }
+          ],
+          "indexNo": 13,
+          "indexTitle": "Aarati baride"
         },
         {
           "raag": "Madmad Sarang",
           "taal": "Bhajan Teka",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Baride baride hoyitu kaala", "Barajanma stiravendu naaniddeno ranga"]},
-            {"marked": false, "lines": ["Aase embudu enna kleshapadisutide", "Ghaasiyaadeno hari narayana", "Vaasudevane ninna naamava paadade", "Naashavaayitu janma mosahodenu Krishna"]},
-            {"marked": false, "lines": ["Parara seveya maadi pararanne kondaadi", "Marulutanadali matiheenanaade", "Nere nambide ninna karunadindli enn", "Mareyade salahayya purandara vittala"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Baride baride hoyitu kaala",
+                "Barajanma stiravendu naaniddeno ranga"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Aase embudu enna kleshapadisutide",
+                "Ghaasiyaadeno hari narayana",
+                "Vaasudevane ninna naamava paadade",
+                "Naashavaayitu janma mosahodenu Krishna"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Parara seveya maadi pararanne kondaadi",
+                "Marulutanadali matiheenanaade",
+                "Nere nambide ninna karunadindli enn",
+                "Mareyade salahayya purandara vittala"
+              ]
+            }
+          ],
+          "indexNo": 14,
+          "indexTitle": "Baahaa hoove"
         }
       ]
     },
@@ -220,22 +631,76 @@
           "taal": "Keharava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Baa baa hoove nannaya olave Haadutha haarutha baa baa"]},
-            {"marked": false, "lines": ["Andada chendada batteyanuttu Gama ghama ennuva bisiyusirittu", "Pala pala holeyuva sundara kannali", "Nooru kanasina bhaasheya bittu"]},
-            {"marked": false, "lines": ["Thaka thai kunisutha nannedeyannu Mounadi haaduve neeneke", "Kai kai jodisi kuniyuva naavu", "Jigiyuva haaruva karedhide baanu"]},
-            {"marked": false, "lines": ["Khushiyali haaduva naanoo neenu", "karedhidhe kaamanabillina jhenu", "Baa baa hoove nannaya olave Haadutha haarutha baa baa"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Baa baa hoove nannaya olave Haadutha haarutha baa baa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Andada chendada batteyanuttu Gama ghama ennuva bisiyusirittu",
+                "Pala pala holeyuva sundara kannali",
+                "Nooru kanasina bhaasheya bittu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Thaka thai kunisutha nannedeyannu Mounadi haaduve neeneke",
+                "Kai kai jodisi kuniyuva naavu",
+                "Jigiyuva haaruva karedhide baanu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Khushiyali haaduva naanoo neenu",
+                "karedhidhe kaamanabillina jhenu",
+                "Baa baa hoove nannaya olave Haadutha haarutha baa baa"
+              ]
+            }
+          ],
+          "indexNo": 15,
+          "indexTitle": "Bhajalere mana"
         },
         {
           "raag": null,
           "taal": "Keherava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Bhajalere mana Krishna muraari", "Mana mohana maadhava giridhaari"]},
-            {"marked": true, "lines": ["Bhajale keshava kunja bihaari", "Krishna kanhaayi shyaama bihaari"]},
-            {"marked": false, "lines": ["Bhajalere man chaina bihaari", "Govindaa Krishna balihaari"]},
-            {"marked": true, "lines": ["Bhaja nata naagara madana muraari", "Gopi vallabha girivara dhaari"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Bhajalere mana Krishna muraari",
+                "Mana mohana maadhava giridhaari"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Bhajale keshava kunja bihaari",
+                "Krishna kanhaayi shyaama bihaari"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Bhajalere man chaina bihaari",
+                "Govindaa Krishna balihaari"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Bhaja nata naagara madana muraari",
+                "Gopi vallabha girivara dhaari"
+              ]
+            }
+          ],
+          "indexNo": 16,
+          "indexTitle": "Bhajale mana"
         }
       ]
     },
@@ -249,21 +714,82 @@
           "attribution": "MOVIE - TARE ZAMEEN PAR",
           "note": "includes solfege syllables inline with lyrics (Sa Pa Dha Re Ga Re...); bracketed text marks an echoed/repeated phrase as printed",
           "stanzas": [
-            {"marked": false, "lines": ["Dekho Dekho Kya Woh Ped Hai Chadar Ode Ya Khada Koi", "Dekho Dekho Kya Woh Ped Hai Chadar Ode Ya Khada Koi", "Baarish Hai Ya Aasmaan Ne Chod Diye Hai Nal Khule Kahin", "Hum Jaise Dekhe Yeh Jahaan Hai Waisa Hi Jaisi Nazar Apni"]},
-            {"marked": false, "lines": ["Khul Ke Sochein Aao Pankh Zara Phailaao Rang Naye Bikhrao", "Chalo Chalo Chalo Chalo Naye Khwaab Bun Le", "Hey Hey", "Sa Pa [Sa Pa] Dha Re [Dha Re] Ga Re [Ga Re] Ga Ma Pa Sa [Ga Ma Pa Sa]", "Bum Bum Bum [Bum Bum Bum] Bum Bum Bum Bole [Bum Bum Bum Bole]", "Hey Bum Chik Bole [Bum Chik Bole] Arre Masti Mein Dole [Masti Mein Dole]", "Bum Bum Bolemasti Mein Dole Bum Bum Bolemasti Mein Tu Dol Re Hey"]},
-            {"marked": false, "lines": ["Bhala Machliya Bhi Kyun Udti Nahin Aise Bho Socho Na", "Socho Sooraj Roz Nahaye Ya Baal Bhigoke Yeh Budhoo Banaye Hume", "Yeh Saare Taare Timtimaye Ya Phir Gusse Mein Kuch Badbadate Rahein"]},
-            {"marked": false, "lines": ["Aisi Rangon Bhari Apni Duniya Hai Kyun Socho To Socho Na", "Pyar Se Chun Ke In Rangon Ko Kisi Ne Sajaye Hai Apni Duniya", "Upar Wala Kya Hai Apni Duniya Upar Wala Kya Koi Kalakaar Hai"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Dekho Dekho Kya Woh Ped Hai Chadar Ode Ya Khada Koi",
+                "Dekho Dekho Kya Woh Ped Hai Chadar Ode Ya Khada Koi",
+                "Baarish Hai Ya Aasmaan Ne Chod Diye Hai Nal Khule Kahin",
+                "Hum Jaise Dekhe Yeh Jahaan Hai Waisa Hi Jaisi Nazar Apni"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Khul Ke Sochein Aao Pankh Zara Phailaao Rang Naye Bikhrao",
+                "Chalo Chalo Chalo Chalo Naye Khwaab Bun Le",
+                "Hey Hey",
+                "Sa Pa [Sa Pa] Dha Re [Dha Re] Ga Re [Ga Re] Ga Ma Pa Sa [Ga Ma Pa Sa]",
+                "Bum Bum Bum [Bum Bum Bum] Bum Bum Bum Bole [Bum Bum Bum Bole]",
+                "Hey Bum Chik Bole [Bum Chik Bole] Arre Masti Mein Dole [Masti Mein Dole]",
+                "Bum Bum Bolemasti Mein Dole Bum Bum Bolemasti Mein Tu Dol Re Hey"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Bhala Machliya Bhi Kyun Udti Nahin Aise Bho Socho Na",
+                "Socho Sooraj Roz Nahaye Ya Baal Bhigoke Yeh Budhoo Banaye Hume",
+                "Yeh Saare Taare Timtimaye Ya Phir Gusse Mein Kuch Badbadate Rahein"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Aisi Rangon Bhari Apni Duniya Hai Kyun Socho To Socho Na",
+                "Pyar Se Chun Ke In Rangon Ko Kisi Ne Sajaye Hai Apni Duniya",
+                "Upar Wala Kya Hai Apni Duniya Upar Wala Kya Koi Kalakaar Hai"
+              ]
+            }
+          ],
+          "indexNo": 17,
+          "indexTitle": "Bam bam bole"
         },
         {
           "raag": null,
           "taal": "Keherava",
           "attribution": "K.S.NISAARA AHMMAD",
           "stanzas": [
-            {"marked": false, "lines": ["Benne kadda namma Krishna benne kaddanamma", "Benneya kaddu jaarutha biddhu monakaaloodisikonda", "Binxdige biddu sidiyalu saddu bechchidha raadheya gandanamma"]},
-            {"marked": true, "lines": ["Taayi bandhalodi kallana kanninalli koodi", "Kannali aake sittanu taaledhu sontake kaiyittu", "Aadalu aake bheekara daali duru duru kan bittu"]},
-            {"marked": false, "lines": ["Hane thuti kennege benne metthidha oratana notakke", "Iliyithu kopa aralithu kendhuti tuntana aatake", "Tappida dandake nittusireleda benneygala neela", "Thattane aluvudha nillisi nakka baayagalisi baya", "Hadadida beladingala jaala avana akutila benneyanthaha nagu", "Kaayali jagadavara santhat naginali nagadavara"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Benne kadda namma Krishna benne kaddanamma",
+                "Benneya kaddu jaarutha biddhu monakaaloodisikonda",
+                "Binxdige biddu sidiyalu saddu bechchidha raadheya gandanamma"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Taayi bandhalodi kallana kanninalli koodi",
+                "Kannali aake sittanu taaledhu sontake kaiyittu",
+                "Aadalu aake bheekara daali duru duru kan bittu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Hane thuti kennege benne metthidha oratana notakke",
+                "Iliyithu kopa aralithu kendhuti tuntana aatake",
+                "Tappida dandake nittusireleda benneygala neela",
+                "Thattane aluvudha nillisi nakka baayagalisi baya",
+                "Hadadida beladingala jaala avana akutila benneyanthaha nagu",
+                "Kaayali jagadavara santhat naginali nagadavara"
+              ]
+            }
+          ],
+          "indexNo": 18,
+          "indexTitle": "Benne kadda"
         }
       ]
     },
@@ -276,22 +802,87 @@
           "taal": "Kehrava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Bhagwaan mere naiya us paar lagaa denaa", "Abthak tho Nibhaayaa hai, aage bhi nibhaa denaa"]},
-            {"marked": false, "lines": ["Ham dheen dhukhi nirbal,nith naam rahe prathipal", "Yah soch dharas dhoge prabhu aaj nahi tho kal", "Jo bhaag lagaayaa hai foolose sajaa dhena"]},
-            {"marked": false, "lines": ["Thum shaanthi sudhaakar ho, thum jnaan dhivaakar ho", "Mama hamsa chuge mothi thum maansarovar ho", "Dho boondh sudharas ki, ham ko bhi pilaa dhena"]},
-            {"marked": false, "lines": ["Rokhoge bhalaa khab thak, darshan dho muje thum se", "Charanose lipat jaavu vrakshose lathaa jaise", "Ab dwaar khadi there mujhe raah dhikhaa dhenaa"]},
-            {"marked": false, "lines": ["Majhadhaar padi naiyyaa, dagmag dole bhavme", "Aavo trishalaa nandhan, ham dhyaan dhare man me", "Ab thanvar kare vinathi, mujhe apanaa banaa dhenaa"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Bhagwaan mere naiya us paar lagaa denaa",
+                "Abthak tho Nibhaayaa hai, aage bhi nibhaa denaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ham dheen dhukhi nirbal,nith naam rahe prathipal",
+                "Yah soch dharas dhoge prabhu aaj nahi tho kal",
+                "Jo bhaag lagaayaa hai foolose sajaa dhena"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Thum shaanthi sudhaakar ho, thum jnaan dhivaakar ho",
+                "Mama hamsa chuge mothi thum maansarovar ho",
+                "Dho boondh sudharas ki, ham ko bhi pilaa dhena"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Rokhoge bhalaa khab thak, darshan dho muje thum se",
+                "Charanose lipat jaavu vrakshose lathaa jaise",
+                "Ab dwaar khadi there mujhe raah dhikhaa dhenaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Majhadhaar padi naiyyaa, dagmag dole bhavme",
+                "Aavo trishalaa nandhan, ham dhyaan dhare man me",
+                "Ab thanvar kare vinathi, mujhe apanaa banaa dhenaa"
+              ]
+            }
+          ],
+          "indexNo": 19,
+          "indexTitle": "Bhagavana meri"
         },
         {
           "raag": null,
           "taal": null,
           "attribution": "MOVIE - 3 IDIOTS",
           "stanzas": [
-            {"marked": false, "lines": ["Behati Hawa Sa Tha Woh, Udati Patang Sa Tha Woh", "Kahaan Gaya Use Dhundon"]},
-            {"marked": false, "lines": ["Hmm Hamako Toh Raahein Thi Chalaati", "Woh Khud Apani Raah Banaata", "Girata Sambhalata Masti Mein Chalata Tha Woh", "Hamako Kal Ki Fikar Sataati, Woh Bas Aaj Ka Jashn Manaata", "Har Lamahe Ko Khulake Jita Tha Woh", "Kahaan Se Aaya Tha Woh, Chhuke Hamaare Dil Ko"]},
-            {"marked": false, "lines": ["Sulagati Dhup Mein Chhanv Ke Jaisa", "Registaan Mein Gaanve Ke Jaisa", "Mann Ke Ghaanv Pe Marham Jaisa Woh", "Ham Sehame Se Rehate Kuye Mein", "Woh Nadiya Mein Gote Lagaata", "Ulati Dhaara Chir Ke Tairata Tha Woh", "Baadal Aawaara Tha Woh, Pyaar Hamaara Tha Woh"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Behati Hawa Sa Tha Woh, Udati Patang Sa Tha Woh",
+                "Kahaan Gaya Use Dhundon"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Hmm Hamako Toh Raahein Thi Chalaati",
+                "Woh Khud Apani Raah Banaata",
+                "Girata Sambhalata Masti Mein Chalata Tha Woh",
+                "Hamako Kal Ki Fikar Sataati, Woh Bas Aaj Ka Jashn Manaata",
+                "Har Lamahe Ko Khulake Jita Tha Woh",
+                "Kahaan Se Aaya Tha Woh, Chhuke Hamaare Dil Ko"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Sulagati Dhup Mein Chhanv Ke Jaisa",
+                "Registaan Mein Gaanve Ke Jaisa",
+                "Mann Ke Ghaanv Pe Marham Jaisa Woh",
+                "Ham Sehame Se Rehate Kuye Mein",
+                "Woh Nadiya Mein Gote Lagaata",
+                "Ulati Dhaara Chir Ke Tairata Tha Woh",
+                "Baadal Aawaara Tha Woh, Pyaar Hamaara Tha Woh"
+              ]
+            }
+          ],
+          "indexNo": 20,
+          "indexTitle": "Beheti hava"
         }
       ]
     },
@@ -304,21 +895,69 @@
           "taal": "Dadraa",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Bhakton ke raajaa shyaama more aajaa", "Shyaama more aajaa govinda more aajaa"]},
-            {"marked": true, "lines": ["Muralivaale aajaa o bansivaale aajaa", "Baansuri sunaajaa shyaama more aajaa"]},
-            {"marked": false, "lines": ["Maakhan chor aajaa o nand kishor aajaa", "Maakhan churaajaa shyaama more aajaa"]},
-            {"marked": true, "lines": ["Naaganathaiyyaa aajaa raas rachayya aajaa", "Raasa to rachaajaa shyaama more aajaa"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Bhakton ke raajaa shyaama more aajaa",
+                "Shyaama more aajaa govinda more aajaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Muralivaale aajaa o bansivaale aajaa",
+                "Baansuri sunaajaa shyaama more aajaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Maakhan chor aajaa o nand kishor aajaa",
+                "Maakhan churaajaa shyaama more aajaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Naaganathaiyyaa aajaa raas rachayya aajaa",
+                "Raasa to rachaajaa shyaama more aajaa"
+              ]
+            }
+          ],
+          "indexNo": 21,
+          "indexTitle": "Bhatkonke raja"
         },
         {
           "raag": "Mishra Durga",
           "taal": "Kehravaa",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Brandaavana kaa Krishna kanhaiyyaa sabaki aankon kaa taaraa", "Mana hi mana qu jale raadhikaa mohana tohe sabakaa pyaaraa"]},
-            {"marked": true, "lines": ["Jamunaa tata para nanda kaa laalaa jab jab raasa rachaayere", "Tana mana dole kaanhaa aise bansi madhura bajaayere", "Sudha bhudha bhooli khade gopiyaa jaane kaisa jaadu daalaa"]},
-            {"marked": false, "lines": ["Ranga salonaa aisa jaise chaayi ho ghata saavana ki", "Teri mai to huyi divaani mana mohana mana bhaavanaki", "Tere kaaran dekh saavare chod diyaa maine jag saara"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Brandaavana kaa Krishna kanhaiyyaa sabaki aankon kaa taaraa",
+                "Mana hi mana qu jale raadhikaa mohana tohe sabakaa pyaaraa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Jamunaa tata para nanda kaa laalaa jab jab raasa rachaayere",
+                "Tana mana dole kaanhaa aise bansi madhura bajaayere",
+                "Sudha bhudha bhooli khade gopiyaa jaane kaisa jaadu daalaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ranga salonaa aisa jaise chaayi ho ghata saavana ki",
+                "Teri mai to huyi divaani mana mohana mana bhaavanaki",
+                "Tere kaaran dekh saavare chod diyaa maine jag saara"
+              ]
+            }
+          ],
+          "indexNo": 22,
+          "indexTitle": "brandavanaka"
         }
       ]
     },
@@ -331,30 +970,94 @@
           "taal": "Kehrava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Baarisu kannada dindimava o karnaataka hradaya shiva"]},
-            {"marked": true, "lines": ["Sattantiharanu badidechcharisu kachchaaduvaranu koodisi olisu", "Hotteya kichchige kanneer surisu ottige baaluva teradali harasu"]},
-            {"marked": false, "lines": ["Kshayise shivetara krati kratiyalli moodali mangala mati matiyalli", "Kavi rushi santara aadarshadali sarvodayaavaagali sarvarali"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Baarisu kannada dindimava o karnaataka hradaya shiva"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Sattantiharanu badidechcharisu kachchaaduvaranu koodisi olisu",
+                "Hotteya kichchige kanneer surisu ottige baaluva teradali harasu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kshayise shivetara krati kratiyalli moodali mangala mati matiyalli",
+                "Kavi rushi santara aadarshadali sarvodayaavaagali sarvarali"
+              ]
+            }
+          ],
+          "indexNo": 23,
+          "indexTitle": "Bharata mateya"
         },
         {
           "raag": "Yaman",
           "taal": "Kehrava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Bhaarata maateya makkalu naavu bhaarata geeteya haaduvevu", "Haarisi dhwajavanu tooguvevu bhaarata jananiya pogaluvevu"]},
-            {"marked": true, "lines": ["Gangaa jamunaa sindhu kaaveri", "Mangaleyeru haridaaduvaru", "Unnata himagiri bangaarada gani", "Kangolisuva ee bhaagyada nagari"]},
-            {"marked": false, "lines": ["Buddha mahaatmaa gaandhiya tatwavu", "Onde naadina shaantige mantravu", "Vidyeyu namage ahimsaa tatwavu", "Buddhi patadi sahabaalveya dharmavu"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Bhaarata maateya makkalu naavu bhaarata geeteya haaduvevu",
+                "Haarisi dhwajavanu tooguvevu bhaarata jananiya pogaluvevu"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Gangaa jamunaa sindhu kaaveri",
+                "Mangaleyeru haridaaduvaru",
+                "Unnata himagiri bangaarada gani",
+                "Kangolisuva ee bhaagyada nagari"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Buddha mahaatmaa gaandhiya tatwavu",
+                "Onde naadina shaantige mantravu",
+                "Vidyeyu namage ahimsaa tatwavu",
+                "Buddhi patadi sahabaalveya dharmavu"
+              ]
+            }
+          ],
+          "indexNo": 24,
+          "indexTitle": "Barisu kannada"
         },
         {
           "raag": "Kedar",
           "taal": "Teentaal",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Baa giridhara murali baarenna bali", "baarennaya bali kunidaadutali", "manavanu tanisuva sundara sabheyali"]},
-            {"marked": true, "lines": ["Kaalindiya dhumuki kaalingana pididu", "paniyaa mettida kaalingana pididu"]},
-            {"marked": false, "lines": ["Brandaavanadali raadhryarodane", "kuniyuta naliyuta mohava beeruta"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Baa giridhara murali baarenna bali",
+                "baarennaya bali kunidaadutali",
+                "manavanu tanisuva sundara sabheyali"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Kaalindiya dhumuki kaalingana pididu",
+                "paniyaa mettida kaalingana pididu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Brandaavanadali raadhryarodane",
+                "kuniyuta naliyuta mohava beeruta"
+              ]
+            }
+          ],
+          "indexNo": 25,
+          "indexTitle": "Baa giridhara"
         }
       ]
     },
@@ -367,21 +1070,76 @@
           "taal": "Kehrava",
           "attribution": "MOVIE - RAJAKUMAR",
           "stanzas": [
-            {"marked": false, "lines": ["Bombe helutaite matte helutaite Neene raajakumara", "Bombe helutaite matte helutaite Neene raajakumara"]},
-            {"marked": false, "lines": ["Hosa belakondu hosilige bandu Belagide maneya managala indu", "Aaraadhiso raaradhiso raajaratnanu", "Aadisiye nodu beelisiye nodu Endu soladu sothu taleya baagadu"]},
-            {"marked": false, "lines": ["Gudisale aagali aramane aagali Aatave nilladhu endu aata nilladu", "Hiriyare irali kiriyare barali Bedhave toradhu endu bedha toradhu", "Ella iddu enu illadha haage badukiruva", "Aakasha nodadha kaiye ninadhu preethi hanchiruva", "Jothegiru neenu appana haage Hannele kaayo vinayadhi heege", "Ninnanu padedha naavu puneetha Baalu nagu nagutha"]},
-            {"marked": false, "lines": ["Taane uridhu manege belaku koduva deepavidhu Nanda deepave idhu", "Aadisuvaathana karuneya mele namma pathrav", "Samayadha sutra avanadhu", "Ondu muttina katheya helithu ee bombe", "Aa katheyallidha raajanange neenu bande", "Yogavu omme baruvudhu namage Yogyathe ondhu ulivudhu konege", "Suryanobba chandranobba Raajanu obba ee raajanu obba"]},
-            {"marked": false, "lines": ["Aadisiye nodu beelisiye nodu Endu soladu sothu taleya baagadu"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Bombe helutaite matte helutaite Neene raajakumara",
+                "Bombe helutaite matte helutaite Neene raajakumara"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Hosa belakondu hosilige bandu Belagide maneya managala indu",
+                "Aaraadhiso raaradhiso raajaratnanu",
+                "Aadisiye nodu beelisiye nodu Endu soladu sothu taleya baagadu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Gudisale aagali aramane aagali Aatave nilladhu endu aata nilladu",
+                "Hiriyare irali kiriyare barali Bedhave toradhu endu bedha toradhu",
+                "Ella iddu enu illadha haage badukiruva",
+                "Aakasha nodadha kaiye ninadhu preethi hanchiruva",
+                "Jothegiru neenu appana haage Hannele kaayo vinayadhi heege",
+                "Ninnanu padedha naavu puneetha Baalu nagu nagutha"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Taane uridhu manege belaku koduva deepavidhu Nanda deepave idhu",
+                "Aadisuvaathana karuneya mele namma pathrav",
+                "Samayadha sutra avanadhu",
+                "Ondu muttina katheya helithu ee bombe",
+                "Aa katheyallidha raajanange neenu bande",
+                "Yogavu omme baruvudhu namage Yogyathe ondhu ulivudhu konege",
+                "Suryanobba chandranobba Raajanu obba ee raajanu obba"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Aadisiye nodu beelisiye nodu Endu soladu sothu taleya baagadu"
+              ]
+            }
+          ],
+          "indexNo": 26,
+          "indexTitle": "Bombe helutaite"
         },
         {
           "raag": null,
           "taal": "Bhajan Tekaa",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Bansidharaa kanhaiyyaa Ghana shyaama sundaraa", "Giridhaari gopabaalaa brandaavana vihaaraa"]},
-            {"marked": true, "lines": ["Govinda maadhavaa hare madhusoodhana muraare", "Raadhe govinda raadhe raadhe govinda raadhe"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Bansidharaa kanhaiyyaa Ghana shyaama sundaraa",
+                "Giridhaari gopabaalaa brandaavana vihaaraa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Govinda maadhavaa hare madhusoodhana muraare",
+                "Raadhe govinda raadhe raadhe govinda raadhe"
+              ]
+            }
+          ],
+          "indexNo": 27,
+          "indexTitle": "bansidhara"
         }
       ]
     },
@@ -395,10 +1153,36 @@
           "attribution": "MOVIE - FANA",
           "note": "tongue-twister song",
           "stanzas": [
-            {"marked": false, "lines": ["Chanda chamke cham cham, chikhe chaukanna chor", "Chitee chate chinee chatoree chinikhor", "Kitna mushkil yeh gana jara gake dikhana", "Chanda chinee chamke chate chaukanna chikhe chor"]},
-            {"marked": false, "lines": ["Khadaksingh ke khadakne se khadaktee hain khidkiya", "Khidkiyo ke khadakne se khadakta hain khadaksingh", "Kitna mushkil yeh gana jara gake dikhana", "Khadak khadak ke khadake khidkee, khadaksingh kaa khadke jor"]},
-            {"marked": false, "lines": ["Pakke ped par paka papita, paka ped ya paka papita", "Pake ped ko pakde pinku, pinku pakde paka papita", "Kitna mushkil yeh gana jara gake dikhana", "Pake ped ko pakde pinku, pinku pakde paka papita"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Chanda chamke cham cham, chikhe chaukanna chor",
+                "Chitee chate chinee chatoree chinikhor",
+                "Kitna mushkil yeh gana jara gake dikhana",
+                "Chanda chinee chamke chate chaukanna chikhe chor"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Khadaksingh ke khadakne se khadaktee hain khidkiya",
+                "Khidkiyo ke khadakne se khadakta hain khadaksingh",
+                "Kitna mushkil yeh gana jara gake dikhana",
+                "Khadak khadak ke khadake khidkee, khadaksingh kaa khadke jor"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Pakke ped par paka papita, paka ped ya paka papita",
+                "Pake ped ko pakde pinku, pinku pakde paka papita",
+                "Kitna mushkil yeh gana jara gake dikhana",
+                "Pake ped ko pakde pinku, pinku pakde paka papita"
+              ]
+            }
+          ],
+          "indexNo": 28,
+          "indexTitle": "Chanda chamke"
         },
         {
           "raag": null,
@@ -406,13 +1190,51 @@
           "attribution": null,
           "note": "nursery/children's song",
           "stanzas": [
-            {"marked": false, "lines": ["Choti Choti Gaiya Chotay Chotay Gwaal", "Chotoso Mero Madan Gopal"]},
-            {"marked": false, "lines": ["Aage Aage Gaiya Pichay Pichay Gwaal", "Beech-May Mero Madan Gopal"]},
-            {"marked": false, "lines": ["Kaari Kaari Gaiya Goray Goray Gwaal", "Shyam Baran Mero Madan Gopal"]},
-            {"marked": false, "lines": ["Ghaasn Khaavay Gaiya Dhudh Peevay Gwaal", "Maakhan Khaavay Mero Madan Gopal"]},
-            {"marked": false, "lines": ["Choti Choti Lakuti Chotay Chotay Haath", "Bansi Bajaaway Mero Madan Gopal"]},
-            {"marked": false, "lines": ["Choti Choti Sakhiyaan Madhuban Baal", "Raas Rachaaway Mero Madan Gopal"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Choti Choti Gaiya Chotay Chotay Gwaal",
+                "Chotoso Mero Madan Gopal"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Aage Aage Gaiya Pichay Pichay Gwaal",
+                "Beech-May Mero Madan Gopal"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kaari Kaari Gaiya Goray Goray Gwaal",
+                "Shyam Baran Mero Madan Gopal"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ghaasn Khaavay Gaiya Dhudh Peevay Gwaal",
+                "Maakhan Khaavay Mero Madan Gopal"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Choti Choti Lakuti Chotay Chotay Haath",
+                "Bansi Bajaaway Mero Madan Gopal"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Choti Choti Sakhiyaan Madhuban Baal",
+                "Raas Rachaaway Mero Madan Gopal"
+              ]
+            }
+          ],
+          "indexNo": 29,
+          "indexTitle": "Choti choti gaiyya"
         }
       ]
     },
@@ -425,20 +1247,66 @@
           "taal": "Dadra",
           "attribution": "MOVIE - ARADHANA",
           "stanzas": [
-            {"marked": false, "lines": ["Chanda Hai Tu, Mera Suraj Hai Tu, O Meri Aankhon Ka Tara Hai Tu", "Jiti Hu Main Bas Tujhe Dekhakar, Iss Tute Dil Ka Sahara Hai Tu"]},
-            {"marked": false, "lines": ["Tu Khele Khel Kayi, Mera Khilona Hai Tu", "Jisase Bandhi Har Aasha Meri, Mera Wo Sapna Salona Hai Tu", "Nanhasa Hai Kitana Sundar Hai Tu, Chhotasa Hai Kitana Pyara Hai Tu"]},
-            {"marked": false, "lines": ["Munne Tu Khush Hai Bada, Tere Gudde Ki Shadi Hai Aaj", "Main Wari Re Main Balihari Re, Ghunghat Mein Gudiya Ko Aati Hai Laaj", "Yuhi Kabhi Hogi Shadi Teri, Dulha Banega Kunwara Hai Tu"]},
-            {"marked": false, "lines": ["Purwayi Wan Me Ude, Panchhi Chaman Mein Ude", "Ram Kare Kabhi Ho Ke Bada, Tu Banake Badal Gagan Mein Ude", "Jo Bhi Tujhe Dekhe Woh Yeh Kahe, Kis Mann Ka Aisa Dulara Hai Tu"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Chanda Hai Tu, Mera Suraj Hai Tu, O Meri Aankhon Ka Tara Hai Tu",
+                "Jiti Hu Main Bas Tujhe Dekhakar, Iss Tute Dil Ka Sahara Hai Tu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Tu Khele Khel Kayi, Mera Khilona Hai Tu",
+                "Jisase Bandhi Har Aasha Meri, Mera Wo Sapna Salona Hai Tu",
+                "Nanhasa Hai Kitana Sundar Hai Tu, Chhotasa Hai Kitana Pyara Hai Tu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Munne Tu Khush Hai Bada, Tere Gudde Ki Shadi Hai Aaj",
+                "Main Wari Re Main Balihari Re, Ghunghat Mein Gudiya Ko Aati Hai Laaj",
+                "Yuhi Kabhi Hogi Shadi Teri, Dulha Banega Kunwara Hai Tu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Purwayi Wan Me Ude, Panchhi Chaman Mein Ude",
+                "Ram Kare Kabhi Ho Ke Bada, Tu Banake Badal Gagan Mein Ude",
+                "Jo Bhi Tujhe Dekhe Woh Yeh Kahe, Kis Mann Ka Aisa Dulara Hai Tu"
+              ]
+            }
+          ],
+          "indexNo": 30,
+          "indexTitle": "Chanda hai tu"
         },
         {
           "raag": null,
           "taal": "Kehrava",
           "attribution": "MOVIE - MAIN AISA HI HOON",
           "stanzas": [
-            {"marked": false, "lines": ["Chanda Ne Poocha Taaron Se Taaron Ne Poocha Hazaaron Se", "Sab Se Pyara Kaun Hai Papa Mere Papa Papa Tere Papa"]},
-            {"marked": false, "lines": ["Meethi Meethi Baaton Se Who Sab Ko Hansata Hai", "Pyaari Adaaon Se Woh Dil Behlaata Hai", "Duniya Mein Aate Jaate Woh Pyaar Lutaata Hai", "Saagar Ne Poocha Naiyya Se Naiyya Ne Poocha Kniwaiyya Se", "Sab Se Pyara Kaun Hai Papa Mere Papa Papa Tere Papa"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Chanda Ne Poocha Taaron Se Taaron Ne Poocha Hazaaron Se",
+                "Sab Se Pyara Kaun Hai Papa Mere Papa Papa Tere Papa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Meethi Meethi Baaton Se Who Sab Ko Hansata Hai",
+                "Pyaari Adaaon Se Woh Dil Behlaata Hai",
+                "Duniya Mein Aate Jaate Woh Pyaar Lutaata Hai",
+                "Saagar Ne Poocha Naiyya Se Naiyya Ne Poocha Kniwaiyya Se",
+                "Sab Se Pyara Kaun Hai Papa Mere Papa Papa Tere Papa"
+              ]
+            }
+          ],
+          "indexNo": 31,
+          "indexTitle": "Chandane poocha"
         }
       ]
     },
@@ -451,23 +1319,90 @@
           "taal": "Kehrava",
           "attribution": "BHAJAN",
           "stanzas": [
-            {"marked": false, "lines": ["Chetan dev ki sevaa karo narajanma safal hojaaya tumhaaro"]},
-            {"marked": true, "lines": ["Ghata ghata poorana eka niranjana", "Dwaita bhaava sab doora nivaaro", "Hirade andar mandira maahi jagamaga jyota jage ujiyaaro"]},
-            {"marked": false, "lines": ["Prema pushpa se poojan kije", "man Deepak dhar dhyaan vichaaro", "bramhaananda ulata Surateeko", "kara darshana bhava bandhana taaro"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Chetan dev ki sevaa karo narajanma safal hojaaya tumhaaro"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Ghata ghata poorana eka niranjana",
+                "Dwaita bhaava sab doora nivaaro",
+                "Hirade andar mandira maahi jagamaga jyota jage ujiyaaro"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Prema pushpa se poojan kije",
+                "man Deepak dhar dhyaan vichaaro",
+                "bramhaananda ulata Surateeko",
+                "kara darshana bhava bandhana taaro"
+              ]
+            }
+          ],
+          "indexNo": 32,
+          "indexTitle": "Chetana devki"
         },
         {
           "raag": null,
           "taal": "Keharava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Choto chotoso Krishna kanhaiyyaa", "Pyaaro pyaaroso bansi bajaiyyaa", "Brijadhama ko vo dhenu charaiyyaa", "Vo to panapana naaganathaiyyaa"]},
-            {"marked": true, "lines": ["Maakhan chori kare joraa jori kare", "Gopiyanaki mataki phuddaiyyaa", "Pyaaro pyaaroso bansi bajaiyyaa"]},
-            {"marked": false, "lines": ["Chaayi brija me umanga khele gwaalon ke sanga", "Raadhaa raani sanga raasa rachaiyyaa", "Pyaaro pyaaroso bansi bajaiyyaa"]},
-            {"marked": true, "lines": ["Krishna bansi baje radha gori naache", "Vo to muralipe mohit karaiyyaa", "Pyaaro pyaaroso bansi bajaiyyaa"]},
-            {"marked": false, "lines": ["Indra varsha kare Krishna raksha kare", "Vo to khud hi leelaa rachaiyyaa", "Pyaaro paaroso bansi bajaiyyaa"]},
-            {"marked": false, "lines": ["Mathe mukut saaje paga paijan baajhe", "Maiyyaa yashodaji lere balaiyyaa", "Pyaaro pyaaroso bansi bajaiyyaa"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Choto chotoso Krishna kanhaiyyaa",
+                "Pyaaro pyaaroso bansi bajaiyyaa",
+                "Brijadhama ko vo dhenu charaiyyaa",
+                "Vo to panapana naaganathaiyyaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Maakhan chori kare joraa jori kare",
+                "Gopiyanaki mataki phuddaiyyaa",
+                "Pyaaro pyaaroso bansi bajaiyyaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Chaayi brija me umanga khele gwaalon ke sanga",
+                "Raadhaa raani sanga raasa rachaiyyaa",
+                "Pyaaro pyaaroso bansi bajaiyyaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Krishna bansi baje radha gori naache",
+                "Vo to muralipe mohit karaiyyaa",
+                "Pyaaro pyaaroso bansi bajaiyyaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Indra varsha kare Krishna raksha kare",
+                "Vo to khud hi leelaa rachaiyyaa",
+                "Pyaaro paaroso bansi bajaiyyaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Mathe mukut saaje paga paijan baajhe",
+                "Maiyyaa yashodaji lere balaiyyaa",
+                "Pyaaro pyaaroso bansi bajaiyyaa"
+              ]
+            }
+          ],
+          "indexNo": 33,
+          "indexTitle": "Choto choto so"
         }
       ]
     },
@@ -480,21 +1415,78 @@
           "taal": "Kehrava",
           "attribution": "MOVIE - ROJA",
           "stanzas": [
-            {"marked": false, "lines": ["Dil hai chhota saa chhoti si aashaa", "Masti bhare mann ki bholi si aashaa", "Chand taaron ko chhuune ki aashaa", "Aasamaanon mein uddne ki ashaa"]},
-            {"marked": false, "lines": ["Mehek jaauun main aaj to aise", "Phool bagiyaa mein meheke hai jaise", "Baadalon ki main odhoon chunariyaa", "Jhoom jaauun main banke bawariyaa", "Apni choti mein bandh luun duniyaa"]},
-            {"marked": false, "lines": ["Swarg si dharti khila rahee jaise", "Mera mann bhi to khil rahaa aise", "Koyal ki tarahaa gaane ka aramaan", "Machhali ki tarahaa machalu ye armaan", "Jawaani hai laayi rangeen sapnaa"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Dil hai chhota saa chhoti si aashaa",
+                "Masti bhare mann ki bholi si aashaa",
+                "Chand taaron ko chhuune ki aashaa",
+                "Aasamaanon mein uddne ki ashaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Mehek jaauun main aaj to aise",
+                "Phool bagiyaa mein meheke hai jaise",
+                "Baadalon ki main odhoon chunariyaa",
+                "Jhoom jaauun main banke bawariyaa",
+                "Apni choti mein bandh luun duniyaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Swarg si dharti khila rahee jaise",
+                "Mera mann bhi to khil rahaa aise",
+                "Koyal ki tarahaa gaane ka aramaan",
+                "Machhali ki tarahaa machalu ye armaan",
+                "Jawaani hai laayi rangeen sapnaa"
+              ]
+            }
+          ],
+          "indexNo": 34,
+          "indexTitle": "Chotisi aasha"
         },
         {
           "raag": null,
           "taal": "Dadra",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Dhavala himadha giriya mele aruna dhwajava haarisi", "Mugila eri eri ninthu vijaya bheri bhaarisi"]},
-            {"marked": false, "lines": ["Sidhu kaniveyolaginindha veeragaana molagali", "Dhyaya raviya kirana tharunaredheya gudiya belagali", "Eddhu nillu bhaaratha dhivya prabheya beerutha"]},
-            {"marked": false, "lines": ["Manava hasirugolisuthihalu bhaava gange anudhina", "Ileya koleya tholeyuthihalu thaayi thunge kshana kshana", "Nelavidhemma paavana enithu dhanya jeevana"]},
-            {"marked": false, "lines": ["Naada gudiya mooru kadeya poreva shaantha saagara", "Hindhu janara hradhayavindhu kshathra tejadhaagara", "Spoorthi gouri shankara kaala yamanu kinkara"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Dhavala himadha giriya mele aruna dhwajava haarisi",
+                "Mugila eri eri ninthu vijaya bheri bhaarisi"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Sidhu kaniveyolaginindha veeragaana molagali",
+                "Dhyaya raviya kirana tharunaredheya gudiya belagali",
+                "Eddhu nillu bhaaratha dhivya prabheya beerutha"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Manava hasirugolisuthihalu bhaava gange anudhina",
+                "Ileya koleya tholeyuthihalu thaayi thunge kshana kshana",
+                "Nelavidhemma paavana enithu dhanya jeevana"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Naada gudiya mooru kadeya poreva shaantha saagara",
+                "Hindhu janara hradhayavindhu kshathra tejadhaagara",
+                "Spoorthi gouri shankara kaala yamanu kinkara"
+              ]
+            }
+          ],
+          "indexNo": 35,
+          "indexTitle": "Dhavala hiimada"
         }
       ]
     },
@@ -507,21 +1499,74 @@
           "taal": "Kehrava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Devaa gananaayakaa paalaka devaa ganagaayaka paalaka"]},
-            {"marked": true, "lines": ["Kandu kai mugiyuve sondila devaa", "Bramhaanda naayaka bramhaadi namita", "Danda dandadaliha bhaktara kaayva"]},
-            {"marked": false, "lines": ["Eleyannu beleguve gowri puresha", "Chaluvaa mahaakaaya kalimala naasha", "Nalinaaksha priyasakha devaa vighneshaa"]},
-            {"marked": true, "lines": ["Gambheera gananaatha trijaga vikhyaata", "Nambidavara deva nambide janaka", "Bandu nee salaho devaa ganeshaa"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Devaa gananaayakaa paalaka devaa ganagaayaka paalaka"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Kandu kai mugiyuve sondila devaa",
+                "Bramhaanda naayaka bramhaadi namita",
+                "Danda dandadaliha bhaktara kaayva"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Eleyannu beleguve gowri puresha",
+                "Chaluvaa mahaakaaya kalimala naasha",
+                "Nalinaaksha priyasakha devaa vighneshaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Gambheera gananaatha trijaga vikhyaata",
+                "Nambidavara deva nambide janaka",
+                "Bandu nee salaho devaa ganeshaa"
+              ]
+            }
+          ],
+          "indexNo": 36,
+          "indexTitle": "Deva gananayaka"
         },
         {
           "raag": null,
           "taal": "Kehrava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Devi bhvuna mana mohini", "Nirmala suriya karojwala dharani", "Janaka janani janani"]},
-            {"marked": true, "lines": ["Neela sindhujala dowtha charana thala", "Anila vikampitha shyaamalaanchana", "Ambara chumbitha paala himaalaya", "shubhra thushaara kireetini"]},
-            {"marked": false, "lines": ["Prathama prabhaatha uditha tava gagani", "Prathama naama kava thava thapovana", "Prathama prasaarithe thapovane bhuvane", "Daana dharmajara kaavya vaahini"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Devi bhvuna mana mohini",
+                "Nirmala suriya karojwala dharani",
+                "Janaka janani janani"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Neela sindhujala dowtha charana thala",
+                "Anila vikampitha shyaamalaanchana",
+                "Ambara chumbitha paala himaalaya",
+                "shubhra thushaara kireetini"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Prathama prabhaatha uditha tava gagani",
+                "Prathama naama kava thava thapovana",
+                "Prathama prasaarithe thapovane bhuvane",
+                "Daana dharmajara kaavya vaahini"
+              ]
+            }
+          ],
+          "indexNo": 37,
+          "indexTitle": "Devi bhuvana"
         }
       ]
     },
@@ -534,20 +1579,60 @@
           "taal": "Bhajan Kheka",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Devi bhajo durugaa bhavaani", "Jagata janani mahishaasura mardhini"]},
-            {"marked": true, "lines": ["Himanaga nandini bhava bhaya bhanjini", "Sura naarada muni mangala abhaye"]},
-            {"marked": false, "lines": ["Sharanaagata mi rakshaka daayini", "Jayajaya mangala bhava bhaya haarini"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Devi bhajo durugaa bhavaani",
+                "Jagata janani mahishaasura mardhini"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Himanaga nandini bhava bhaya bhanjini",
+                "Sura naarada muni mangala abhaye"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Sharanaagata mi rakshaka daayini",
+                "Jayajaya mangala bhava bhaya haarini"
+              ]
+            }
+          ],
+          "indexNo": 38,
+          "indexTitle": "Devi bhjo"
         },
         {
           "raag": null,
           "taal": "Kehrava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Doora bahu dooraa hoguvaa baara", "Allihudenna oora teeraa doora doora hoguva baaraa"]},
-            {"marked": true, "lines": ["Jalajaladalegala melkunidaadi balalike talalikegalannella doodi", "Olavina maataadi hakkigalinchara keli aanandava taali"]},
-            {"marked": false, "lines": ["Hima mani kanakana sinchita anchina hasurina teetada melaadi", "Olavina maataadi hakkigalinchara keli aanandava taali"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Doora bahu dooraa hoguvaa baara",
+                "Allihudenna oora teeraa doora doora hoguva baaraa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Jalajaladalegala melkunidaadi balalike talalikegalannella doodi",
+                "Olavina maataadi hakkigalinchara keli aanandava taali"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Hima mani kanakana sinchita anchina hasurina teetada melaadi",
+                "Olavina maataadi hakkigalinchara keli aanandava taali"
+              ]
+            }
+          ],
+          "indexNo": 39,
+          "indexTitle": "Doora bahu doora"
         },
         {
           "raag": null,
@@ -555,10 +1640,29 @@
           "attribution": null,
           "note": "'[jaya]' and '/1' markers kept inline as printed",
           "stanzas": [
-            {"marked": false, "lines": ["Gopala radha lola murali lola nandalala [jaya]"]},
-            {"marked": false, "lines": ["Keshava madhava janardhana", "Bana mala brundaavana maala /1"]},
-            {"marked": false, "lines": ["Ananda mohana niranjana", "Bana maala brundaavana baala"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Gopala radha lola murali lola nandalala [jaya]"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Keshava madhava janardhana",
+                "Bana mala brundaavana maala /1"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ananda mohana niranjana",
+                "Bana maala brundaavana baala"
+              ]
+            }
+          ],
+          "indexNo": 40,
+          "indexTitle": "Gopala radha"
         }
       ]
     },
@@ -571,22 +1675,74 @@
           "taal": "Keherava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Ekadantam gajaananam shoorpa katnam lambodaram", "Herambham ganaadhipam sharanam sharanam gowri sutam"]},
-            {"marked": true, "lines": ["Suranara poojita shivasutane pramatha pratama suprajane", "Siddhi buddhi dayakane harasai mudadi ganeshane"]},
-            {"marked": false, "lines": ["Grahapati jnaaniye gunaadyane tusti vrasti dayakane", "Sharvaani suta prashaantane harasai mudadi gajamukhane"]},
-            {"marked": true, "lines": ["Shanmukha sodara shaashwatane vibhuda vishwa vanditane", "Mangala mooruti maheshane harasai mudadi vighneshane"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Ekadantam gajaananam shoorpa katnam lambodaram",
+                "Herambham ganaadhipam sharanam sharanam gowri sutam"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Suranara poojita shivasutane pramatha pratama suprajane",
+                "Siddhi buddhi dayakane harasai mudadi ganeshane"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Grahapati jnaaniye gunaadyane tusti vrasti dayakane",
+                "Sharvaani suta prashaantane harasai mudadi gajamukhane"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Shanmukha sodara shaashwatane vibhuda vishwa vanditane",
+                "Mangala mooruti maheshane harasai mudadi vighneshane"
+              ]
+            }
+          ],
+          "indexNo": 41,
+          "indexTitle": "Ekadantam"
         },
         {
           "raag": null,
           "taal": "Dadra",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Ee namma taayi naadu nirupama laavanya beedu", "Ee vanadhali nalidhulivaa kogilegelu naavu"]},
-            {"marked": false, "lines": ["Parvathagalalle higiya aagasadha nereya geleya", "Raksheyavane namage avane maargadharshi"]},
-            {"marked": false, "lines": ["Ee thaaya madilinalli saasira nadhigale hariyuvavu", "Ee sundhara nandhanake aa swargave karubuvudhu"]},
-            {"marked": false, "lines": ["Ee neladha dharmavandhu kalisadhu dhweshavanendhu", "Bhaaratheeyaru naavu nammee dhesha bharatha naadu"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Ee namma taayi naadu nirupama laavanya beedu",
+                "Ee vanadhali nalidhulivaa kogilegelu naavu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Parvathagalalle higiya aagasadha nereya geleya",
+                "Raksheyavane namage avane maargadharshi"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ee thaaya madilinalli saasira nadhigale hariyuvavu",
+                "Ee sundhara nandhanake aa swargave karubuvudhu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ee neladha dharmavandhu kalisadhu dhweshavanendhu",
+                "Bhaaratheeyaru naavu nammee dhesha bharatha naadu"
+              ]
+            }
+          ],
+          "indexNo": 42,
+          "indexTitle": "Ee namma taayi naadu"
         }
       ]
     },
@@ -599,31 +1755,98 @@
           "taal": "Bhajan Teka",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Gajamukha ganapa namo gajaanana", "Aadhi vandya sura nara poojithane"]},
-            {"marked": false, "lines": ["Siddhi buddhiyaraa muddhina kaanthaa", "Siddhiya needemage vinaayaka"]},
-            {"marked": false, "lines": ["Vidhyeya karunisu buddhiya karunisu", "Vigna vinaashakane vigneshane"]},
-            {"marked": false, "lines": ["Kaaryaarambhadhi kara mugivevu naav", "Kaarya kaigoodisu nee mahaa kaayane"]},
-            {"marked": false, "lines": ["Bhajanaarambhadhi bhajipevu ninnanu", "Jayavanu needemage ganeshane"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Gajamukha ganapa namo gajaanana",
+                "Aadhi vandya sura nara poojithane"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Siddhi buddhiyaraa muddhina kaanthaa",
+                "Siddhiya needemage vinaayaka"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Vidhyeya karunisu buddhiya karunisu",
+                "Vigna vinaashakane vigneshane"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kaaryaarambhadhi kara mugivevu naav",
+                "Kaarya kaigoodisu nee mahaa kaayane"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Bhajanaarambhadhi bhajipevu ninnanu",
+                "Jayavanu needemage ganeshane"
+              ]
+            }
+          ],
+          "indexNo": 43,
+          "indexTitle": "Gajamukha ganapa"
         },
         {
           "raag": null,
           "taal": "Dadra",
           "attribution": "VEENA. G.",
           "stanzas": [
-            {"marked": false, "lines": ["Ganapathi ganapathi ganapathi om ganapathi", "Karimukha kadubu priya karuni kadala ganapathi"]},
-            {"marked": false, "lines": ["Kava dheva ganapathi parama dhaiva ganapathi", "Omkaara naadha ganapathi omkaara roopi ganapathi"]},
-            {"marked": false, "lines": ["Unde pididha kaigalu balu chandha baala ganapathi", "Unde thindhu naliva namma muddhu baala ganapathi"]},
-            {"marked": false, "lines": ["Nanja kuvara ganapati gowri nanadha ganapati", "Nalidhu nalidhu aaduvantha dollu hotte ganapati"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Ganapathi ganapathi ganapathi om ganapathi",
+                "Karimukha kadubu priya karuni kadala ganapathi"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kava dheva ganapathi parama dhaiva ganapathi",
+                "Omkaara naadha ganapathi omkaara roopi ganapathi"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Unde pididha kaigalu balu chandha baala ganapathi",
+                "Unde thindhu naliva namma muddhu baala ganapathi"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Nanja kuvara ganapati gowri nanadha ganapati",
+                "Nalidhu nalidhu aaduvantha dollu hotte ganapati"
+              ]
+            }
+          ],
+          "indexNo": 44,
+          "indexTitle": "Ganapati ganapati"
         },
         {
           "raag": "Mru Bihag",
           "taal": "Kehrava",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Ghana shyama gopala Ghana shyama gopala", "Mann mohana jagan mohana Yadhunandana gopal", "Gopala gopala shyama gopala Gopala gopala sai gopala"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Ghana shyama gopala Ghana shyama gopala",
+                "Mann mohana jagan mohana Yadhunandana gopal",
+                "Gopala gopala shyama gopala Gopala gopala sai gopala"
+              ]
+            }
+          ],
+          "indexNo": 45,
+          "indexTitle": "Ghana shyaama"
         }
       ]
     },
@@ -636,22 +1859,80 @@
           "taal": "Roopak",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Gajamukhane ganapathiye ninage vandane", "Namdidavara baalina kalpatharu nine"]},
-            {"marked": true, "lines": ["Bhaadrapada shukladaa chauthiyandu", "Ni mane manegu dayamaadi harasu yendu", "Ninna sannidhaanadi thalebaagi kaiyamugidu", "Beduvaa bhaktarige ni dhayaa Sindhu"]},
-            {"marked": false, "lines": ["Eerelu lokada anu anuvinaa", "Ihaparadaa saa dhanake ni karana", "Ninolume nothada ondu honnakirana", "Nididare saakayya janma paavana"]},
-            {"marked": true, "lines": ["Paarvathi parashivana prema puthrane", "Paalisuvaa paradaiva bere kaane", "Paapada pankadali paduma yenisu yenna", "Paada seveyonde dharama saadhana"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Gajamukhane ganapathiye ninage vandane",
+                "Namdidavara baalina kalpatharu nine"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Bhaadrapada shukladaa chauthiyandu",
+                "Ni mane manegu dayamaadi harasu yendu",
+                "Ninna sannidhaanadi thalebaagi kaiyamugidu",
+                "Beduvaa bhaktarige ni dhayaa Sindhu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Eerelu lokada anu anuvinaa",
+                "Ihaparadaa saa dhanake ni karana",
+                "Ninolume nothada ondu honnakirana",
+                "Nididare saakayya janma paavana"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Paarvathi parashivana prema puthrane",
+                "Paalisuvaa paradaiva bere kaane",
+                "Paapada pankadali paduma yenisu yenna",
+                "Paada seveyonde dharama saadhana"
+              ]
+            }
+          ],
+          "indexNo": 46,
+          "indexTitle": "Gajamukhane ganapatiye"
         },
         {
           "raag": "Bhoopala",
           "taal": "Bhajan Teka",
           "attribution": null,
           "stanzas": [
-            {"marked": false, "lines": ["Gaayiye ganapati jaga vandana", "Shankara sumana bhavaani nandana"]},
-            {"marked": true, "lines": ["Siddhi sadana gajavadana vinaayak", "Krapaa sindhu sundara sabalaayaka"]},
-            {"marked": false, "lines": ["Modaka priya muda mangaladaataa", "Vidya vaaridhi buddhi pradhaataa"]},
-            {"marked": true, "lines": ["Maangata tulasidaasa karajore", "Basahi raama siyaa maanasa more"]}
-          ]
+            {
+              "marked": false,
+              "lines": [
+                "Gaayiye ganapati jaga vandana",
+                "Shankara sumana bhavaani nandana"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Siddhi sadana gajavadana vinaayak",
+                "Krapaa sindhu sundara sabalaayaka"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Modaka priya muda mangaladaataa",
+                "Vidya vaaridhi buddhi pradhaataa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Maangata tulasidaasa karajore",
+                "Basahi raama siyaa maanasa more"
+              ]
+            }
+          ],
+          "indexNo": 47,
+          "indexTitle": "Gaayiye ganapati"
         }
       ]
     },
@@ -665,10 +1946,32 @@
           "attribution": null,
           "note": "addressed to Vitthal/Pandurang, imagery of a horse",
           "stanzas": [
-            {"marked": true, "lines": ["Ghod tujhe roop deva ghod tujhe naama", "Paanduranga paanduranga paanduranga naama", "Ghod tujhe naama smarana ghod tujhe naama shravana", "Raamakrishna raamakrishna raamakrishna naama"]},
-            {"marked": false, "lines": ["Pandarichaa vaara kari vittala naam ghajari", "Shreehari vithevari kara kataavari"]},
-            {"marked": true, "lines": ["Janimane roopaa ghoda naama mane naama ghoda", "Tukaa mane charan ghoda prabhu vittalaa"]}
-          ]
+            {
+              "marked": true,
+              "lines": [
+                "Ghod tujhe roop deva ghod tujhe naama",
+                "Paanduranga paanduranga paanduranga naama",
+                "Ghod tujhe naama smarana ghod tujhe naama shravana",
+                "Raamakrishna raamakrishna raamakrishna naama"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Pandarichaa vaara kari vittala naam ghajari",
+                "Shreehari vithevari kara kataavari"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Janimane roopaa ghoda naama mane naama ghoda",
+                "Tukaa mane charan ghoda prabhu vittalaa"
+              ]
+            }
+          ],
+          "indexNo": 48,
+          "indexTitle": "God tuze"
         },
         {
           "raag": "Jeevanpuri",
@@ -677,9 +1980,2012 @@
           "status": "partial",
           "note": "handwritten swara annotations (SRGRS / SRMGRS / MPDGRS / MPDNDS) appear beside this song in the margin - not transcribed as they look like a practice scale note rather than part of the lyric. A fragment of a further song ('sha di / hin. / seva / tho') is obscured by a child's drawing at the bottom of the page and could not be read - re-check photo if that song matters.",
           "stanzas": [
-            {"marked": false, "lines": ["Gajamukha naa ninna naamava neneve", "Nijavaagi karunisu varagala deva"]},
-            {"marked": true, "lines": ["Mooshika vaahana modhaka hasthaa", "Paashaankushadhara kamala prashasthaa", "Shyaamala varna vilambitha sootra", "Vaamana roopa maheshwara puthra"]},
-            {"marked": false, "lines": ["Buddhi pradhaayaka pusthaka dhaari", "Siddhi vinaayaka paadha namasthe", "Vaarijodhbhava vinutha paraabuja", "Gouriya varaputhra shree gananaayaka"]}
+            {
+              "marked": false,
+              "lines": [
+                "Gajamukha naa ninna naamava neneve",
+                "Nijavaagi karunisu varagala deva"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Mooshika vaahana modhaka hasthaa",
+                "Paashaankushadhara kamala prashasthaa",
+                "Shyaamala varna vilambitha sootra",
+                "Vaamana roopa maheshwara puthra"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Buddhi pradhaayaka pusthaka dhaari",
+                "Siddhi vinaayaka paadha namasthe",
+                "Vaarijodhbhava vinutha paraabuja",
+                "Gouriya varaputhra shree gananaayaka"
+              ]
+            }
+          ],
+          "indexNo": 49,
+          "indexTitle": "Gajamukha naa ninna"
+        }
+      ]
+    },
+    {
+      "pageNumber": "24",
+      "sourceImage": "assets/songs/page_024.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Gopala gopala shyama gopala",
+                "Murali gaana lola gopi gopaala",
+                "Devaki nandana sundara venu gopaala",
+                "Oh raadhe raadhe raadhe raadhe raadhe gopala"
+              ]
+            }
+          ],
+          "indexNo": 50,
+          "indexTitle": "Gopala gopala"
+        },
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Govinda Krishna hari om Gopala Krishna hari om",
+                "Govinda Krishna hari om raadhaa ramana hari om"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Radha ko sangha murali bhajaave",
+                "Gopiyana ke sangha raas rachaave",
+                "Sab ko nachaave hari omm Gopala Krishna hari omm"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Prem ke bas hi tu bhik jaave,",
+                "Drupad sutaa kee jhoot na khaave",
+                "Sab sukh pave hari omm Mann bhar aave hari omm"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Aaja mann vaa tujh ko bhulaave",
+                "Nishdin gaave chainan pave",
+                "Tadapa bhulaave hari omm Thoda aave hari omm"
+              ]
+            }
+          ],
+          "indexNo": 51,
+          "indexTitle": "Govinda krishna"
+        },
+        {
+          "raag": null,
+          "taal": "Trital",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Giridhar aage naachungi",
+                "Naach naach piva rasik rijhaun, premi jan ko jaachungi",
+                "Prem preeti kaa bandhi ghunghroo, surath ki kachani kaachhungi",
+                "Lok laaj kul ki maryaadaa, ya mein ek na raakhungi",
+                "Piva ke palanga jaa paudungi meera hari rang rachungi"
+              ]
+            }
+          ],
+          "indexNo": 52,
+          "indexTitle": "Giridhara aage"
+        }
+      ]
+    },
+    {
+      "pageNumber": "25",
+      "sourceImage": "assets/songs/page_025.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Govardhana giridhari murari narayan gopala",
+                "Mukunda madhava murali dhaari naraayan gopala",
+                "Narayan gopala gaavon narayan gopala",
+                "Mukunda madhava murali dhaari naarayan gopaala"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Yashodha mayya ki aakonka taaraa",
+                "Baala gwaala our makhan chora",
+                "Munijana vallabha brij kaa pyaara"
+              ]
+            }
+          ],
+          "indexNo": 53,
+          "indexTitle": "Govardhana giridhari"
+        },
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Ghana shyaam Ghana shyaam",
+                "raadhe raadhe mohana ghanashyaama",
+                "Vasudeva sutha devaki nandana",
+                "Vandana daayaka bhandana mochana",
+                "Pragata bhaye tumh kaaraagruhaa mein",
+                "Chod ke sab aaram ghan shyaama"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Khul gaye bandhan kaaraagruh ke",
+                "Chandana bansi taaraa mehke",
+                "Bhool gayi dukh maathaa devaki",
+                "Kar ke tumhe pranaam ghan shyama"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Umadh pade baadal neeche ko",
+                "Umadi yamunaa pag choone ko",
+                "Jal gaavan mein nikhale jaayak",
+                "Sar par tumko dhaam Ghana shyaama"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Raas rachaa kar brundaavana mein",
+                "Baite hai thulasi kaanan mein",
+                "Bana maala se poojitha shobhita",
+                "Bana maali abhiram Ghana shyaam"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Nisha dhina tera darshana paakar",
+                "Nisha dhina teri mahima gaakar",
+                "Bhar do sevaa me mann mohana",
+                "Bheete aathoyan Ghana shyaam"
+              ]
+            }
+          ],
+          "indexNo": 54,
+          "indexTitle": "Ghana shyam"
+        }
+      ]
+    },
+    {
+      "pageNumber": "26",
+      "sourceImage": "assets/songs/page_026.jpg",
+      "songs": [
+        {
+          "raag": "Khamaj",
+          "taal": "Bhajan Teka",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Govinda maadhava gopaala keshava",
+                "Narasimhaachyuta naaraayana",
+                "Dasharatha nandana seetaa manohara",
+                "Daanava mardhana dayaanidhe"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Raama raaghava raajeeva lochana Kaamita faladaa karivaradaa",
+                "Krishna keshava ambujalochana Kaamita faladaa karivaradaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Raama raama govinda raama Kalyaana raama paahi",
+                "Shreeraama raama pattabhi raama Kodanda raama paahi jai jai"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Raama raama nayanaabhi raama Lokaabhi raamaa paahi",
+                "Jaladhi shayana ravi chandravilochana Jalajabhavastuta shreeramaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kousalyaatmaja kaamita falada Maaruti sevita paahi",
+                "Raama raamaa paahi hare Raama raajaa paahi jai jai"
+              ]
+            }
+          ],
+          "indexNo": 55,
+          "indexTitle": "Govinda madhava"
+        },
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": "Janapada (folk)",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Ghallu gallenuta gejje gallu thaajenuthaa",
+                "Ballida rangan balliya myaale chellidarokuliyo"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Aredaru arishinavaa adake beredaru sunnavaa",
+                "Andavulla rangan myaale chellidaro kuliyo"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Haalino kuliyo bale neeladokuliyo",
+                "Lolanaada rangan myaale haalino kuliyo"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Thuppado kuliyo olle oppadokuliyo",
+                "Oppavulla rangan myaale tuppado kuliyo"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Gandhadokuliyo olle chandadokuliyo",
+                "Andavulla rangan myaale gandhado kuliyo"
+              ]
+            }
+          ],
+          "indexNo": 56,
+          "indexTitle": "Gallu ghallenuta"
+        }
+      ]
+    },
+    {
+      "pageNumber": "27",
+      "sourceImage": "assets/songs/page_027.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "title": "Ham Ko Man Ki Shakti Dena",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Hamko man ki shaki dena man vijay kare",
+                "Doosaronke jaise pehele khud ko jai kare"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Bhed bhaav apane dil se saaf kar sakhe",
+                "Dostonse bhool hoto maaf kar sakhe",
+                "Jhoot se bache rahe sach kadam bhare",
+                "Doosaronke jaise pehele khud ko jai kare"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Mushkile pade to ham pe itanaa karma kar",
+                "Saath detu dharma kaa challenge dharma par",
+                "Khud pe hosalaa rahe badi se naa dare",
+                "Doosaronke jaise pehele khud ko jai kare"
+              ]
+            }
+          ],
+          "indexNo": 57,
+          "indexTitle": "Ham ko man ki"
+        },
+        {
+          "raag": null,
+          "taal": "Keherava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Lalalaa lalalaa laalalalaa laalalalaa lalalalaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "He maatra bhoomi tere charanome sira namaavu",
+                "Mai bhakti benta apani tere sharan me laavu"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Jis se sapoot upaje shreeraamakrishna jaise",
+                "Us teri dhooliko mai nij sheesh pai chadaavu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Sevaame teri saare bhedonko bhool jaavu",
+                "Vaha punya naam teraa pratidan sun sunaavu"
+              ]
+            }
+          ],
+          "indexNo": 58,
+          "indexTitle": "He matrabhoomi tere"
+        },
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Hara ganga jattadhara gowri shankara",
+                "Girijaa manoramana",
+                "Hara mratyunjaya mahadeva maheshwara",
+                "Mangala shubha charana"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Nandi vaahana naagabhooshana",
+                "Nirupama gunasadana (saayi)",
+                "Natana manohara neelakanta saayi",
+                "Neerajadala nayana saayi"
+              ]
+            }
+          ],
+          "indexNo": 59,
+          "indexTitle": "Hara ganga"
+        }
+      ]
+    },
+    {
+      "pageNumber": "28",
+      "sourceImage": "assets/songs/page_028.jpg",
+      "note": "continues the Shiva bhajan started at the bottom of page 27",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Hari sundara nanda mukunda hari naaraayana hari om",
+                "Hari keshava hari govinda hari naaraayana hari om"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Vanamaali muralidhaari govardhana girivaradhaari",
+                "Nitnit kar maakhan chori",
+                "Aavore kaanhaare gokul ki pyaare",
+                "Gaavore naachore gokul ki pyaare"
+              ]
+            }
+          ],
+          "indexNo": 60,
+          "indexTitle": "Hari sundara"
+        },
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "He shaaradhe maa he shaaradhe maa",
+                "Ajnaanathaase hame thaardhe maa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Thu swar ki dhevi sangeeth thujhase",
+                "Har shabdha theraa hai har geeth thujhse",
+                "Ham hai akhele ham hai adhoore",
+                "Theri sharan ham hame pyaar dhe maa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Dhuniyone samaji dhuniyone jaane",
+                "Vedhonki bhaashaa puraanonki vaani",
+                "Ham bhi tho samjhe ham bhi tho jaane",
+                "Vidhyaa ka ham ko adhikaar dhe maa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Thu swetha varni kamal par viraaje",
+                "Haatho me veenaa mukut sir saaje",
+                "Man se hamaare mitaake andhere",
+                "Ham ko jaano prasansaar dhemaa"
+              ]
+            }
+          ],
+          "indexNo": 61,
+          "indexTitle": "He sharade ma"
+        }
+      ]
+    },
+    {
+      "pageNumber": "29",
+      "sourceImage": "assets/songs/page_029.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Hemme nanage amma ninna thaayi endhu kareyalu",
+                "Kandhanemba ninna preethi saviyu jeniginthalu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Enu thane iddharu ninagu sirivsntharu",
+                "Balle naane iruvaresto ninagu dheemantharu",
+                "Gaali bandha garimeyalli yaaru samake baruvaru",
+                "Thaali nintha sahaneyalli ninna yaaru geluvaru"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Praacheene enisidharu chira noothane neenu",
+                "Vedha moolavadha jnaana sudhege neenu jenu",
+                "Koti koti belaku arali ninna paadha tholedhive",
+                "Ninna kaanalendhe Chandra thaare nabhadhi neredhive"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Thampu aaladhadige bandhu nintha bhaktha naanu",
+                "Melinindha kelagurulidha bitthavaadharenu",
+                "Nanna manadhi aralutthidhe thaaya ninna roopa",
+                "Kampu beeri sutthalella haradi niluva dhooap"
+              ]
+            }
+          ],
+          "indexNo": 62,
+          "indexTitle": "Hemme nanage"
+        },
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Hari naaraayana hari naaraayana hari naaraayana bhajore",
+                "Shyaama sundhara madhana gopaala",
+                "Sachchidhaanandhaa saayi narayana",
+                "Gopi gopaalana gopi gopaalana gopi gopaalana bhajore",
+                "Jaya madhusoodhana hare madhusoodhana",
+                "Jaya madhusoodhana bhajore"
+              ]
+            }
+          ],
+          "indexNo": 63,
+          "indexTitle": "Hari narayana"
+        }
+      ]
+    },
+    {
+      "pageNumber": "30",
+      "sourceImage": "assets/songs/page_030.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "note": "the \\\\word\\\\ markers are kept inline exactly as printed (an echo/repeat convention, similar to the '(2)' markers used elsewhere)",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Hennina janumake anna thammaru beku",
+                "Bennu thattuvaru sabheyolage \\\\savira\\\\",
+                "honna kattuvaru udiyolage"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Enage yaarillantha manadhaaga marugidhare",
+                "Paranaadalobba prathisoorya \\\\nannanna\\\\",
+                "Bidhige chandhraama udhiyaadha"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Maneya hindhala maavu nenedhaare ghammendhu",
+                "Nenedhanthe bandha nana anna \\\\baaleya\\\\",
+                "Goneyaange thola thiruootha"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Saradhaara baruvaga suridhaavu mallige",
+                "Dhore nanna thamma baruvaaga \\\\yaalakki\\\\",
+                "Gone baagi haala suridhaavo"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Anna baruthaanantha angalake kai kottu",
+                "Ranna battalige mane haaki\\\\kelenu\\\\",
+                "Thannagihare thavaravaru"
+              ]
+            }
+          ],
+          "indexNo": 64,
+          "indexTitle": "Hemmina janumake"
+        },
+        {
+          "raag": null,
+          "taal": "Jhaptal",
+          "attribution": "RAJIV AJJIBAL",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Haadondhu moodithu manasinolagondhu",
+                "Chukka chalaadidha aakaasha kandu",
+                "Snehadhaa notadhali hareyadhaa selethaa",
+                "Dhesha kaalagalaache saaguvaa thavaka"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Hogeya musukinolagaache aanandha vadhana",
+                "Benki hagalallu nudivudoo nayana",
+                "Kadhana kalahagalallu jigiyuvaa badhuku",
+                "Moodi baruvudhu untu anupama nasuku"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Raga dhwesha kahi bhaavagala mugilu",
+                "Karagi surisuvudhu olavina honalu",
+                "Kallu kambagalu araluvaa kanasu",
+                "Achala kshanagalu seri ondhaadha manasu"
+              ]
+            }
+          ],
+          "indexNo": 65,
+          "indexTitle": "Hadondu mooditu"
+        }
+      ]
+    },
+    {
+      "pageNumber": "31",
+      "sourceImage": "assets/songs/page_031.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Himagiriya shrangaa dheva nadhi gangaa",
+                "Manadhali moodipa bhaava vinoothana anupama utthungaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Dhivya sanaathana samskrathige vedha puraanave saakshigalu",
+                "Hindhuvinunnathi avanathige saakshi himaadriya shakharagalu",
+                "Anjuva edheyali dhairyadhi panjanu urisuva manjina mahalugalu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Aa sura lokava meerisuvaa naadige dhumukidha bhaagirathai",
+                "Bhaaratha maatheya sangadhali dhanyalu enisiha bhaagyavathi",
+                "Hindhu dheshadha kana kana janamana paavanagolisiha punyavathi"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Sole geluvina sopssna dhudukadhe nade nee jopaana",
+                "Novali nandhiha bandhuvige needutha dhairya samaadhanaa",
+                "Maatheya gourava rakshanegaagi mudupaagiralemmaya praana"
+              ]
+            }
+          ],
+          "indexNo": 66,
+          "indexTitle": "Himagiriya shranga"
+        },
+        {
+          "raag": null,
+          "taal": "Keherava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Hakki chilipili hadidavu rekke bichchi haradidavu",
+                "Hombale suli holedavo sulangi tene balu balukyavo"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Tangaali toogo hottinage kembare myage swami moodyano",
+                "Koti kirana beeri gattinage hunnesara dandetti horataane"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Tavare kantereyo vyalage swami nammappa nadedano",
+                "Ibbani tabbida ileyage dyaaru jatreya nadesyano"
+              ]
+            }
+          ],
+          "indexNo": 67,
+          "indexTitle": "Hakki chippili"
+        }
+      ]
+    },
+    {
+      "pageNumber": "32",
+      "sourceImage": "assets/songs/page_032.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Bhajan Teka",
+          "attribution": null,
+          "title": "Hind Desh Ke Nivasi",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "SRM-M-M- RMP-P-P- NPNPM-PM R-S-",
+                "MPN-N-N- PNS-S-S- N-SNP-NPM-R-S-",
+                "Hind desh ke nivaasi sabhi jana ek hai",
+                "Ranga roopa vesh bhaashaa chaahe anek hai"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Belee gulaab juhi champaa chameli",
+                "Pyaare pyaare fool goonche maalaame ek hai"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Koyal ki kook nyaari papiyonki desh pyaari",
+                "Gaan hi taranaa bulbul raag magar ek hai"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Ganga yanuma bramhaputra Krishna kaaveri",
+                "Jaake milgaye saagar me hui sab ek hai"
+              ]
+            }
+          ],
+          "indexNo": 68,
+          "indexTitle": "Hind desh ke"
+        },
+        {
+          "raag": null,
+          "taal": "Jhaptal",
+          "attribution": "D. Karki",
+          "title": "Hachevu Kannadada Deepa",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Hachevu kannadada deepa Hachevu kannadada deepa",
+                "Karunaada deepa sirinudiya deepa olavetti toruvaa deepaa aa.."
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Bahudinagalinda maimaraveyinda koodiruva koleyaa kochevu",
+                "Yellelli kannadada kampu soosalu Allalli karanaa chaachevu",
+                "Nadu naade irali gadinaade irali kannadada kaleyaa kechevu",
+                "Maretevu mareva teredevu manava eredevu olavaa hidi nenapaa",
+                "Naranaravanellaa hurigulisi hosedu hachevu kannadada deepa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kalpaneya kannu harivanaka saalu deepa gala belakaa beerevu",
+                "Hachiruva deepadali taaya roopa Achaliyadante koredevu",
+                "Odalodala kechinaa kidigalannu gadinaadinaachae thoorevu",
+                "Hommiralu preeti yelliyadu bheeti naadolave neethi hidi nenapaa",
+                "ManemanegaLalli manamanagaLalli hachchevu kannaDada deepa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Nammavarugalisida hesarulisalu ellaru ondoo goodevu",
+                "Nammedeyu midiyuvee maathinalli mateyanu pooje maadevu",
+                "Nammusiru teeduve naadinalli maangalya geehtaa haadevu",
+                "thoredevu marula kadedevu irula padedevu thirula hidinenapaa",
+                "Karulemba kudige minchanna mudisi hachevu kannadada deepa"
+              ]
+            }
+          ],
+          "indexNo": 69,
+          "indexTitle": "Hachcheevu kannadada"
+        }
+      ]
+    },
+    {
+      "pageNumber": "33",
+      "sourceImage": "assets/songs/page_033.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": "GANESH HOSMANE",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Hullina budadali huttida devaru beledanu chigurutha bettadali",
+                "Belagina bisilali holedanu aralutha hoogala Melina muththinali"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Hoovina odalali hurulaagiddhanu gandhava chellutha gaaliyali",
+                "Paraaga kanadali anuvanthiddava vasageya besedanu sparshadali"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Maragal tongeya thudiyali onagutha iddanu beejada roopadali",
+                "Suriyalu jadimale biddhanu mannali eddanu chigurutha molakeyali"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Suduvanu odalali hasivina benkiya sudadanthiruvanu manninali",
+                "Mounada koralali maathaagiruvanu nudivanu midiyutha haadinali"
+              ]
+            }
+          ],
+          "indexNo": 70,
+          "indexTitle": "Hullima bidadali"
+        },
+        {
+          "raag": "Saraswati",
+          "taal": "Jhaptal",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "He jajani jagadhambe ninnadige sharanembe",
+                "Maargadhali bandhenna saadhanege anuvaagu"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Moorjagava paalisuthe sootradhaarini maathe",
+                "Poojisuthe praarthisuthe baaluvevu naavmundhe"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Girijaathe ninnadiya nambiruva bhaktharige",
+                "Neralindha maremaadu mareyalaarevu thaaye"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Karuneyali neenoliye kallu karaguvudhamma",
+                "Uraga suthe nee muniye branhandaviradhamma"
+              ]
+            }
+          ],
+          "indexNo": 71,
+          "indexTitle": "He jajani"
+        }
+      ]
+    },
+    {
+      "pageNumber": "34",
+      "sourceImage": "assets/songs/page_034.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "title": "Etani Shakti",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Itani shakti hame dena data mankaa vishwaas kamjor honaa",
+                "Ham chale nek raste pe hamse bhool karbhi koyi bhool honaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Dur ajnaan ke ho andhere tu hame jnaan ki roshani de",
+                "Har buraayi se bachate rahe ham jitani bhi de bali jindagi de",
+                "Bhair honaa kiseekaa kisise bhaavanaa manme badaleki hotaa",
+                "Ham chale nek rastepe hamse bhool karbhi koyi bhool honaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ham na soche hame kyaa milaahai ham ye soche kiyaa kyaahai arpan",
+                "Fool khushiyonki baate sabhi ko sabkaa jeevanhi banjaaye madhuban",
+                "Apani karunaa kaa jal tu bahaade karde paavan har ikman kaa konaa",
+                "Ham chale nek raste pe hamse bhool karbhi koyi bhool honaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Ham andhereme hai roshani de khonaa de khudko hi dushmani se",
+                "Ham sajaa paaye apane kiye ki mouth bhi hoto sehle khushise",
+                "Kal jo guzaraahai firse na gizre aanevaalaa vo kal aisaa honaa",
+                "Ham chale nek raste pe hamse bhool karbhi koyi bhool honaa"
+              ]
+            }
+          ],
+          "indexNo": 72,
+          "indexTitle": "Itani shakti"
+        },
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "note": "well-known film song (Shree 420) - book gives no credit line",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Ichak dana bichak dana Dane upar dana ichak dana",
+                "Chhajje upar ladaki nache Ladaka hai diwaana ichak dana"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Chhoti si chhokari Lalbayi nam hai",
+                "Pehne woh ghaghra Ek paisa dam hai",
+                "Munh me sabake aag Lagaye aata hai Rulana ichak dana"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ek janwar aisa jisake Dum par paisa",
+                "Sar pe hai taj bhi Badshah ke jaisa",
+                "Badal dekhe chham Chham nache albela Mastana ichak dana"
+              ]
+            }
+          ],
+          "indexNo": 73,
+          "indexTitle": "Ichchik dana"
+        }
+      ]
+    },
+    {
+      "pageNumber": "35",
+      "sourceImage": "assets/songs/page_035.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "title": "Jaha Daal Daal",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jahaa daal daal par sone ki chidiyaa karati hai baseraa",
+                "O bhaarat desh hai meraa o bhaarat desh hai meraa",
+                "Jahaa satya ahimsaa our dharma kaa pag pag lagataa deraa",
+                "O bhaarat desh hai meraa o bhaarat desh hai meraa",
+                "jai bharati jai bharati jai bharati jai bharati"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Ye dharati o jahaa rishimuni japate prabhu naamki maalaa",
+                "Hari om hari om hari om hari om",
+                "Jahaa har baalak ik mohan hai our radhaa ika ika baalaa",
+                "our radhaa ika ika baalaa",
+                "Jahaa sooraj sabse pehele aakar dale apanaa feraa",
+                "O bhaarat desh hai meraa o bhaarat desh hai meraa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Jahaa gangaa jamunaa Krishna our kaaveri beheti jaaye",
+                "Jahaa uttar dakshin poorab pashchim jo amarit pilavaayee",
+                "ye amarit pilavaayee",
+                "Kahi ye jal fal our fool ugaaye kesar kahi bikheraa",
+                "O bhaarat desh hai meraa o bhaarat desh hai meraa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Alabelenki is dharati ke tyohaar bhi hai alabele",
+                "Kahi deevaali ki jagamaga hai holi ke kahi mele",
+                "holi ke kahi mele",
+                "Jahaa raag rang our hasi khushikaa chaaro orahai gheraa",
+                "O bhaarat desh hai meraa o bhaarat desh hai meraa"
+              ]
+            }
+          ],
+          "indexNo": 74,
+          "indexTitle": "Jaha daal daal par"
+        },
+        {
+          "raag": "Yaman",
+          "taal": "Tritaal",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jayashree ganapati gajaananaa",
+                "Govri suta aanandita vadana"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Bhava duhkha haranaa durita nivaarana",
+                "Abhayavitarana bahu sukhakarana"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Sugunaakaaraa nirguna dhamana",
+                "Jnaanadehi mama vandita charana"
+              ]
+            }
+          ],
+          "indexNo": 75,
+          "indexTitle": "Jayashree ganapati"
+        }
+      ]
+    },
+    {
+      "pageNumber": "36",
+      "sourceImage": "assets/songs/page_036.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jai Ganesh, Jai Ganesh, Jai Ganesh Deva",
+                "Mata Jaaki Parvati Pita Mahadeva"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Ek Dant Dayavant, Chaar Bhuja Dhaari",
+                "Maathe Pe Sindhoor Sohe, Muse Ki Savari",
+                "Paan Chadhe, Phul Chadhe, Aur Chadhe Meva",
+                "Ladduan Ka Bhog Lage, Sant Kare Seva"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Andhan Ko Aankh Det, Kodhin Ko Kaaya",
+                "Baanjhan Ko Putra Det, Nirdhan Ko Maaya",
+                "Sur Shaam Sharan Aye, Safalki Je Seva",
+                "Mata Jaaki Parvati Pita Mahadeva"
+              ]
+            }
+          ],
+          "indexNo": 76,
+          "indexTitle": "Jai ganesh"
+        },
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jai jai narayana narayana hari hari",
+                "Sai narayana narayana hari hari",
+                "Teree lila sabse nyari nyari hari hari",
+                "Teree mahima -3 sabse pyaree pyaree hari hari"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Alakha niranjan bhava bhaya bhanjana, janama niranjana data",
+                "Hame sharan de apne chare mai kar nirbhay jaga trata",
+                "Tune lakho kee naiya tari tari hari hari"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Prabhu ke nam kaa paaras jo chule, woh ho jaaye sona",
+                "Do akshar kaa shabdha hari hai lekin bada salona",
+                "Usane sankata tali bhari bhari hari hari"
+              ]
+            }
+          ],
+          "indexNo": 77,
+          "indexTitle": "Jai jai narayan"
+        }
+      ]
+    },
+    {
+      "pageNumber": "37",
+      "sourceImage": "assets/songs/page_037.jpg",
+      "note": "continues the bhajan started at the bottom of page 36",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jalala jalala jaladhare suvi suvvale jole",
+                "Dhoni dhumbale mele jaane jammela jole"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Jalala jalala jaladhare",
+                "Nanna jotheyaagi haadu haayaagi kogile maagi kogile",
+                "Thaala himmela mela mimmela neerale navile aadale",
+                "Binka binnana bedagu bigumaana balle ambaale bale"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Hammu kannota thumbu maimaata manchale chaluve chanchale",
+                "Branga saaranga singa maathanga naagale lalane neenele",
+                "Hamsa nadedhanthe honalu haridhanthe haayi harigola leele"
+              ]
+            }
+          ],
+          "indexNo": 78,
+          "indexTitle": "Jalala jalala"
+        },
+        {
+          "raag": "Shivranjini",
+          "taal": "Dadra",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jo jo baalakrishna jogulava haadutthaa thooguve naa",
+                "Jo joo joo joo yaadavanandhana joo joo"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Navarathna thumbida thotthila katti",
+                "Muruga mallige jaaji hoogala chelli",
+                "Nalku vedagalemba sarapaliya katti",
+                "Pancha varnagalemba jyothi belagi"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Echcharada niddeyu ninageko baala",
+                "Thumbihudu hasemaneyu nee nintha kaala",
+                "Mussanje aaythemba aa sura sandesha",
+                "Irulaayithu nanna kanda malago mukundha"
+              ]
+            }
+          ],
+          "indexNo": 79,
+          "indexTitle": "Jo jo balakrishna"
+        }
+      ]
+    },
+    {
+      "pageNumber": "38",
+      "sourceImage": "assets/songs/page_038.jpg",
+      "songs": [
+        {
+          "raag": "Yaman",
+          "taal": "Dadra",
+          "attribution": null,
+          "note": "book prints 'TAAN -DADRA' rather than 'TAAL' here, likely a typo - kept as Dadra",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Janani janma bhoomi janani janma bhoomi",
+                "Janani janma bhoomi namma punya maate bhaarati",
+                "Janara manada mahaapoora bhaavakeli itimiti",
+                "S-S SSS, S-S S-S, NRN-DP MDPMGR",
+                "G-GG-G M-MM-M MDN-DP MDPMGR"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Koti hradayadalli moletu hariva bhinna bhaavane",
+                "Kaavya kangalalli taledu ninta ondu kalpane",
+                "Jeeva jeeva teli mulugi tavakagonda vartane",
+                "Yoga bhoga yaavudondu nilukadilli summane",
+                "S-S SSS, ........................MDPMGR"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kalpa vraksha kaamadhenu heeri bante manukula",
+                "Kanninalli kanasinaase maatu bariya mragajala",
+                "Divya drasti bayakeyalli chinte bene odalige",
+                "Datta baradu bisilinalli jigiva tavaka mannige",
+                "S-S SSS, ........................MDPMGR"
+              ]
+            }
+          ],
+          "indexNo": 80,
+          "indexTitle": "Janani janma bhoomi"
+        },
+        {
+          "raag": null,
+          "taal": null,
+          "attribution": "Movie - Dear Zindagi",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jo dil se lage Usey keh do Hi, Hi, Hi",
+                "Jo dil na lage Usey keh do bye, bye, bye",
+                "Aane do, aane do Dil mein aa jaane do",
+                "Keh do muskurahat ko Hi, Hi, Hi, Hi",
+                "Jaane de, jaane do Dil se chale jaane do",
+                "Keh do ghabrahat ko Bye, bye, bye, bye, bye, bye...",
+                "Love you Zindagi Love you Zindagi"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kabhi haath pakad ke tu mera Chal de, chal de",
+                "Kabhi haath chhuda ke main tera Chal doon, chal doon",
+                "Main thodi si moody hoon Tu thodi si tedhi hai",
+                "Kya khoob ye jodi hai Teri Meri.."
+              ]
+            }
+          ],
+          "indexNo": 81,
+          "indexTitle": "Jo dil se lge"
+        }
+      ]
+    },
+    {
+      "pageNumber": "39",
+      "sourceImage": "assets/songs/page_039.jpg",
+      "songs": [
+        {
+          "raag": "Hamsadwani",
+          "taal": "Bhajan Teka",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jaya jagadeeshwari maataa saraswati",
+                "Sharanaagata pari paalana kaari"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Chandra bimba sama vadanaviraaje",
+                "Shashi mukuta maalaa Ghana dhaare",
+                "Veenaa vaama angama shobhe",
+                "Saama geeta dhvani madhurapiyaari"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Shweta vasana kamalaasana sundara",
+                "Sanga sakhi shubha samsa savaari",
+                "Bramhaananda mai daasa tumhaaro",
+                "De darashana parabramha dulaari"
+              ]
+            }
+          ],
+          "indexNo": 82,
+          "indexTitle": "Jaya jagadheeshwari"
+        },
+        {
+          "raag": "Dani",
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jaya jaya ganapati raaya jayajaya mangala kaaya",
+                "chakkuli modaka holige paayasa koduvevu savi kajjaya",
+                "chikkavariruvevu tappugalenisade hattira baa nannodeyaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "aaneya vadanane daanava haranane ninnadigeraguve geeya",
+                "jnaanava nee dayapaalisu namage karuna saagara deva"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "siddivinaayaka shudda mtiya kodu sadguru shreedhara roopa",
+                "uddarisalu nee ileyolu nelesihe siddivinaayaka bhoopaa"
+              ]
+            }
+          ],
+          "indexNo": 83,
+          "indexTitle": "Jaya jaya ganapati"
+        }
+      ]
+    },
+    {
+      "pageNumber": "40",
+      "sourceImage": "assets/songs/page_040.jpg",
+      "songs": [
+        {
+          "raag": "Madmad Sarang",
+          "taal": "Dadra",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jaya Janardhana Krishna Radhika Pate",
+                "Jana vimochana Krishna Janma Mochana",
+                "Garuda Vahana Krishna Gopika Pathe",
+                "Nayana mohana Krishna Neerajekshana"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Sujana Baandhava Krishna Sundara kruthe",
+                "Madana Komala Krishna Madhava Hare",
+                "vasumati Pathe Krishna vaasavaanuja",
+                "varaguNaakara Krishna vaishnavaakruthe"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Surachiraanana Krishna Shouryavaaridhe",
+                "Murahara vibho Krishna muktidaayaka",
+                "vimalapaalaka Krishna vallabhipate",
+                "Kamalalochana Krishna kamyadaayaka"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Vimalagaatrane Krishna Bhaktavatsala",
+                "Charana pallavam Krishna Karuna Komalam",
+                "KuvalaikshaNa Krishna komalaakruthe",
+                "tava padambujam Krishna sharanamaashraye"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Bhuvana naayaka Krishna paavanaakruthe",
+                "GuNagaNojwala Krishna Nalinalochana",
+                "Pranayavaaridhe Krishna guNagaNaakara",
+                "daamasodara Krishna deena vatsala"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Kaamasundara Krishna paahi sarvadaa",
+                "Narakanaashana Krishna Narasahaayaka",
+                "Devaki sutha Krishna KaruNyambhude",
+                "Kamsanaashana Krishna Dwarakasthitha"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Paavanaatmaka Krishna dehi mangaLam",
+                "Tvatpadaambujam Krishna Shyama komalam",
+                "Bhaktavatsala Krishna Kaamyadayaka",
+                "Paalisennanu Krishna Srihari namo"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Bhaktadaasa naa Krishna Harasu Nee sadaa",
+                "Kaadu ninthenaa Krishna Salaheyaa Vibho",
+                "Garuda vaahana Krishna Gopika Pathe",
+                "Nayana mohana Krishna Neerajekshana"
+              ]
+            }
+          ],
+          "indexNo": 84,
+          "indexTitle": "Jaya janardhana"
+        }
+      ]
+    },
+    {
+      "pageNumber": "41",
+      "sourceImage": "assets/songs/page_041.jpg",
+      "songs": [
+        {
+          "raag": "Bairagi Bhairav",
+          "taal": "Dadra",
+          "attribution": "K.S NISSAR AHAMAD",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jogada siri belakinalli Tungeya tene balukinalli",
+                "Sahyadriya lohadalira Uttungada nilukinalli",
+                "Nitya haridvarna vanada Tega gandha tarugalali",
+                "Nityotsava taye nityotsava Ninage nityotsava taye nityotsava"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Itihasada himadallina Simhasana maleyalli",
+                "Gata sahasa sarutiruva Shasanagala salinalli",
+                "Olegariya sirigalalli Degulagala bhittigalali",
+                "Nityotsava taye nityotsava Ninage nityotsava taye nityotsava"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Halavennadha hirimeye Kulavennadha garimeye",
+                "Sadvikala shila nudiya Lokamruta simeye",
+                "E vathsara nirmathsara manadhudhara mahimeye",
+                "Nityotsava taye nityotsava Ninage nityotsava taye nityotsava"
+              ]
+            }
+          ]
+        },
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Jeeva thumbi bhaava thumbi manadha dheepa belagu baa",
+                "Sneha thori moha thori neenu chaluveyaagi baa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Bhoomi hasiru chaluvinusiru hradhayavanne mididhu mididhu",
+                "Yaava neela bannavarali mudhadhi nenapu haridhe"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Hariva nadhiya kareyu baralu thanuvu manavu marethidhe",
+                "Yaava neela bannavarali kshanadhi nenapu haaridhe"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": "42",
+      "sourceImage": "assets/songs/page_042.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Kabhi raam banake kabhi shyaama banake",
+                "Chale aanaa prabhuji chale aanaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Tuma raama roopa me aanaa",
+                "Seetaa saath leke dhanush haath leke",
+                "chale aanaa prabhuji chale aanaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Tuma shyaama roopa me aanaa",
+                "Radha saath leke murali haath leke",
+                "Chale aanaa prabhuji chale aanaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Tuma shiva ke roopa me anaa",
+                "Gowraa saath leke damaru hath leke",
+                "Chale aanaa prabhuji chale aanaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Tuma Vishnu roopa me anaa",
+                "Lakshmi saath leke chakra hath leke",
+                "Chale aanaa prabhuji chale aanaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Tuma ganapati roopa me anaa",
+                "Ruddhi saath leke siddhi saath leke",
+                "Chale aanaa prabhuji chale aanaa"
+              ]
+            }
+          ]
+        },
+        {
+          "raag": "Bheempalas",
+          "taal": "Keharava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Krishnaa krishnaa kolalanoodutaa baaro",
+                "Ninna poorna leeleyaa toro"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Gopiya streeyara naduve gopaalana veshadi nalive",
+                "Haalina gadigeyanodedu nee harushadi haalanu kudive"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Mooru lokadaa daniye narajanma taalidaa hariye",
+                "Shishtara rakshanegendu avataaravettidaa indu"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": "43",
+      "sourceImage": "assets/songs/page_043.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Kuhu kuho nee kogileye na",
+                "Haaduva haadondha haaduveyaa",
+                "Naa keluva maathondha keluveyaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Chiguridha banadhali neeniruve",
+                "Nee kooguva dhwaniyali naaniruve",
+                "Haadutha kulithare dinavella",
+                "Naa noduthaliruve navavella"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Bharatha dheshada baaninolu",
+                "Ee dhwanigala mardhanigolisuveya",
+                "Bhaavaikyatheyanu moodisalu",
+                "Ee asamaanatheyanu alisuveya"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Bhedha bhaavava maresuveya",
+                "Nee raastraabhimaanava thumbuveya",
+                "Andhakaaradha janagalige",
+                "Ee amratha vaaniya thilisuveyaa"
+              ]
+            }
+          ]
+        },
+        {
+          "raag": null,
+          "taal": "Roopak",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Kaviya kanasina edheya paradheya sarisi jhanarisi kankana",
+                "Gaali ale aleyodane narthana kaala gajjeya jhnajana"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Hradhayadholagu horagu ennaya narthanave avatharisidhe",
+                "Jnaana managala kori ninthidhe kavige aashirvadhisisdhe"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Paarijaathadha hoovinanthaha vinayave hiri guruthige",
+                "Hoovinolagana madhura sangama ihudhu sarisama preethige"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Manadha mallige moggu aralidhe madhura sourabha soosidhe",
+                "Anthrangave karagidhanthidhe karuneye kan theredhidhe"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": "44",
+      "sourceImage": "assets/songs/page_044.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "title": "Kandiraa Kandira",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Kandiraa kandeera krishnana kandiraa",
+                "Tunta Krishnana kandiraa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Hostiladi bandano rangoli maayaa",
+                "Angalake ilidaano hoogale mayaa",
+                "Nadumanege bandaano adagadagi nindaano",
+                "Geetopadeshada krishnane maayaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Olagodi bandaano kene mosaru maayaa",
+                "Gudu gudu nadedaano kadagole maayaa",
+                "Hittiladi bandaano kivi tiruvi nandaano",
+                "Ede tumbi ninta neere maayaa"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Kannadi hididaano kaadige maayaa",
+                "Munnudi baredaano a dukha maayaa",
+                "Hunnime sanjege aadyadi malagidano",
+                "Namma angaladaa chandrane maayaa"
+              ]
+            }
+          ]
+        },
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "note": "well-known children's film song (Lakdi Ki Kaathi) - book gives no credit line",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "lakdi ki kaathi kati pe ghoda",
+                "ghode ki dum pe jo maara hathauda",
+                "dauda dauda dauda ghoda dum utha ke dauda"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "ghoda pahuncha chauk mein chauk mein tha naai",
+                "ghodeji ki naai ne hazaamat jo banaai",
+                "chag-bag chag-bag chag-bag chag-bag"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "ghoda tha ghamandi pahuncha sabji mandi",
+                "sabji mandi baraf padi thi baraf mein lag gai thandi",
+                "chag-bag chag-bag chag-bag chag-bag"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "ghoda apana tagada hai dekho kitani charabi hai",
+                "chalata hai maharauli mein par ghoda apana arabi hai",
+                "chag-bag chag-bag chag-bag chag-bag"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": "45",
+      "sourceImage": "assets/songs/page_045.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "S - S RS N - N SN P - P NP MP MP GM PN",
+                "D - D NS P - P PN M - M PM GM GM PN S"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Maa saraswathee shaaradhe poorna is ajnaana udhadhise",
+                "Veenaa pane thaaradhe thaaradhe thaaradhe"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Soorya bramha shiv Vishnu gajaanana jin charanonko sevathe",
+                "Ham shishu hai ajnaani mathaa there charanonkaa pyaar dhe",
+                "Veenaa pane thaaradhe thaaradhe thaaradhe"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Moorakh ham jaane janani poojan vandhan dhyaan ko",
+                "Aadhi shkthi kar rakshaa hame poojaake udhegaar dhe",
+                "Veenaa pane thaaradhe thaaradhe thaaradhe"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Swetha kamal theraa aasan hai sweth hamsa theraa vaahan hai",
+                "Ham par siddha drasti kar janani bodha ksheera ki dhaar dhe",
+                "Veenaa pane thaaradhe thaaradhe thaaradhe"
+              ]
+            }
+          ]
+        },
+        {
+          "raag": null,
+          "taal": "Kehrava",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Maa, Meri Maa, Pyari Maa, Mammaa",
+                "Ho Maa, Meri Maa, Pyari Maa, Mammaa"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Haatho Ki Lakirein Badal Jayengi",
+                "Ghum Ki Yeh Janjirein Pighal Jayengi",
+                "Ho Khuda Pe Bhi Asar, Tu Duwao Ka Hai Ghar"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Bigadi Kismat Bhi Sanwar Jaayegi",
+                "Jindagi Taraane Khushi Ke Gaayegi",
+                "Tere Hote Kiska Dar, Tu Duwao Ka Hai Ghar"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Yu Toh Main Sabse Nyara Hoon, Tera Maa Main Dulhara Hoon",
+                "Yu Toh Main Sabse Nyara Hoon, Par Tera Maa Main Dulhara Hoon",
+                "Duniya Mein Jine Se Jyada Uljhanein Hai Maa, Tu Hai Amar Ka Jahan",
+                "Tu Gussa Karti Hai, Bada Achha Lagata Hai",
+                "Tu Kaan Pakadati Hai Badi Jor Se Lagta Hai, Meri Maa"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": "46",
+      "sourceImage": "assets/songs/page_046.jpg",
+      "songs": [
+        {
+          "raag": "Bhairavi",
+          "taal": "Dadra",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Mohana mukunda hari giridhaara govinda hari",
+                "narayan sai narayan"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "allah Narayan eeshwara narayan",
+                "naanak narayan eesu narayan",
+                "Buddha narayan Mahaveera narayan",
+                "sai narayan sai narayan"
+              ]
+            }
+          ]
+        },
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Mohana murali dhara-4",
+                "Krishna govinda Krishna Krishna govinda Krishna"
+              ]
+            },
+            {
+              "marked": true,
+              "lines": [
+                "Kanha gopala kanha gopala mann mohana mohana"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Krishna gopala Krishna gopala mann mohana mohana"
+              ]
+            }
+          ]
+        },
+        {
+          "raag": null,
+          "taal": "Bhajan Teka",
+          "attribution": null,
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Mana mohanaa he yadhu nandana",
+                "Deenaavana bhava bhaya bhanjana"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Madhava keshava madhusoodhana",
+                "Narayana sayi narayana"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Govardhanoddhara gopala baala",
+                "Gopi manasa chora radhe gopala"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": "47",
+      "sourceImage": "assets/songs/page_047.jpg",
+      "songs": [
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": "Movie - Bajirav Mastani",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Mohe rang do laal Nand ke laal laal",
+                "Chhedo nahi bas rang do laal"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Dekhu dekhu tujhko main hoke nihaal",
+                "Chhu lo kora mora kaanch sa tann Nain bhar kya rahe nihaar"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Marodi kalaai mori Haan kalaai mori",
+                "Haan kalaai marodi.. kalaai mori",
+                "Churri chatkai ittrai Toh chori se garwa lagai",
+                "Hari ye chunariya Jo jhatke se chheeni",
+                "Main toh rangi hari hari ke rang Laaj se gulaabi gaal"
+              ]
+            }
+          ]
+        },
+        {
+          "raag": null,
+          "taal": "Dadra",
+          "attribution": "Movie - Diljale",
+          "stanzas": [
+            {
+              "marked": false,
+              "lines": [
+                "Mera mulk mera desh mera yeh watan",
+                "Shanti ka unnati ka pyaar ka chaman",
+                "Is ke vaaste nisaar hai mera tan mera man",
+                "Aye watan aye watan aye watan",
+                "Jaaneman jaaneman jaaneman"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Is ki mitti se bane tere mere yeh badan",
+                "Is ki dharti tere mere vaaste gagan",
+                "Is ne hi sikhaya humko jeene ka chalan"
+              ]
+            },
+            {
+              "marked": false,
+              "lines": [
+                "Apne is chaman ko swarg hum banayenge",
+                "Kona kona apne desh ka sajayenge",
+                "Jashn hoga zindagi ka honge sab magan"
+              ]
+            }
           ]
         }
       ]

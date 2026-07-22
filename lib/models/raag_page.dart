@@ -22,7 +22,43 @@ class RaagBook {
   final Map<String, List<int>> raagIndex;
   final List<IndexEntry> indexEntries;
 
-  RaagBook({required this.pages, required this.raagIndex, required this.indexEntries});
+  RaagBook({
+    required this.pages,
+    required this.raagIndex,
+    required this.indexEntries,
+  });
+
+  static const _availableSourceImages = {
+    'assets/pages/page_001.jpg',
+    'assets/pages/page_002.jpg',
+    'assets/pages/page_003.jpg',
+    'assets/pages/page_004.jpg',
+    'assets/pages/page_005.jpg',
+    'assets/pages/page_006.jpg',
+    'assets/pages/page_007.jpg',
+    'assets/pages/page_008.jpg',
+    'assets/pages/page_009.jpg',
+    'assets/pages/page_010.jpg',
+    'assets/pages/page_011.jpg',
+    'assets/pages/page_012.jpg',
+    'assets/pages/page_013.jpg',
+    'assets/pages/page_014.jpg',
+    'assets/pages/page_015.jpg',
+    'assets/pages/page_016.jpg',
+    'assets/pages/page_017.jpg',
+    'assets/pages/page_018.jpg',
+    'assets/pages/page_019.jpg',
+    'assets/pages/page_020.jpg',
+    'assets/pages/page_021.jpg',
+    'assets/pages/page_022.jpg',
+    'assets/pages/page_023.jpg',
+  };
+
+  static String? normalizeSourceImage(String? sourceImage) {
+    if (sourceImage == null || sourceImage.trim().isEmpty) return null;
+    final path = sourceImage.trim();
+    return _availableSourceImages.contains(path) ? path : null;
+  }
 
   factory RaagBook.fromJson(Map<String, dynamic> json) {
     final pagesJson = json['pages'] as List<dynamic>;
@@ -61,15 +97,16 @@ class RaagBook {
     final byRaag = pagesForRaag(entry.title);
     if (byRaag.isNotEmpty) return byRaag;
 
-    final matchingPage = pages.where((p) => p.pageNumber == entry.page).toList();
+    final matchingPage = pages
+        .where((p) => p.pageNumber == entry.page)
+        .toList();
     if (matchingPage.isNotEmpty) return matchingPage;
 
     final normalizedTitle = entry.title.trim().toLowerCase();
     final titleMatch = pages.where((p) {
       final title = p.title.trim().toLowerCase();
       return title.contains(normalizedTitle) || normalizedTitle.contains(title);
-    }).toList()
-      ..sort((a, b) => a.pageNumber.compareTo(b.pageNumber));
+    }).toList()..sort((a, b) => a.pageNumber.compareTo(b.pageNumber));
     return titleMatch;
   }
 
@@ -111,7 +148,9 @@ class RaagPage {
       raag: json['raag'] as String?,
       status: json['status'] as String?,
       note: json['note'] as String?,
-      sourceImage: json['sourceImage'] as String?,
+      sourceImage: RaagBook.normalizeSourceImage(
+        json['sourceImage'] as String?,
+      ),
       blocks: blocksJson
           .map((b) => PageBlock.fromJson(b as Map<String, dynamic>))
           .toList(),
@@ -122,7 +161,8 @@ class RaagPage {
 /// A single content block on a page: header info, a swara grid,
 /// a grid with matched lyrics, or a plain text note.
 class PageBlock {
-  final String type; // "header" | "grid" | "grid_with_lyrics" | "text" | "alankar_set"
+  final String
+  type; // "header" | "grid" | "grid_with_lyrics" | "text" | "alankar_set"
   final String? label;
   final Map<String, dynamic>? headerData;
   final List<String>? taalMarkers;
@@ -171,8 +211,12 @@ class PageBlock {
       swaraRows: parseGrid(json['swaraRows']),
       lyricRows: parseGrid(json['lyricRows']),
       content: json['content'] as String?,
-      aroh: json['aroh'] != null ? List<String>.from(json['aroh'] as List) : null,
-      avroh: json['avroh'] != null ? List<String>.from(json['avroh'] as List) : null,
+      aroh: json['aroh'] != null
+          ? List<String>.from(json['aroh'] as List)
+          : null,
+      avroh: json['avroh'] != null
+          ? List<String>.from(json['avroh'] as List)
+          : null,
       taal: json['taal'] as String?,
       confidence: json['confidence'] as String?,
       note: json['note'] as String?,

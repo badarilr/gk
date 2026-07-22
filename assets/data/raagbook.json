@@ -7,7 +7,8 @@
     "block_type_grid": "a taal-marker table of swara rows (sargamgeet-style)",
     "block_type_grid_with_lyrics": "a taal-marker table with matched swara + lyric rows (laxangeet/bandish-style)",
     "status_pending_verification": "blocks tagged this way were intentionally NOT transcribed yet (dense drill grids, no lyric anchor) - do a focused pass on the photo before trusting them",
-    "block_type_alankar_set": "a running list of AROH/AVROH swara-phrases (no taal-column grid, no lyrics) - used for pure practice-drill pages. Optional 'taal' names the rhythmic cycle the book associates with the drill. Optional 'confidence': 'verify_against_photo' flags sets where handwritten octave dots were hard to disambiguate from the scan."
+    "block_type_alankar_set": "a running list of AROH/AVROH swara-phrases (no taal-column grid, no lyrics) - used for pure practice-drill pages. Optional 'taal' names the rhythmic cycle the book associates with the drill. Optional 'confidence': 'verify_against_photo' flags sets where handwritten octave dots were hard to disambiguate from the scan.",
+    "komal_swara_note": "From Kafi/Khamaj/Des onward the raag uses komal (flattened) Gandhar/Nishad per the 'vikrat' field. This book marks that with an underline (the same mark used elsewhere for lower-octave notes), so komal swaras in these later pages are transcribed here in plain uppercase and flagged confidence: verify_against_photo rather than guessed at - please check the underlines in sourceImage before treating them as certain."
   },
   "source": "Goonjan Kala Kendra - Alankar Praveshika notebook",
   "sourceImageConvention": "each page object has a 'sourceImage' path (assets/pages/page_NNN.jpg, zero-padded to 3 digits, matching pageNumber). Drop your original page photos into that Flutter asset folder using this exact naming so the app can show the source snapshot next to the transcribed content for verification.",
@@ -2414,12 +2415,2010 @@
       "sourceImage": "assets/pages/page_023.jpg"
     },
     {
+      "pageNumber": 24,
+      "title": "Bheempalas Aalap Stayi / Aalap Antara / Taan Stayi / Taan Antara",
+      "raag": "Bheempalas",
+      "status": "pending_verification",
+      "note": "Continuation of page 23. Four drill grids (Aalap Stayi, Aalap Antara, Taan Stayi, Taan Antara) not transcribed yet - dense, no lyric anchor, consistent with how other raags' aalap/taan pages were handled in this book.",
+      "sourceImage": "assets/pages/page_024.jpg"
+    },
+    {
       "pageNumber": 25,
       "title": "Rag Kafi",
       "raag": "Kafi",
-      "note": "transcribed in an earlier message of this conversation - can be merged into this file on request",
-      "blocks": [],
+      "note": "This thaat (and Khamaj/Des further ahead) uses komal (flattened) swaras - Gandhar and Nishad here. The source book marks these with an underline under the swara letter, same mark it uses elsewhere for lower-octave swaras. Where a note is both underlined AND clearly meant as komal (per the 'vikrat' field) rather than lower-octave, it's transcribed here in plain uppercase and flagged with confidence: verify_against_photo rather than guessing - please cross-check the underlines against sourceImage before trusting exact swara identity.",
+      "blocks": [
+        {
+          "type": "header",
+          "data": {
+            "that": "Kafi",
+            "ras": "Bhakthi",
+            "jati": "Sampoorn",
+            "vikrat": "Gandhar & Nishad",
+            "vaadi": "Pancham",
+            "varjya": "Nothing",
+            "samvadi": "Shadj",
+            "time": "Midnight",
+            "aroh": [
+              "S",
+              "R",
+              "G",
+              "M",
+              "P",
+              "D",
+              "N",
+              "S'"
+            ],
+            "avroh": [
+              "S'",
+              "N",
+              "D",
+              "P",
+              "M",
+              "G",
+              "R",
+              "S"
+            ],
+            "pakkad": [
+              "P",
+              "D",
+              "M",
+              "P",
+              "G",
+              "R",
+              ",",
+              "M",
+              "G",
+              "R",
+              "S"
+            ],
+            "confidence": "verify_against_photo"
+          }
+        },
+        {
+          "type": "grid",
+          "label": "Sargamgeet Teentaal - Sthayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "rows": [
+            [
+              "S S R R",
+              "G G M M",
+              "P --- --- M",
+              "P D N S"
+            ]
+          ],
+          "confidence": "verify_against_photo"
+        },
+        {
+          "type": "grid",
+          "label": "Antara",
+          "rows": [
+            [
+              "M M P D",
+              "N N S --",
+              "R G R S",
+              "N D S --"
+            ],
+            [
+              "D D P P",
+              "P D M P",
+              "P --- --- M",
+              "P D N S"
+            ],
+            [
+              "N D P M",
+              "G G R R",
+              "R P M P",
+              "M G R S"
+            ]
+          ],
+          "confidence": "verify_against_photo"
+        }
+      ],
       "sourceImage": "assets/pages/page_025.jpg"
+    },
+    {
+      "pageNumber": 26,
+      "title": "Laxangeet Ektaal - Kafi",
+      "raag": "Kafi",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Guni gaavatha kaafi raga kharaharapriya mela janitha, komala gani ujwala para sura panchama vaadi naada"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Sarala swaroopavi parichitha maanatha sabasudha avikala, aashraya guni chathura kahatha komala gani ujwala para sura panchama vaadi naada"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "X",
+            "0",
+            "2",
+            "0",
+            "3",
+            "4"
+          ],
+          "swaraRows": [
+            [
+              "PD MP",
+              "G --",
+              "R S",
+              "R G",
+              "M P",
+              "--- P"
+            ],
+            [
+              "S R",
+              "S N",
+              "D P",
+              "G --",
+              "R S",
+              "R N"
+            ],
+            [
+              "S --",
+              "R R",
+              "G G",
+              "M --",
+              "P P",
+              "D D"
+            ],
+            [
+              "N S",
+              "NS R",
+              "S N",
+              "D --",
+              "M P",
+              "M P"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Gu ni",
+              "gaa --",
+              "va tha",
+              "kaa --",
+              "fi raa",
+              "--- ga"
+            ],
+            [
+              "Kha ra",
+              "ha ra",
+              "pri ya",
+              "me --",
+              "la ja",
+              "ni tha"
+            ],
+            [
+              "Ko --",
+              "ma la",
+              "ga ni",
+              "u --",
+              "jwa la",
+              "pa ra"
+            ],
+            [
+              "Su ra",
+              "pan --",
+              "cha ma",
+              "vaa --",
+              "di naa",
+              "--- da"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M M",
+              "M P",
+              "N --",
+              "S N",
+              "S S",
+              "S S"
+            ],
+            [
+              "N --",
+              "R G",
+              "R S",
+              "R N",
+              "S S",
+              "S S"
+            ],
+            [
+              "S --",
+              "N D",
+              "M P",
+              "G G",
+              "R S",
+              "R N"
+            ],
+            [
+              "Ko --",
+              "ma la",
+              "ga ni",
+              "u --",
+              "jwa la",
+              "pa ra"
+            ],
+            [
+              "Su ra",
+              "pan --",
+              "cha ma",
+              "vaa --",
+              "di naa",
+              "--- da"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Sa ra",
+              "la swa",
+              "roo --",
+              "pa vi",
+              "pa ri",
+              "chi tha"
+            ],
+            [
+              "Maa --",
+              "na ta",
+              "sa ba",
+              "su dha",
+              "a vi",
+              "ka la"
+            ],
+            [
+              "Aa --",
+              "shra ya",
+              "gu ni",
+              "cha thu",
+              "ra ka",
+              "ha tha"
+            ],
+            [
+              "ma la",
+              "ga ni",
+              "u --",
+              "jwa la",
+              "pa ra",
+              ""
+            ],
+            [
+              "pan --",
+              "cha ma",
+              "vaa --",
+              "di naa",
+              "--- da",
+              ""
+            ]
+          ],
+          "note": "The last two rows repeat the 'Ko-ma la gani... / Su ra pan-cha ma...' line, exactly as printed in the book (antara reuses the stayi's closing line)."
+        }
+      ],
+      "sourceImage": "assets/pages/page_026.jpg"
+    },
+    {
+      "pageNumber": 27,
+      "title": "Kafi - Bandish Teentaal",
+      "raag": "Kafi",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Aaja khelo shyaam sanga holi, Aaja pichakaari ranga bhari kesar ki"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Kuvaka kanhaiyyaa sanga sakhi raadhaa, Ranga bhari jori sohathari"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "9 10 11 12 (0)",
+            "13 14 15 16 (3)",
+            "1 2 3 4 (X)",
+            "5 6 7 8 (2)"
+          ],
+          "swaraRows": [
+            [
+              "",
+              "",
+              "",
+              "R M"
+            ],
+            [
+              "P D P G",
+              "--- R M M",
+              "P --- --- ---",
+              "P --- R M"
+            ],
+            [
+              "D D D D",
+              "D N D P",
+              "M P D P",
+              "G R"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "",
+              "",
+              "",
+              "Aa aj"
+            ],
+            [
+              "kh -lo shyaa",
+              "--- ma san ga",
+              "ho --- --- ---",
+              "li - Aa ja"
+            ],
+            [
+              "pi cha kaa ri",
+              "ran ga bha ri",
+              "ke - sa ra",
+              "ki --"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M M P D",
+              "N - S --",
+              "R G R S",
+              "N D S --"
+            ],
+            [
+              "D D D D",
+              "D N D P",
+              "M P D P",
+              "G R"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ku va ra kan",
+              "hai - yyaa --",
+              "san gas a khi",
+              "raa -- dha--"
+            ],
+            [
+              "Ran ga bha ri",
+              "jo - ri --",
+              "so -ha tha",
+              "ri --"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_027.jpg"
+    },
+    {
+      "pageNumber": 28,
+      "title": "Kafi Bandish Ektaal",
+      "raag": "Kafi",
+      "blocks": [
+        {
+          "type": "header",
+          "data": {
+            "aroh": [
+              "S",
+              "R",
+              "G",
+              "M",
+              "P",
+              "D",
+              "N",
+              "S'"
+            ],
+            "avroh": [
+              "S'",
+              "N",
+              "D",
+              "P",
+              "M",
+              "G",
+              "R",
+              "S"
+            ],
+            "pakkad": [
+              "P",
+              "D",
+              "M",
+              "G",
+              "R",
+              ",",
+              "M",
+              "G",
+              "R",
+              "S"
+            ],
+            "vistar": [
+              "N S",
+              "R G M G R S",
+              "R M P",
+              "D- M P G R",
+              "R G M P",
+              "D N D P",
+              "D N S--",
+              "N D P M G R S"
+            ]
+          }
+        },
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Januma safala jaano Hari ke maaya vichaari, Prabhu ke guna gaavo"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Prema bhaav sajjanataa Pitra prema ke karataa, Nitabichare jo jagame Aanand mitra ko bhaave, Jo dhyaave jaano"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "X",
+            "0",
+            "2",
+            "0",
+            "3",
+            "4"
+          ],
+          "swaraRows": [
+            [
+              "D P",
+              "M G",
+              "R S",
+              "R M",
+              "P D",
+              "M P"
+            ],
+            [
+              "D D",
+              "PD N",
+              "ND PM",
+              "RM PD",
+              "P G",
+              "R R"
+            ],
+            [
+              "D P",
+              "PD N",
+              "D P",
+              "RM PD",
+              "M P",
+              "G R"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ja nu",
+              "ma sa",
+              "fa la",
+              "jaa --",
+              "--- ---",
+              "no --"
+            ],
+            [
+              "Ha ri",
+              "ke --",
+              "maa --",
+              "yaa --",
+              "vi cha",
+              "ri --"
+            ],
+            [
+              "Pra bhu",
+              "ke --",
+              "gu na",
+              "gaa --",
+              "--- ---",
+              "vo --"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M --",
+              "P N",
+              "D N",
+              "S N",
+              "S N",
+              "S --"
+            ],
+            [
+              "N --",
+              "N S",
+              "N S",
+              "PN SR",
+              "N D",
+              "P --"
+            ],
+            [
+              "M P",
+              "R S",
+              "R --",
+              "R S",
+              "RS ND",
+              "P --"
+            ],
+            [
+              "N S",
+              "R N",
+              "D P",
+              "RM PD",
+              "PM P",
+              "G R"
+            ],
+            [
+              "RM PD",
+              "PM P",
+              "G R",
+              "RM",
+              "PN",
+              "DP MP"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Pre --",
+              "ma bhaa",
+              "--- va",
+              "sa ---",
+              "jja na",
+              "thaa --"
+            ],
+            [
+              "Pi --",
+              "tra pre",
+              "--- ma",
+              "ke --",
+              "ka ra",
+              "thaa --"
+            ],
+            [
+              "Ni tha",
+              "bi cha",
+              "re --",
+              "jo --",
+              "ja ga",
+              "me --"
+            ],
+            [
+              "Aa nan",
+              "da mi",
+              "-- thra",
+              "ko ---",
+              "bhaa --",
+              "ve ---"
+            ],
+            [
+              "Jo --",
+              "dhyaa ---",
+              "ve --",
+              "jaa --",
+              "--- ---",
+              "no --"
+            ]
+          ]
+        }
+      ],
+      "note": "Header vistar/pakkad rebuilt from the 'Aaroh/Avroh/Pakkad/Vistar' line printed above the Stayi table on this page; cross-check against sourceImage.",
+      "sourceImage": "assets/pages/page_028.jpg"
+    },
+    {
+      "pageNumber": 29,
+      "title": "Kafi Aalap Stayi / Aalap Antara / Taan Stayi / Taan Antara",
+      "raag": "Kafi",
+      "status": "pending_verification",
+      "note": "Four drill grids not transcribed yet - dense, no lyric anchor, consistent with how other raags' aalap/taan pages were handled in this book.",
+      "sourceImage": "assets/pages/page_029.jpg"
+    },
+    {
+      "pageNumber": 30,
+      "title": "Rag Khamaj",
+      "raag": "Khamaj",
+      "note": "Margin annotations on this page (Shadhava Sampurna jaathi note, min 5/max 7 note count rule, Avnava/Sompurna jaathi labels, and a Shudda/Komal swara key at the bottom: Shudda - NS, NR; Komal - DN, PN) are handwritten asides in the book, kept here as a page-level note rather than structured data. Komal Nishad is used here (vikrat), transcribed in plain uppercase - cross-check against sourceImage.",
+      "blocks": [
+        {
+          "type": "header",
+          "data": {
+            "that": "Khamaj",
+            "jati": "Shadav Sampoorn",
+            "vaadi": "Gandhar",
+            "samvadi": "Nishad",
+            "varjya": "Rishab (Aroh)",
+            "vikrat": "Nishad (Avroh)",
+            "time": "2nd prahar of night",
+            "ras": "Shrangar",
+            "aroh": [
+              "S",
+              "G",
+              "M",
+              "P",
+              "D",
+              "N",
+              "S'"
+            ],
+            "avroh": [
+              "S'",
+              "N",
+              "D",
+              "P",
+              "M",
+              "G",
+              "R",
+              "S"
+            ],
+            "pakkad": [
+              "G",
+              "M",
+              "P",
+              "D",
+              "N",
+              "D",
+              "P",
+              ",",
+              "M",
+              "G",
+              "R",
+              "S",
+              "G"
+            ],
+            "vistar": [
+              "N S G-R S",
+              "S G M P",
+              "G M N D P",
+              "M P M G R S",
+              "G M P D N -",
+              "S--",
+              "S G R S N D P",
+              "D N D P M G R S"
+            ],
+            "confidence": "verify_against_photo"
+          }
+        },
+        {
+          "type": "grid",
+          "label": "Khamaj Sargamgeet Tritaal - Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "rows": [
+            [
+              "G S G M",
+              "P N D P",
+              "G M P D",
+              "G P M G"
+            ],
+            [
+              "P N D N",
+              "S -- N D",
+              "S N D M",
+              "P D M G"
+            ],
+            [
+              "N S G R",
+              "N D M P",
+              "N D P D",
+              "M G R S"
+            ]
+          ]
+        },
+        {
+          "type": "grid",
+          "label": "Sargamgeet - Antara",
+          "rows": [
+            [
+              "G M P D",
+              "N N S N",
+              "S -- S S",
+              "N S S S"
+            ],
+            [
+              "N S G R",
+              "M G R S",
+              "P S N S",
+              "N D M P"
+            ],
+            [
+              "G M P S",
+              "N D M P",
+              "N D P D",
+              "M G R S"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_030.jpg"
+    },
+    {
+      "pageNumber": 31,
+      "title": "Laxangeet Tritaal - Khamaj",
+      "raag": "Khamaj",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Khamaaj raagini gaavatha saba jana, Shuddha sakala sura dwaya nishaada Ghana, Bahutha na letha rishabha aarohana"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Ga ni nrapa manthri sabko sammatha, Rasa shangaara sukhada mana bhaavatha, Chaala chalatha chanchala gambheerana"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              "S G -- M",
+              "P D NR NS",
+              "N D P D",
+              "G P M G"
+            ],
+            [
+              "G -- M N",
+              "D N P D",
+              "N S R D",
+              "S N D P"
+            ],
+            [
+              "P D S R",
+              "MG RG S R",
+              "N D P D",
+              "MP DP M G"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Kha maa -- ja",
+              "raa - gi ni",
+              "gaa - va tha",
+              "sa ba ja na"
+            ],
+            [
+              "Shu -- dda sa",
+              "ka la su ra",
+              "dwa ya ni shaa",
+              "--- da ga na"
+            ],
+            [
+              "Ba hu tha na",
+              "le - tha ri",
+              "sha ba aa ---",
+              "ro - ha na"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "G M N D",
+              "N DN P D",
+              "N N S N",
+              "S -- S S"
+            ],
+            [
+              "N N N --",
+              "S -- S S",
+              "P N S R",
+              "D S N D"
+            ],
+            [
+              "S M G M",
+              "R G N S",
+              "P D SN RS",
+              "N DP M G"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ga ni nra pa",
+              "man - thri --",
+              "sa ba ko --",
+              "sam - ma tha"
+            ],
+            [
+              "Ra sa shran --",
+              "gaa - ra su",
+              "kha da ma na",
+              "bhaa - va tha"
+            ],
+            [
+              "Chaa - la cha",
+              "la hta chan -",
+              "cha la gam --",
+              "bhee - ra na"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_031.jpg"
+    },
+    {
+      "pageNumber": 32,
+      "title": "Khamaj Bandish Tritaal",
+      "raag": "Khamaj",
+      "note": "Two Khamaj bandish-in-Tritaal settings appear back to back in the book (this page and the next); kept as separate pages to match the source.",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Shyaama sundara banamaali ke sakha, Darasa binaa jiyaa tarasaaye"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Sohani sooratha mohani mooratha, Darasa binaa jiyaa tarasaaye"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "9 10 11 12 (0)",
+            "13 14 15 16 (3)",
+            "1 2 3 4 (X)",
+            "5 6 7 8 (2)"
+          ],
+          "swaraRows": [
+            [
+              "S G M P",
+              "G M N D",
+              "NS NS N D",
+              "M P M G"
+            ],
+            [
+              "N N S S",
+              "N S N D",
+              "G M S N",
+              "DP MP M G"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Syaa-- ma sun",
+              "da ra ba na",
+              "maa - li --",
+              "ke - sa kha"
+            ],
+            [
+              "Da ra sa bi",
+              "naa-- -- ji",
+              "yaa - tha ra",
+              "saa - ye --"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M N D N",
+              "S -- N S",
+              "S -- S S",
+              "N S N D"
+            ],
+            [
+              "S G M G",
+              "S N D P",
+              "G M P D",
+              "N N S S"
+            ],
+            [
+              "N N S S",
+              "N S N D",
+              "G M S N",
+              "DP MP M G"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "So - ha ni",
+              "soo - ra tha",
+              "mo - ha ni",
+              "moo - ra tha"
+            ],
+            [
+              "Ha ra ran ga",
+              "ke - cha bi",
+              "mo - ma na",
+              "ba si sa khi"
+            ],
+            [
+              "Da ra sa bi",
+              "naa-- -- ji",
+              "yaa - tha ra",
+              "saa - ye --"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_032.jpg"
+    },
+    {
+      "pageNumber": 33,
+      "title": "Khamaj Bandish Trithaal",
+      "raag": "Khamaj",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Jaavo saiyyaa na mose karatha barajori, Dheeta langaravaa maanatha naahi jaanatha naahi, Baiyyaare more lataka gayire"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Karatha ho nisadina aanabana falachina, Jaavore jaavo jaavo karo na titori"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              "P S N S",
+              "--- N D P",
+              "G M P N",
+              "D G --- M"
+            ],
+            [
+              "R G R S",
+              "R N S ---",
+              "M N D N",
+              "P D N S"
+            ],
+            [
+              "R N D P",
+              "P N S R",
+              "S N D P",
+              "G M G M"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Jaa vo sai yyaa",
+              "--- na mo se",
+              "ka ra tha ba",
+              "ra jo --- ri"
+            ],
+            [
+              "Dhee ---ta lan",
+              "ga ra vaa --",
+              "maanatha naa",
+              "---hi jaa na"
+            ],
+            [
+              "Tha naa ---hi",
+              "bhai yyaa re mo",
+              "re la ta ka",
+              "ga yi re --"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M N D N",
+              "P D N S",
+              "P N S R",
+              "S N D P"
+            ],
+            [
+              "S M G M",
+              "R G S R",
+              "N S N S",
+              "D N P D"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ka ra tha ho",
+              "ni sa di na",
+              "aa na ba na",
+              "fa la chi na"
+            ],
+            [
+              "Jaa vo re jaa",
+              "---vo jaa vo",
+              "ka ro na ti",
+              "to --- ri --"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_033.jpg"
+    },
+    {
+      "pageNumber": 34,
+      "title": "Khamaj Aalap Stayi / Aalap Antara / Taan Stayi / Taan Antara",
+      "raag": "Khamaj",
+      "status": "pending_verification",
+      "note": "Four drill grids not transcribed yet - dense, no lyric anchor, consistent with how other raags' aalap/taan pages were handled in this book. Several lines in the Taan grids are hand-struck-through in the original photo.",
+      "sourceImage": "assets/pages/page_034.jpg"
+    },
+    {
+      "pageNumber": 35,
+      "title": "Rag Des",
+      "raag": "Des",
+      "blocks": [
+        {
+          "type": "header",
+          "data": {
+            "that": "Khamaj",
+            "jati": "Oudav Sampoorn",
+            "vaadi": "Rishab",
+            "samvadi": "Pancham",
+            "varjya": "Gandhar & Daivat",
+            "vikrat": "Nishad (Avroh)",
+            "time": "2nd prahar of night",
+            "ras": "Shrangar & Bhakti",
+            "aroh": [
+              "S",
+              "R",
+              "M",
+              "P",
+              "N",
+              "S'"
+            ],
+            "avroh": [
+              "S'",
+              "N",
+              "D",
+              "P",
+              "M",
+              "G",
+              "R",
+              "G",
+              "N",
+              "S"
+            ],
+            "pakkad": [
+              "P",
+              "D",
+              "M",
+              "G",
+              "R",
+              "G",
+              "N",
+              "S"
+            ],
+            "vistar": [
+              "N S",
+              "R M G R",
+              "G-N S",
+              "N S R M P",
+              "D M G R",
+              "G N S",
+              "R M P",
+              "M P N S",
+              "P N S R N D P",
+              "D M G R",
+              "G N S"
+            ],
+            "confidence": "verify_against_photo"
+          }
+        },
+        {
+          "type": "grid",
+          "label": "Sargamgeet Tritaal - Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "rows": [
+            [
+              "R P M G",
+              "R G N S",
+              "R R M P",
+              "N D P --"
+            ],
+            [
+              "N N N S",
+              "N R S N",
+              "D P D M",
+              "G R N S"
+            ]
+          ]
+        },
+        {
+          "type": "grid",
+          "label": "Antara",
+          "rows": [
+            [
+              "M P N N",
+              "S -- S S",
+              "R M G R",
+              "G N S --"
+            ],
+            [
+              "P N S R",
+              "N S N D",
+              "P D M G",
+              "R G N S"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_035.jpg"
+    },
+    {
+      "pageNumber": 36,
+      "title": "Des Laxangeet Tritaal",
+      "raag": "Des",
+      "note": "Page annotated '7 beats' in the margin near the title, though the grid below is laid out in the usual four-column taal format - kept as printed.",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Guni gaavatha raagini des ko, Athi madhura madhura do nishaada layi"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Re pa vaadi samvaadi sohatha, Chadatha alpa ga da sabako sammatha, Raina dina jayi gaavatha jana guni"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              "",
+              "",
+              "",
+              "M P"
+            ],
+            [
+              "NS RS N D",
+              "P D M M",
+              "G R -- G",
+              "S -- S S"
+            ],
+            [
+              "R G S R",
+              "M P N N",
+              "N S -- R",
+              "N D"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "",
+              "",
+              "",
+              "Gu ni"
+            ],
+            [
+              "gaa ---va tha",
+              "raa - gi ni",
+              "de --- -- sa",
+              "ko -- A thi"
+            ],
+            [
+              "ma dhu ra ma",
+              "dhu ra do --",
+              "ni shaa -- da",
+              "la yi"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M M M --",
+              "P --- N ---",
+              "S --- N ---",
+              "S -- S S"
+            ],
+            [
+              "N N N S",
+              "--- S S S",
+              "P N S R",
+              "N D M P"
+            ],
+            [
+              "R M R M",
+              "P D M P",
+              "PN SR S R",
+              "N D M P"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Re pa vaa --",
+              "di - sam --",
+              "vaa -- di --",
+              "so ---ha tha"
+            ],
+            [
+              "Cha da tha a",
+              "-- lpa ga da",
+              "sa ba ko --",
+              "sa -- mma tha"
+            ],
+            [
+              "Rai --- na di",
+              "naa --ja yi",
+              "gaa -- va tha",
+              "ja na gu ni"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_036.jpg"
+    },
+    {
+      "pageNumber": 37,
+      "title": "Des - Bandish Dadrathaal",
+      "raag": "Des",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Shyaama sundara madana mohana, Muraliyaa bajaaye jaaye"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Kaandhe kamariyaa haath muraliyaa, Bana me govve charaaye jaaye"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "swaraRows": [
+            [
+              "PN SR S",
+              "N D P",
+              "RM PD P",
+              "M G R"
+            ],
+            [
+              "R MG",
+              "N -- S",
+              "R M --",
+              "G R ---"
+            ],
+            [
+              "R M M",
+              "P -- P",
+              "PD PD D",
+              "M G R"
+            ],
+            [
+              "N N N",
+              "S -- S",
+              "PN SR",
+              "DP MG RS"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Shyaa-- ma",
+              "sun da ra",
+              "ma da na",
+              "mo ha na"
+            ],
+            [
+              "Mu ra li",
+              "yaa-- ba",
+              "jaa --- ---",
+              "ye --- ---"
+            ],
+            [
+              "Mu ra li",
+              "yaa-- ba",
+              "jaa -- ye",
+              "jaa--ye"
+            ],
+            [
+              "Mu ra li",
+              "yaa-- ba",
+              "jaa -- ye",
+              "jaa--ye"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M M M",
+              "P N N",
+              "N S N",
+              "S S S"
+            ],
+            [
+              "N N N",
+              "S S S",
+              "PN SR S",
+              "N D P"
+            ],
+            [
+              "N N N",
+              "S S S",
+              "PN SR SN",
+              "DP MG RS"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Kaan de kaa",
+              "ma ri yaa",
+              "ha tha mu",
+              "ra li yaa"
+            ],
+            [
+              "Ba na me",
+              "gou ve cha",
+              "raa -- ye",
+              "jaa -- ye"
+            ],
+            [
+              "Ba na me",
+              "gou ve cha",
+              "raa -- ye",
+              "jaa -- ye"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_037.jpg"
+    },
+    {
+      "pageNumber": 38,
+      "title": "Des Bandish Teenthaal",
+      "raag": "Des",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Man mohan mathavaalaa pyaaraa, Gokul mathuraa kaa ujiyaaraa"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Bansi bajaavatha ras barasaavath, Goonj rahaa yamunaa kaa kinaaraa"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              "MG RG N S",
+              "R R M P",
+              "N -- S --",
+              "N D P D P --"
+            ],
+            [
+              "R -- M M",
+              "P P P --",
+              "R N D P",
+              "MP DP MG R"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ma na mo --",
+              "ha na ma tha",
+              "vaa - laa --",
+              "pyaa - raa --"
+            ],
+            [
+              "Go -ku la",
+              "ma thu raa --",
+              "kaa -u ji",
+              "yaa -raa --"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M -- M M",
+              "P -- N N",
+              "S S S S",
+              "R N S S"
+            ],
+            [
+              "PN SR S R",
+              "N D P P",
+              "R M P D",
+              "MP DP MG R"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ban -si ba",
+              "jaa - va tha",
+              "ra sa ba ra",
+              "saa - va tha"
+            ],
+            [
+              "Goon - ja ra",
+              "haa - ya mu",
+              "naa -- kaa ki",
+              "naa - raa --"
+            ]
+          ],
+          "note": "A small aside 'M P dhu' is scribbled above the Antara table in the source photo."
+        }
+      ],
+      "sourceImage": "assets/pages/page_038.jpg"
+    },
+    {
+      "pageNumber": 39,
+      "title": "Des Aalap Stayi / Aalap Antara / Taan Stayi / Taan Antara",
+      "raag": "Des",
+      "status": "pending_verification",
+      "note": "Four drill grids not transcribed yet - dense, no lyric anchor, consistent with how other raags' aalap/taan pages were handled in this book.",
+      "sourceImage": "assets/pages/page_039.jpg"
+    },
+    {
+      "pageNumber": 40,
+      "title": "Rag Yaman",
+      "raag": "Yaman",
+      "blocks": [
+        {
+          "type": "header",
+          "data": {
+            "that": "Kalyan",
+            "jati": "Sampoorn",
+            "vadiSamvadi": "Gandhar & Nishad",
+            "aroh": [
+              "S",
+              "R",
+              "G",
+              "M'",
+              "P",
+              "D",
+              "N",
+              "S'"
+            ],
+            "aroh_note": "Book writes aroh as 'S R G M P D N S (N R G M D N S)' - the parenthetical variant with tivra Madhyam (M') is the more commonly sung phrase.",
+            "avroh": [
+              "S'",
+              "N",
+              "D",
+              "P",
+              "M'",
+              "G",
+              "R",
+              "S"
+            ],
+            "pakkad": [
+              "N",
+              "R",
+              "G",
+              "M'",
+              "G",
+              "R",
+              "N",
+              "R",
+              "S",
+              "P",
+              "M'",
+              "G",
+              "R",
+              "S"
+            ],
+            "time": "1st prahar of night",
+            "vikrat": "Teevra Madyam",
+            "ras": "Shrangar",
+            "vistar": [
+              "N R G",
+              "M' G R S",
+              "G M' D N D P",
+              "M' D N S'",
+              "N D N R S",
+              "N D P M' - G",
+              "P - R S"
+            ]
+          }
+        },
+        {
+          "type": "grid",
+          "label": "Swargeeth Teenthaal - Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "1",
+            "2"
+          ],
+          "rows": [
+            [
+              "N -- D P",
+              "M -- P --",
+              "G M D P",
+              "R G R S"
+            ],
+            [
+              "N R G R",
+              "N R S --",
+              "M D N D",
+              "M D P --"
+            ],
+            [
+              "N R G R",
+              "N R S --",
+              "S N D P",
+              "M G R S"
+            ]
+          ]
+        },
+        {
+          "type": "grid",
+          "label": "Antara",
+          "rows": [
+            [
+              "G M D N",
+              "S -- S --",
+              "N D -- N",
+              "--- R S --"
+            ],
+            [
+              "N R G N",
+              "--- R D --",
+              "N M -- D",
+              "N D P --"
+            ],
+            [
+              "G R -- G",
+              "-- M D N",
+              "S N D P",
+              "M G R S"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_040.jpg"
+    },
+    {
+      "pageNumber": 41,
+      "title": "Laxangeet Teentaal - Yaman",
+      "raag": "Yaman",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Yamana raga raagaa guni maanatha, That kalyaana swana ranga poorna matha"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Ga vaadi aru nishaada vilasitha, Sudha sura sammatha theevara ma yutha"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Sthayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              "D P M G",
+              "R R S --",
+              "G --- G G",
+              "P -- M G"
+            ],
+            [
+              "P -- M G",
+              "P -- P --",
+              "D D P P",
+              "M M G G"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ya ma na raa",
+              "--- ga raa --",
+              "gaa - gu ni",
+              "maa - na tha"
+            ],
+            [
+              "Thaa - ta ka",
+              "lyaa - na ---",
+              "swa na ran ga",
+              "Poo rna ma tha"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "G -- M --",
+              "D -- S N",
+              "S S -- S",
+              "N R S S"
+            ],
+            [
+              "N R G R",
+              "S N D P",
+              "D -- P P",
+              "M -- G G"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ga - vaa ---",
+              "di - a ru",
+              "ni shaa -- da",
+              "vi la si tha"
+            ],
+            [
+              "Su dha su ra",
+              "sa - mma tha",
+              "tee - va ra",
+              "ma - yu tha"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_041.jpg"
+    },
+    {
+      "pageNumber": 42,
+      "title": "Yaman Bandish Tritaal",
+      "raag": "Yaman",
+      "blocks": [
+        {
+          "type": "text",
+          "label": "Stayi lyrics",
+          "content": "Eri aali piyaa bina sakhi, Kalana paratha mohe ghari fala china dina"
+        },
+        {
+          "type": "text",
+          "label": "Antara lyrics",
+          "content": "Jaba se piyaa parades gavanakinho, Rathiyaa katatha mohe tare gina gina"
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi",
+          "taalMarkers": [
+            "0",
+            "3",
+            "X",
+            "2"
+          ],
+          "swaraRows": [
+            [
+              "N -- P --",
+              "R -- S --",
+              "G G M",
+              "G -- M D"
+            ],
+            [
+              "P P P P",
+              "M D P P",
+              "N D P M",
+              "R R S S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "E -- ri --",
+              "aa - li --",
+              "pi yaa -- bi",
+              "na - sa khi"
+            ],
+            [
+              "Ka la na pa",
+              "ra tha mo he",
+              "gha ri fa la",
+              "chi na di na"
+            ]
+          ]
+        },
+        {
+          "type": "grid_with_lyrics",
+          "label": "Antara",
+          "swaraRows": [
+            [
+              "M M G G",
+              "M -- D D",
+              "MD NS S S",
+              "N R S S"
+            ],
+            [
+              "N R G R",
+              "S ND P P",
+              "N -- P --",
+              "R R S S"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Ja ba se pi",
+              "yaa - pa ra",
+              "de - sa ga",
+              "va na ki nho"
+            ],
+            [
+              "Ra thi yaa ka",
+              "ta tha mo he",
+              "thaa - re --",
+              "gi na gi na"
+            ]
+          ]
+        }
+      ],
+      "sourceImage": "assets/pages/page_042.jpg"
+    },
+    {
+      "pageNumber": 43,
+      "title": "Yaman Aalap Stayi / Aalap Antara / Taan Stayi / Taan Antara",
+      "raag": "Yaman",
+      "status": "pending_verification",
+      "note": "Four drill grids not transcribed yet - dense, no lyric anchor, consistent with how other raags' aalap/taan pages were handled in this book.",
+      "sourceImage": "assets/pages/page_043.jpg"
+    },
+    {
+      "pageNumber": 44,
+      "title": "Drapad (Bhoopali) Choutal",
+      "raag": "Bhoopali",
+      "blocks": [
+        {
+          "type": "grid_with_lyrics",
+          "label": "Stayi / Sanchari / Antara / Abhoga",
+          "taalMarkers": [
+            "X",
+            "0",
+            "2",
+            "0",
+            "3",
+            "4"
+          ],
+          "swaraRows": [
+            [
+              "P G",
+              "G --",
+              "G P",
+              "G R",
+              "G R",
+              "SD S"
+            ],
+            [
+              "P D",
+              "S R",
+              "G P",
+              "GP DS",
+              "DP GR",
+              "SD S"
+            ],
+            [
+              "G G",
+              "P P",
+              "S D",
+              "S --",
+              "S D",
+              "R S"
+            ],
+            [
+              "S D",
+              "S --",
+              "SR G",
+              "R S",
+              "D PG",
+              "--- na"
+            ]
+          ],
+          "lyricRows": [
+            [
+              "Da ra",
+              "re --",
+              "ma na",
+              "pra bhu",
+              "ke dhyaa",
+              "--- na"
+            ],
+            [
+              "Chaa --",
+              "ha ta",
+              "Jo --",
+              "To --",
+              "ka lyaa",
+              "--- na"
+            ],
+            [
+              "Ja la",
+              "ta la",
+              "a va",
+              "ni --",
+              "am --",
+              "Ba ra"
+            ],
+            [
+              "Sa ba",
+              "me --",
+              "va ha",
+              "vi --",
+              "dya maa",
+              "--- na"
+            ]
+          ],
+          "note": "Rows are labelled in the book as Stayi, Sanchari, Antara, and Abhoga respectively (Dhrupad's four-part form) rather than the usual Stayi/Antara pair."
+        },
+        {
+          "type": "text",
+          "label": "Raag Bhoopala - Taal Bhajan Teka - lyrics",
+          "content": "Gaayiye ganapati jaga vandana, Shankara sumana bhavaani nandana / Siddhi sadana gajavadana vinaayak, Krapaa sindhu sundara sabalaayaka / Modaka priya muda mangaladaataa, Vidya vaaridhi buddhi pradhaataa / Maangata tulasidaasa karajore, Basahi raama siyaa maanasa more"
+        }
+      ],
+      "sourceImage": "assets/pages/page_044.jpg"
+    },
+    {
+      "pageNumber": 46,
+      "title": "Taal Tritaal (Teentaal)",
+      "raag": null,
+      "blocks": [
+        {
+          "type": "taal_reference",
+          "data": {
+            "khali": "1 (on the 9th beat)",
+            "taali": "3 (on the 1st, 5th & 13th beat)",
+            "beats_maatras": 16,
+            "parts_vibhag": 4,
+            "bols": {
+              "1 2 3 4": "Dha dhin dhin dha",
+              "5 6 7 8": "Dha dhin dhin dha",
+              "9 10 11 12": "Dha tin tin taa",
+              "13 14 15 16": "Trak dhin dhin dha"
+            }
+          }
+        }
+      ],
+      "sourceImage": "assets/pages/page_046.jpg"
+    },
+    {
+      "pageNumber": 47,
+      "title": "Ektal / Roopakyaal",
+      "raag": null,
+      "blocks": [
+        {
+          "type": "taal_reference",
+          "label": "Ektal",
+          "data": {
+            "beats_maatra": 12,
+            "parts_vibhag": "6 (each have 2 beats)",
+            "taali": "4 (on 1st, 5th, 9th & 11th beat)",
+            "khali": "2 (on 3rd & 7th beat)",
+            "bols": {
+              "1 2": "Dhin Dhin",
+              "3 4": "Dhage Thrak",
+              "5 6": "Tho Naa",
+              "7 8": "Kath Tin",
+              "9 10": "Dhage Thrak",
+              "11 12": "Dhee Naa"
+            }
+          }
+        },
+        {
+          "type": "taal_reference",
+          "label": "Roopakyaal",
+          "data": {
+            "beats_maatras": 7,
+            "parts_vibhag": 3,
+            "taali": "2 (on 4th & 6th beat)",
+            "khali": "1 (on tha 1st beat)",
+            "bols": {
+              "1 2 3": "Thi Thi Naa",
+              "4 5": "Dhee Naa",
+              "6 7": "Dhee Naa"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "label": "Swara key",
+          "content": "S = Shadj, R = Rishab, G = Gandhar, M = Madyam, P = Pancham, D = Daivat, N = Nishad"
+        }
+      ],
+      "sourceImage": "assets/pages/page_047.jpg"
+    },
+    {
+      "pageNumber": 48,
+      "title": "Zaptaal / Choutaal",
+      "raag": null,
+      "blocks": [
+        {
+          "type": "taal_reference",
+          "label": "Zaptaal",
+          "data": {
+            "beats_maatraas": 10,
+            "parts_vibhag": 4,
+            "taali": "3 (on 1st, 3rd & 8th beat)",
+            "khali": "1 (on the 5th beat)",
+            "bols": {
+              "1 2": "Dhee naa",
+              "3 4 5": "Dhee dhee naa",
+              "6 7": "Thee naa",
+              "8 9 10": "Dhee dhee naa"
+            }
+          }
+        },
+        {
+          "type": "taal_reference",
+          "label": "Choutaal",
+          "data": {
+            "beats_maatras": 12,
+            "parts_vibhag": 6,
+            "taali": "4 (on 1st, 5th, 9th & 11th beat)",
+            "khali": "2 (on 3rd & 7th beat)",
+            "bols": {
+              "1 2": "Dhaa dhaa",
+              "3 4": "Dhem taa",
+              "5 6": "Kita dhaa",
+              "7 8": "Dhem thaa",
+              "9 10": "Thita kata",
+              "11 12": "Gadi gana"
+            }
+          }
+        }
+      ],
+      "sourceImage": "assets/pages/page_048.jpg"
     }
   ],
   "notYetSent": [

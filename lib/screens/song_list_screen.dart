@@ -25,20 +25,16 @@ class _SongListScreenState extends State<SongListScreen> {
           }
 
           final book = snapshot.data!;
-          final filteredPages = book.pages.where((page) {
+          final songs = book.songs;
+          final filteredSongs = songs.where((item) {
             final query = _searchText.trim().toLowerCase();
             if (query.isEmpty) return true;
             final haystack = [
-              page.displayTitle,
-              page.title ?? '',
-              page.pageNumber,
-              ...page.songs.map((song) => [
-                    song.displayTitle,
-                    song.title ?? '',
-                    song.raag ?? '',
-                    song.taal ?? '',
-                    song.attribution ?? '',
-                  ].join(' ')),
+              item.indexLabel,
+              item.displayTitle,
+              item.song.indexTitle ?? '',
+              item.song.title ?? '',
+              item.pageLabel,
             ].join('\n').toLowerCase();
             return haystack.contains(query);
           }).toList();
@@ -49,7 +45,7 @@ class _SongListScreenState extends State<SongListScreen> {
                 padding: const EdgeInsets.fromLTRB(12, 12, 12, 8),
                 child: TextField(
                   decoration: const InputDecoration(
-                    hintText: 'Search song, raga, taal or attribution',
+                    hintText: 'Search song title',
                     prefixIcon: Icon(Icons.search),
                     border: OutlineInputBorder(),
                   ),
@@ -59,32 +55,34 @@ class _SongListScreenState extends State<SongListScreen> {
               Expanded(
                 child: ListView.builder(
                   padding: const EdgeInsets.all(12),
-                  itemCount: filteredPages.length,
+                  itemCount: filteredSongs.length,
                   itemBuilder: (context, index) {
-                    final page = filteredPages[index];
-                    final title = page.displayTitle;
-                    final subtitle = page.songs.isEmpty
-                        ? 'No songs transcribed yet'
-                        : '${page.songs.length} song${page.songs.length == 1 ? '' : 's'}';
+                    final item = filteredSongs[index];
 
                     return Card(
                       margin: const EdgeInsets.only(bottom: 10),
                       child: ListTile(
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                        leading: page.sourceImage != null
-                            ? Image.asset(
-                                page.sourceImage!,
-                                width: 48,
-                                height: 48,
-                                fit: BoxFit.cover,
-                                errorBuilder: (_, __, ___) => const Icon(Icons.music_note),
-                              )
-                            : const Icon(Icons.music_note, size: 32),
-                        title: Text(title),
-                        subtitle: Text(subtitle),
+                        contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 14,
+                          vertical: 8,
+                        ),
+                        leading: CircleAvatar(
+                          backgroundColor: const Color(0xFF8B6E3C),
+                          foregroundColor: Colors.white,
+                          child: Text(
+                            item.indexLabel,
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                        title: Text(item.displayTitle),
                         onTap: () => Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (_) => SongPageView(page: page)),
+                          MaterialPageRoute(
+                            builder: (_) => SongPageView(item: item),
+                          ),
                         ),
                       ),
                     );
